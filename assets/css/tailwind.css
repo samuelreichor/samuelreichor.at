@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #fff;
+    --muted: #F1F5F9;
+  }
+   
+  .dark {
+    --background: #020817;
+    --muted: #101929;
+  }
+
+  body {
+    background-color: var(--background)
+  }
+
+  .outside-container {
+    @apply px-5 lg:px-8 xl:px-10 2xl:px-14 w-full mx-auto max-w-screen-2xl;
+  }
+
+  .container,
+  .container-gaps {
+    @apply gap-x-4 md:gap-x-6 2xl:gap-x-8;
+  }
+
+  .container {
+    @apply grid grid-cols-12;
+  }
+
+  a:hover {
+    @apply text-primary-400 transition-colors;
+  }
+}
