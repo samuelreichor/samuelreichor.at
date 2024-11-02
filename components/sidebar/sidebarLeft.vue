@@ -6,6 +6,7 @@
     label?: string;
     showParentUrl?: boolean;
     defaultOpen?: boolean;
+    showChilds?: boolean;
   }
 
   const props = defineProps({
@@ -27,8 +28,9 @@
         :nav-nodes="nodeObj.navNodes" 
         :default-open="nodeObj.defaultOpen"
         :show-parent-url="nodeObj.showParentUrl"
+        :show-childs="nodeObj.showChilds"
         />
     </nav>
-    <SidebarNav v-if="socialNodes" label="Find me here" :nav-nodes="socialNodes" class="text-black/70 dark:text-white/70" />
+    <SidebarNav v-if="socialNodes" label="Find me here" :nav-nodes="socialNodes"/>
   </aside>
 </template>

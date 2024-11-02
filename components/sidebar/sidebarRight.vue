@@ -1,50 +1,55 @@
 <script lang="ts" setup>
-  import type { NavNode } from './types'
+  import type { TocLink } from '@nuxt/content';
+  import { useActiveScroll } from 'vue-use-active-scroll'
 
   const props = defineProps({
-    navNodes: {
+    tocLinks: {
+      type: Array as PropType<TocLink[]>,
       required: true,
-      type: Array as PropType<NavNode[]>
     }
+  })
+
+  const ids = computed(() =>
+    props.tocLinks.flatMap(({ id, children = [] }) => [
+      id,
+      ...children.map(({ id }) => id), // Flatten any nested link
+    ])
+  )
+
+  const { setActive, activeId } = useActiveScroll(ids, {
+    overlayHeight: 120,
   })
 
   const isOpen = ref(false)
   function toggleNav() {
     isOpen.value = !isOpen.value;
   }
-
-  const socialNodes: NavNode[] = [
-    {
-      url: 'https://github.com/samuelreichor',
-      title: 'Github',
-      target: '_blank',
-      icon: 'github'
-    },
-    {
-      url: 'not-implemented',
-      title: 'Discord',
-      target: '_blank',
-      icon: 'discord'
-    },
-    {
-      url: 'https://medium.com/@samuelreichor',
-      title: 'Blog',
-      target: '_blank',
-      icon: 'medium'
-    },
-  ]
 </script>
 
 <template>
-  <div>
+  <div v-if="props.tocLinks.length > 0">
     <button @click="toggleNav()"
-      class="font-bold max-lg:flex max-lg:justify-between max-lg:w-full max-lg:bg-muted max-lg:p-3 max-lg:rounded-md">
+      class="font-bold max-lg:flex max-lg:justify-between max-lg:w-full max-lg:bg-muted max-lg:p-3 max-lg:rounded-md lg:text-sm">
       Table of Contents
-      <Icon class="-rotate-90 lg:hidden" name="chevron" />
+      <Icon :class="['lg:hidden transition-transform', isOpen ? 'rotate-[270deg]' : 'rotate-180']" name="chevron" />
     </button>
-    <div v-show="isOpen" class="mt-4 lg:!block">
-      <SidebarNav :nav-nodes="props.navNodes" />
+    <div v-show="isOpen" class="mt-2 lg:!block text-sm">
+      <ul class="space-y-1 text-nav-node">
+        <li v-for="(link, index) in props.tocLinks" :key="index">
+          <NuxtLink @click="setActive(link.id)" :to="`#${link.id}`"
+            :class="{ 'lg:!text-highlight-500': activeId === link.id }">
+            {{ link.text }}
+          </NuxtLink>
+        </li>
+      </ul>
+
+      <hr class="border-t-contrast mb-0 md:mt-6 lg:hidden">
     </div>
-    <SidebarNav class="pt-20 max-lg:hidden" :nav-nodes="socialNodes" />
   </div>
 </template>
+
+<style scoped>
+  a {
+    @apply text-slate-700 hover:text-black dark:text-slate-300 dark:hover:text-white transition-colors;
+  }
+</style>

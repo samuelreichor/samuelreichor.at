@@ -20,10 +20,12 @@
     {
       navNodes: navigationNpm.value?.[0].children,
       label: 'NPM Packages',
+      showChilds: false,
     },
     {
       navNodes: navigationCraft.value?.[0].children,
       label: 'Craft Cms Plugins',
+      showChilds: false,
     }
   ]
 </script>

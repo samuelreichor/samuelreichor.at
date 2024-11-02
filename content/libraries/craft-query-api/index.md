@@ -1,5 +1,5 @@
 ---
-title: 'Craft Query API'
+title: Craft Query Api
 description: 'meta description of the page'
 pkg: true
 type: 'craft'

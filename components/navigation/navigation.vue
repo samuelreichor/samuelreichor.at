@@ -1,4 +1,5 @@
 <script setup lang="ts">
+  import type { NavItem } from '@nuxt/content';
   const colorMode = useColorMode()
   const isDark = computed({
     get() {
@@ -9,15 +10,35 @@
     }
   })
 
+  const navigation = inject<NavItem[]>('navigationObj');
   const isOpen = ref(false)
+
   function toggleNav() {
     isOpen.value = !isOpen.value
+
+    if(isOpen.value === true) {
+      openNavigation()
+    }
+
+    if (isOpen.value === false) {
+      closeNavigation()
+    }
+  }
+
+  function closeNavigation() {
+    isOpen.value = false;
+    document.documentElement.classList.remove('overflow-hidden')
+  }
+
+  function openNavigation() {
+    isOpen.value = true;
+    document.documentElement.classList.add('overflow-hidden')
   }
 
   function closeOnEsc() {
     window.addEventListener('keydown', (e) => { 
       if (e.key === 'Escape') {
-        isOpen.value = false;
+        closeNavigation()
       }
     })
   }
@@ -27,45 +48,39 @@
 </script>
 
 <template>
-  <div v-if="isOpen" class="h-[var(--nav-height)]"></div>
-  <header
-    :class="['flex top-0 left-0 right-0 gap-8 justify-between w-full py-6 max-md:flex-wrap bg-background z-[1000]', isOpen ? 'fixed outside-container' : 'sticky']">
-    <a href="#main"
-      class="absolute h-full left-0 right-0 -top-[20rem] focus:top-0 inline-flex items-center justify-center bg-muted opacity-95 font-bold">
-      Skip Navigation
-    </a>
-    <NuxtLink to="/" class="font-bold">
+  <header class="sticky top-0 left-0 right-0 z-[1000] flex justify-between py-6 bg-background">
+    <NuxtLink to="/" class="font-bold z-20" @click="closeNavigation()">
       SR
     </NuxtLink>
-    <div :class="['flex gap-3 md:gap-10 max-md:w-full max-md:flex-col', !isOpen && 'max-md:hidden']">
-      <NuxtLink to="/blog">
-        Blog
-      </NuxtLink>
-      <NuxtLink to="/projects">
-        Projects
-      </NuxtLink>
-      <NuxtLink to="/libraries">
-        Libraries
-      </NuxtLink>
+    <div v-if="isOpen"
+      class="w-full bg-background fixed bottom-0 left-0 right-0 top-[var(--nav-height)] min-h-[calc(100vh-var(--nav-height))] overflow-y-auto overscroll-contain z-10 md:hidden">
+      <div class="outside-container">
+        <LazyNavigationNodeTree :nav-nodes="navigation" @click-e="closeNavigation()" />
+      </div>
     </div>
-    <div class="flex gap-4 md:gap-8 items-center">
-      <div :class="['flex gap-8 items-center', !isOpen && 'max-md:hidden']">
-        <NuxtLink href="https://github.com/samuelreichor" :external="true" target="_blank">
-          <Icon name="github" size="lg" />
-        </NuxtLink>
-      </div>
-      <div :class="['flex gap-8 items-center max-md:absolute max-md:top-5', isOpen ? 'max-md:right-5' : 'right-0' ]">
-        <ClientOnly>
-          <UButton :icon="isDark ? 'moon' : 'sun'" color="gray" aria-label="Change Color Theme"
-            @click="isDark = !isDark" />
-          <template #fallback>
-            <div class="w-8 h-8" />
-          </template>
-        </ClientOnly>
-        <button @click="toggleNav()" class="md:hidden">
-          <Icon name="hamburger" size="lg" />
-        </button>
-      </div>
+    <div v-else class="mx-auto hidden md:block">
+      <ul>
+        <li v-for="node in navigation">
+          <NuxtLink :href="node._path">
+            {{ node.title }}
+          </NuxtLink>
+        </li>
+      </ul>
+    </div>
+    <div class="absolute right-0 z-20 flex gap-4 items-center">
+      <NuxtLink href="https://github.com/samuelreichor" :external="true" target="_blank">
+        <Icon name="github" size="lg" />
+      </NuxtLink>
+      <ClientOnly>
+        <UButton :icon="isDark ? 'moon' : 'sun'" color="gray" aria-label="Change Color Theme"
+          @click="isDark = !isDark" />
+        <template #fallback>
+          <div class="w-8 h-8" />
+        </template>
+      </ClientOnly>
+      <button @click="toggleNav()" class="md:hidden">
+        <Icon name="hamburger" size="lg" />
+      </button>
     </div>
   </header>
 </template>

@@ -14,6 +14,11 @@ export default defineNuxtConfig({
   },
 
   content: {
+    markdown: {
+      anchorLinks: {
+        depth: 2, exclude: [1],
+      }
+    },
     highlight: {
       theme: {
         default: 'github-dark',

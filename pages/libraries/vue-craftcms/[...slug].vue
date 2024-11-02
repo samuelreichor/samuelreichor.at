@@ -5,7 +5,7 @@
   const { navDirFromPath } = useContentHelpers()
 
   const navigation = inject<NavItem[]>('navigationObj')
-  const navNodes = navDirFromPath('/libraries/craft-query-api', navigation!)
+  const navNodes = navDirFromPath('/libraries/vue-craftcms', navigation!)
 
   const route = useRoute()
 
@@ -14,7 +14,7 @@
     throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
   }
 
-  const { data: surround } = await useAsyncData(`${route.path}-surround-1`, () => {
+  const { data: surround } = await useAsyncData(`${route.path}-surround`, () => {
     return queryContent()
       .where({ _extension: 'md', navigation: { $ne: false } })
       .only(['title', 'description', '_path'])
@@ -38,7 +38,7 @@
       <div class="markdown-rte">
         <ContentDoc />
       </div>
-      <RelatedMd :relations="surround as Relation[]" />
+      <RelatedMd :relations="surround as Relation[]"/>
     </template>
 
     <template v-if="page?.body?.toc?.links?.length" v-slot:sidebarright>
