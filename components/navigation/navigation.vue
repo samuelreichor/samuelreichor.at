@@ -23,10 +23,6 @@
   }
   onMounted(() => {
     closeOnEsc();
-
-    window.addEventListener("focus", (event) => {
-      console.log(event.target)
-    });
   })
 </script>
 
@@ -56,12 +52,6 @@
       <div :class="['flex gap-8 items-center', !isOpen && 'max-md:hidden']">
         <NuxtLink href="https://github.com/samuelreichor" :external="true" target="_blank">
           <Icon name="github" size="lg" />
-        </NuxtLink>
-        <NuxtLink href="https://github.com/samuelreichor" :external="true" target="_blank">
-          <Icon name="discord" size="lg" />
-        </NuxtLink>
-        <NuxtLink href="https://github.com/samuelreichor" :external="true" target="_blank">
-          <Icon name="medium" size="lg" />
         </NuxtLink>
       </div>
       <div :class="['flex gap-8 items-center max-md:absolute max-md:top-5', isOpen ? 'max-md:right-5' : 'right-0' ]">

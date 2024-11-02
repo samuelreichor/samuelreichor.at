@@ -11,11 +11,11 @@
   });
 
   const sizes = {
-    sm: '',
-    md: '',
+    xs: '',
+    sm: 'w-4 h-auto',
     base: 'w-5 h-auto',
     lg: 'w-6 h-auto',
-    xl: '',
+    xl: 'w-7 h-auto',
   }
 
   type SizeVariants = keyof typeof sizes;

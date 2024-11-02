@@ -1,6 +1,7 @@
 export type NavNode = {
-  url: string,
+  _path: string,
   title: string,
   target?: '_blank' | '_self',
   icon?: string,
+  children: NavNode[]
 }

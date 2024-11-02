@@ -6,13 +6,19 @@
   :root {
     --background: #fff;
     --muted: #F1F5F9;
+    --contrast: theme('colors.gray.200');
   }
    
   .dark {
     --background: #020817;
     --muted: #101929;
+    --contrast: theme('colors.gray.700');
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+  
   body {
     background-color: var(--background)
   }
@@ -21,9 +27,13 @@
     @apply px-5 lg:px-8 xl:px-10 2xl:px-14 w-full mx-auto max-w-screen-2xl;
   }
 
+  .outside-container-outbreak {
+    @apply -mx-5 lg:-mx-8 px-5 lg:px-8 xl:px-0 xl:mx-0;
+  }
+
   .container,
   .container-gaps {
-    @apply gap-x-4 md:gap-x-6 2xl:gap-x-8;
+    @apply gap-x-4 md:gap-x-8 xl:gap-x-10;
   }
 
   .container {
@@ -31,6 +41,185 @@
   }
 
   a:hover {
-    @apply text-primary-400 transition-colors;
+    @apply text-highlight-500 transition-colors;
+  }
+
+  .mt-top-default {
+    margin-top: 2rem;
+  }
+
+  details > summary {
+  list-style: none;
+  
+  }
+  details > summary::-webkit-details-marker {
+    display: none;
+  }
+
+  @keyframes details-show {
+    from {
+      opacity:0;
+      transform: var(--details-translate, translateY(-0.5em));
+    }
+  }
+
+  details[open] > *:not(summary) {
+    animation: details-show 150ms ease-in-out;
+  }
+
+
+  h1, h2, h3, h4,
+  .break-word-css {
+    word-break: break-word;
+    hyphens: auto;
+    -webkit-hyphenate-limit-before: 5;
+    -webkit-hyphenate-limit-after: 5;
+    -ms-hyphenate-limit-chars: 10 5 5;
+    hyphenate-limit-chars: 10 5 5;
+  }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      max-width: 750px;
+      text-wrap: balance;
+      font-weight: 600;
+      scroll-margin-top: calc(20px + var(--nav-height));
+    }
+
+  .markdown-rte {
+    h1 {
+      @apply mb-6 md:mb-8 text-4xl;
+    }
+
+    h2 {
+      @apply mb-6 md:mb-7 pt-2 text-3xl font-medium;
+    }
+
+    h3 {
+      @apply mb-4 md:mb-6 pt-2 text-2xl;
+    }
+
+    h4 {
+      @apply mb-2 md:mb-4 text-xl;
+    }
+
+    h5 {
+      @apply mb-2 md:mb-4 text-lg;
+    }
+
+    .margin-bottom,
+    ul,
+    ol,
+    p {
+      max-width: 800px;
+      line-height: 1.75;
+      @apply block mb-6;
+    }
+
+    blockquote {
+      border-inline-start-color: theme('colors.contrast.DEFAULT');
+      border-inline-start-width: .25rem;
+      font-style: italic;
+      font-weight: 400;
+      margin-bottom: 1.6em;
+      margin-top: 1.6em;
+      padding-inline-start: 1em;
+    }
+
+    code.single-code {
+      background-color: theme('colors.muted.DEFAULT');
+      border: 1px solid theme('colors.contrast.DEFAULT');
+      border-radius: .375rem;
+      display: inline-block;
+      font-size: .875em;
+      padding: 0 .5rem;
+    }
+
+
+    ul li {
+      position: relative;
+      list-style-type: none;
+      padding-left: 1.75rem;
+
+      &:before {
+          position: absolute;
+          content: '';
+          top: 0.8rem;
+          left: 0.625rem;
+          width: 0.35rem;
+          height: 0.35rem;
+          border-radius: 100%;
+          background-color: white;
+      }
+    }
+
+    ol {
+      position: relative;
+      list-style: none;
+      counter-reset: ol-counter;
+      padding-left: 1.5rem;
+
+      li {
+        counter-increment: ol-counter;
+
+        &::before {
+          content: counter(ol-counter) ". ";
+          position: absolute;
+          left: 0;
+        }
+      }
+    }
+
+    ul,
+    ol {
+      li:not(:last-child) {
+          margin-bottom: 0.25rem;
+      }
+    }
+
+    hr {
+      border-color: theme('colors.contrast.DEFAULT');
+      border-top-width: 1px;
+      margin-bottom: 3em;
+      margin-top: 3em;
+    }
+
+    table {
+      border-radius: 8px;
+      width: 100%;
+      min-width: 400px;
+      border-spacing: 0;
+      border-collapse: separate;
+      border: 1px solid theme('colors.contrast.DEFAULT');
+
+      thead {
+        background-color: theme('colors.muted.DEFAULT');
+        text-align: left;
+        box-shadow: 0 1px 0 0 theme('colors.contrast.DEFAULT');
+      }
+      
+      thead th:first-child {
+        border-top-left-radius: 8px;
+      }
+      
+      thead th:last-child {
+        border-top-right-radius: 8px;
+      }
+      
+      td,
+      th {
+        padding: 0.5rem 1rem;
+      }
+
+      tbody {
+        tr:nth-child(even) {
+          background-color: theme('colors.muted.DEFAULT');
+        }
+      } 
+    }
   }
 }

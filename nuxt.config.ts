@@ -3,7 +3,7 @@ import svgLoader from 'vite-svg-loader';
 
 export default defineNuxtConfig({
   devtools: { enabled: false },
-  modules: ['@nuxt/ui'],
+  modules: ['@nuxt/ui', '@nuxt/content'],
 
   routeRules: {
     '/': { prerender: true }
@@ -11,6 +11,16 @@ export default defineNuxtConfig({
 
   vite: {
     plugins: [svgLoader()],
+  },
+
+  content: {
+    highlight: {
+      theme: {
+        default: 'github-dark',
+        dark: 'github-dark',
+        light: 'github-light',
+      }
+    }
   },
 
   compatibilityDate: '2024-11-01',

@@ -1,10 +1,27 @@
 import type { Config } from 'tailwindcss'
 
 export default <Partial<Config>>{
+  content: [
+    "./components/**/*.{js,vue,ts}",
+    "./layouts/**/*.vue",
+    "./pages/**/*.vue",
+    "./plugins/**/*.{js,ts}",
+    "./content/**/*.{js,vue,ts}",
+    "./app.vue",
+    "./error.vue",
+  ],
   corePlugins: {
     container: false,
   },
   theme: {
+    screens: {
+      'sm': '640px',
+      'md': '768px',
+      'lg': '1024px',
+      'sidebar': '1180px',
+      'xl': '1280px',
+      '2xl': '1536px',
+    },
     extend: {
       aspectRatio: {
         auto: 'auto',
@@ -30,6 +47,9 @@ export default <Partial<Config>>{
         },
         muted: {
           DEFAULT: 'var(--muted)'
+        },
+        contrast: {
+          DEFAULT: 'var(--contrast)'
         }
       }
     },
