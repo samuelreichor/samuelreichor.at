@@ -1,31 +1,17 @@
 <script setup lang="ts">
-  import type { NavItem } from '@nuxt/content';
   import type { Relation } from '~/components/relatedMd/relatedMd.vue';
 
-  const { navDirFromPath } = useContentHelpers()
+  const { surround } = await useSurroundHelper();
+  const { page, navNodes } = await useCustomNavs('/libraries/craft-query-api')
 
-  const navigation = inject<NavItem[]>('navigationObj')
-  const navNodes = navDirFromPath('/libraries/craft-query-api', navigation!)
-
-  const route = useRoute()
-
-  const { data: page } = await useAsyncData(route.path, () => queryContent(route.path).findOne())
-  if (!page.value) {
-    throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
-  }
-
-  const { data: surround } = await useAsyncData(`${route.path}-surround-1`, () => {
-    return queryContent()
-      .where({ _extension: 'md', navigation: { $ne: false } })
-      .only(['title', 'description', '_path'])
-      .findSurround(route.path.endsWith('/') ? route.path.slice(0, -1) : route.path)
-  }, { default: () => [] })
+  const headline = computed(() => formatNavDir(page.value?._dir))
 
   const nodeProps = [{
     navNodes,
     showParentUrl: false,
     defaultOpen: true,
   }]
+
 </script>
 
 <template>
@@ -35,13 +21,14 @@
     </template>
 
     <template v-slot:main>
+      <HeroSimple :headline="page?.title ?? 'Not Implemented'" :label="headline" :description="page?.description"/>
       <div class="markdown-rte">
         <ContentDoc />
       </div>
       <RelatedMd :relations="surround as Relation[]" />
     </template>
 
-    <template v-if="page?.body?.toc?.links?.length" v-slot:sidebarright>
+    <template v-if="page?.body?.toc?.links.length" v-slot:sidebarright>
       <SidebarRight :toc-links="page?.body?.toc?.links" />
     </template>
   </NuxtLayout>

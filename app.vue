@@ -1,6 +1,7 @@
 <script setup lang="ts">
-  import removeDuplicateChildren from '~/assets/utils/utils';
   import type { NavItem } from '@nuxt/content';
+  import removeDuplicateChildren from './utils/utils';
+  
   const { data: nav } = await useAsyncData('navigation', () => fetchContentNavigation())
 
   if (nav.value) {
@@ -15,7 +16,7 @@
       icon: 'github'
     },
     {
-      _path: 'not-implemented',
+      _path: 'https://discordapp.com/users/samuelreichoer',
       title: 'Discord',
       target: '_blank',
       icon: 'discord'
@@ -33,7 +34,7 @@
 
 <template>
   <NuxtLayout>
-    <Navigation/>
+    <Navigation />
     <div id="main">
       <NuxtPage />
     </div>

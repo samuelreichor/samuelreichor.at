@@ -18,7 +18,7 @@
       <a
         v-if="relation"
         :href="relation._path"
-        :class="['border border-contrast bg-muted rounded-md p-4 md:px-6 md:py-8 group block', index === 1 && 'text-right']"
+        :class="['bg-muted rounded-md p-4 md:px-6 md:py-8 group block', index === 1 && 'text-right']"
         >
           <div
             class="h-10 w-10 bg-contrast border border-contrast rounded-full inline-flex justify-center items-center transition-colors group-hover:bg-highlight-500/10 group-hover:border-highlight-500">

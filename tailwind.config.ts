@@ -18,7 +18,6 @@ export default <Partial<Config>>{
       'sm': '640px',
       'md': '768px',
       'lg': '1024px',
-      'sidebar': '1180px',
       'xl': '1280px',
       '2xl': '1536px',
     },
@@ -50,6 +49,9 @@ export default <Partial<Config>>{
         },
         contrast: {
           DEFAULT: 'var(--contrast)'
+        },
+        dimmed: {
+          DEFAULT: 'var(--dimmed)'
         }
       }
     },

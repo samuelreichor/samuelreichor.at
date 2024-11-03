@@ -1,29 +1,22 @@
 <script setup lang="ts">
-  import type { NavItem } from '@nuxt/content';
-  import removeDuplicateChildren from '~/assets/utils/utils';
-  import Card from '~/components/card/card.vue';
+import type { NavItem } from '@nuxt/content';
 
-  const craftPackages = queryContent('libraries').where({ type: 'craft' })
-  const npmPackages = queryContent('libraries').where({ pkg: true, type: 'npm' })
+  const { data: craftPlugins } = await useAsyncData(`craftPlugins`, async () => {
+    return queryContent('libraries').only(['badge', '_path', 'title', 'icon', 'description']).where({ type: 'craft' }).find()
+  }, { default: () => [] });
 
-  const { data: navigationCraft } = await useAsyncData('navigationCraft', () => fetchContentNavigation(craftPackages))
-  const { data: navigationNpm } = await useAsyncData('navigationNpm', () => fetchContentNavigation(npmPackages))
-
-  if (navigationNpm.value) {
-    navigationNpm.value = removeDuplicateChildren(navigationNpm.value);
-  }
-  if (navigationCraft.value) {
-    navigationCraft.value = removeDuplicateChildren(navigationCraft.value);
-  }
+  const { data: npmPackages } = await useAsyncData(`npmPackages`, async () => {
+    return queryContent('libraries').only(['badge', '_path', 'title', 'icon', 'description']).where({ type: 'npm' }).find()
+  }, { default: () => [] });
 
   const nodes = [
     {
-      navNodes: navigationNpm.value?.[0].children,
+      navNodes: npmPackages.value as NavItem[],
       label: 'NPM Packages',
       showChilds: false,
     },
     {
-      navNodes: navigationCraft.value?.[0].children,
+      navNodes: craftPlugins.value as NavItem[],
       label: 'Craft Cms Plugins',
       showChilds: false,
     }
@@ -33,7 +26,7 @@
 <template>
   <NuxtLayout name="sidebar">
     <template v-slot:sidebarleft>
-      <SidebarLeft :nodes="nodes"/>
+      <SidebarLeft :nodes="nodes" />
     </template>
     <template v-slot:main>
       <div>
@@ -45,14 +38,14 @@
           update.
         </p>
       </div>
-      <h2 v-if="navigationNpm" class="text-2xl mb-6 mt-10 md:mt-16">Npm Packages</h2>
-      <section v-if="navigationNpm" id="npm-packages" class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-        <Card v-for="pkg in navigationNpm[0].children" :key="pkg.title" :badge="pkg.badge" :link="pkg._path"
+      <h2 v-if="npmPackages.length > 0" class="text-2xl mb-6 mt-10 md:mt-16">Npm Packages</h2>
+      <section v-if="npmPackages.length > 0" id="npm-packages" class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <Card v-for="pkg in npmPackages" :key="pkg.title" :badge="pkg.badge" :link="pkg._path"
           :headline="pkg.title" :icon="pkg.icon" :description="pkg.description" />
       </section>
-      <h2 v-if="navigationCraft" class="text-2xl mb-6 mt-10">Craft CMS Plugins</h2>
-      <section v-if="navigationCraft" id="craft-plugins" class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-        <Card v-for="pkg in navigationCraft[0].children" :key="pkg.title" :badge="pkg.badge" :link="pkg._path"
+      <h2 v-if="craftPlugins.length > 0" class="text-2xl mb-6 mt-10">Craft CMS Plugins</h2>
+      <section v-if="craftPlugins.length > 0" id="craft-plugins" class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <Card v-for="pkg in craftPlugins" :key="pkg.title" :badge="pkg.badge" :link="pkg._path"
           :headline="pkg.title" :icon="pkg.icon" :description="pkg.description" />
       </section>
     </template>

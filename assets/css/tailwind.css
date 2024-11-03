@@ -7,12 +7,14 @@
     --background: #fff;
     --muted: #F1F5F9;
     --contrast: theme('colors.gray.200');
+    --dimmed: theme('colors.slate.700')
   }
    
   .dark {
     --background: #020817;
     --muted: #101929;
     --contrast: theme('colors.gray.700');
+    --dimmed: theme('colors.slate.300')
   }
 
   html {
@@ -20,7 +22,8 @@
   }
   
   body {
-    background-color: var(--background)
+    background-color: var(--background);
+    font-weight: 500;
   }
 
   .outside-container {
@@ -55,7 +58,7 @@
 
   hr,
   .my-default {
-    @apply my-10 md:my-20;
+    @apply my-10 md:my-14;
   }
 
   hr {
@@ -118,7 +121,6 @@
     ul,
     ol,
     p {
-      max-width: 800px;
       line-height: 1.75;
       @apply block mb-6;
     }
@@ -180,7 +182,7 @@
     ul,
     ol {
       li:not(:last-child) {
-          margin-bottom: 0.25rem;
+          margin-bottom: 0.5rem;
       }
     }
 
