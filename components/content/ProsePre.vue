@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-muted rounded-lg border border-contrast shadow-sm margin-bottom">
+  <div class="bg-muted rounded-lg border border-contrast shadow-sm margin-bottom flow-root">
     <div v-if="$props.filename"
       class="font-mono text-sm bg-background py-3 px-4 rounded-t-lg text-black dark:text-white !mb-0 !flex w-full items-center justify-between">
       <span>
