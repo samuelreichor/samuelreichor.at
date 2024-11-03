@@ -12,7 +12,7 @@
 
   const sizes = {
     xs: '',
-    sm: 'w-4 h-auto',
+    sm: 'w-4 h-4',
     base: 'w-5 h-auto',
     lg: 'w-6 h-auto',
     xl: 'w-7 h-auto',

@@ -30,9 +30,8 @@ import type { NavItem } from '@nuxt/content';
     </template>
     <template v-slot:main>
       <div>
-        <p class="text-4xl md:text-6xl max-w-font-bold leading-tight">
-          Welcome to the <span class="text-highlight-500">Library</span> Hub!
-        </p>
+        <Headline text=" Welcome to the Library Hub!" target="Library" size="h1" />
+
         <p class="mt-8 max-w-[750px]">
           Here, you'll discover a comprehensive overview of all the libraries that I actively maintain and continually
           update.
@@ -40,13 +39,13 @@ import type { NavItem } from '@nuxt/content';
       </div>
       <h2 v-if="npmPackages.length > 0" class="text-2xl mb-6 mt-10 md:mt-16">Npm Packages</h2>
       <section v-if="npmPackages.length > 0" id="npm-packages" class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-        <Card v-for="pkg in npmPackages" :key="pkg.title" :badge="pkg.badge" :link="pkg._path"
-          :headline="pkg.title" :icon="pkg.icon" :description="pkg.description" />
+        <Card v-for="pkg in npmPackages" :key="pkg.title" :badge="pkg.badge" :link="pkg._path" :headline="pkg.title"
+          :icon="pkg.icon" :description="pkg.description" />
       </section>
       <h2 v-if="craftPlugins.length > 0" class="text-2xl mb-6 mt-10">Craft CMS Plugins</h2>
       <section v-if="craftPlugins.length > 0" id="craft-plugins" class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-        <Card v-for="pkg in craftPlugins" :key="pkg.title" :badge="pkg.badge" :link="pkg._path"
-          :headline="pkg.title" :icon="pkg.icon" :description="pkg.description" />
+        <Card v-for="pkg in craftPlugins" :key="pkg.title" :badge="pkg.badge" :link="pkg._path" :headline="pkg.title"
+          :icon="pkg.icon" :description="pkg.description" />
       </section>
     </template>
   </NuxtLayout>

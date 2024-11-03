@@ -59,7 +59,7 @@
       </div>
     </div>
     <div v-else class="mx-auto hidden md:block">
-      <ul>
+      <ul class="flex gap-6">
         <li v-for="node in navigation">
           <NuxtLink :href="node._path">
             {{ node.title }}
@@ -67,9 +67,9 @@
         </li>
       </ul>
     </div>
-    <div class="absolute right-0 z-20 flex gap-4 items-center">
+    <div class="absolute right-0 bottom-0 top-0 z-20 flex gap-4 items-center">
       <NuxtLink href="https://github.com/samuelreichor" :external="true" target="_blank">
-        <Icon name="github" size="lg" />
+        <Icon name="github" size="xl" />
       </NuxtLink>
       <ClientOnly>
         <UButton :icon="isDark ? 'moon' : 'sun'" color="gray" aria-label="Change Color Theme"
@@ -85,12 +85,16 @@
   </header>
 </template>
 
-<style lang="postcss">
+<style>
+  .router-link-active {
+    color: theme('colors.highlight.500');
+  } 
+
   :root {
     --nav-height: 72px;
 
     @screen md {
-      --nav-height: 80px;
+      --nav-height: 72px;
     }
   }
 </style>

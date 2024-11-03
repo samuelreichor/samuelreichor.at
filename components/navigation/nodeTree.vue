@@ -38,7 +38,7 @@
 </script>
 
 <template>
-  <ul class="mt-3 space-y-1 w-full">
+  <ul class="mt-3 space-y-1 w-full text-lg">
     <li v-for="(node, index) in props.navNodes" :key="index">
       <details v-if="node.children?.length" class="group/node">
         <summary class="flex items-center justify-between cursor-pointer">

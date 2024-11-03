@@ -125,6 +125,10 @@
       @apply block mb-6;
     }
 
+    .max-w-text p:not(:has(img)) {
+      @apply max-w-[750px];
+    }
+
     blockquote {
       border-inline-start-color: theme('colors.contrast.DEFAULT');
       border-inline-start-width: .25rem;
@@ -218,6 +222,10 @@
           background-color: theme('colors.muted.DEFAULT');
         }
       } 
+    }
+
+    img {
+      @apply pb-8 md:pb-12;
     }
   }
 }

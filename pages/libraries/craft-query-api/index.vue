@@ -28,6 +28,7 @@
     },
   ];
 
+  const tocLinks = page.value?.body?.toc?.links;
 </script>
 
 <template>
@@ -70,8 +71,8 @@
       <RelatedMd :relations="surround as Relation[]" />
     </template>
 
-    <template v-if="page?.body?.toc?.links?.length" v-slot:sidebarright>
-      <SidebarRight :toc-links="page?.body?.toc.links" />
+    <template v-if="tocLinks?.length" v-slot:sidebarright>
+      <SidebarRight :toc-links="tocLinks" />
     </template>
   </NuxtLayout>
 </template>
