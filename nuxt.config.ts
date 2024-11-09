@@ -3,11 +3,7 @@ import svgLoader from 'vite-svg-loader';
 
 export default defineNuxtConfig({
   devtools: { enabled: false },
-  modules: ['@nuxt/ui', '@nuxt/content'],
-
-  routeRules: {
-    '/': { prerender: true }
-  },
+  modules: ['@nuxt/ui', '@nuxt/content', '@nuxtjs/seo'],
 
   vite: {
     plugins: [svgLoader()],
@@ -68,6 +64,10 @@ export default defineNuxtConfig({
       ],
 
     }
+  },
+
+  sitemap: {
+    strictNuxtContentPaths: true
   },
 
   compatibilityDate: '2024-11-01',
