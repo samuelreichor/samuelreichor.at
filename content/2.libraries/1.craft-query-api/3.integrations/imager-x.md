@@ -1,6 +1,6 @@
 ---
 title: 'ImagerX'
-description: 'Learn how to configure imagerX for the craft query api Craft CMS plugin.'
+description: 'Learn how to configure imagerX for the Craft Query API Craft CMS plugin.'
 ---
 
 ## Configure ImagerX

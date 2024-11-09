@@ -23,7 +23,7 @@
         text: 'Js Craft CMS Query API',
         target: 'Query API',
       }"
-        description="Core package of Vue and Nuxt Craft CMS. You can use this as baseline to build your query builder for Craft CMS."
+        description="The core package for Vue and Nuxt Craft CMS. Use this as a foundation to build a query builder for Craft CMS with your preferred JavaScript framework."
         :cta="[
           {
             text: 'Installation',

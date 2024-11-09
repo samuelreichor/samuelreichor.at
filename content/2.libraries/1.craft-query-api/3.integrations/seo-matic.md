@@ -1,6 +1,6 @@
 ---
 title: 'SEOmatic'
-description: 'Learn how to configure SEOmatic for the craft query api Craft CMS plugin.'
+description: 'Learn how to configure SEOmatic for the Craft Query API Craft CMS plugin.'
 ---
 
 ## Configure SEOmatic
