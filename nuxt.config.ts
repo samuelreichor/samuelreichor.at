@@ -69,6 +69,16 @@ export default defineNuxtConfig({
           name: 'apple-mobile-web-app-title',
           content: 'Samuel Reichör',
         },
+        {
+          name: 'theme-color',
+          media: '(prefers-color-scheme: dark)',
+          content: '#020817',
+        },
+        {
+          name: 'theme-color',
+          media: '(prefers-color-scheme: light)',
+          content: '#fff',
+        },
       ],
 
     }
