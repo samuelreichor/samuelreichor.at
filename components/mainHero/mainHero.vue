@@ -14,10 +14,6 @@
       type: Array as PropType<Link[]>,
       default: () => undefined,
     },
-    link: {
-      type: Object as PropType<Link>,
-      default: () => undefined,
-    }
   });
 
 </script>
@@ -31,9 +27,9 @@
         :text="props.headline.text" 
         :target="props.headline.target" 
       />
-      <p class="mt-8">{{ props.description }}</p>
+      <p class="mt-6 md:mt-8">{{ props.description }}</p>
 
-      <div class="flex gap-4 mt-10">
+      <div class="flex gap-4 mt-8 md:mt-10">
         <UButton 
           v-for="(link, index) in cta" 
           :key="index"
@@ -43,16 +39,6 @@
         {{ link.text }}
       </UButton>
       </div>
-
-<!--       <NuxtLink 
-        v-if="props.link" 
-        :href="props.link.url" 
-        :target="props.link.target ?? '_self'" 
-        class="inline-flex items-start font-semibold text-highlight-500 text-lg mt-10"
-        >
-        {{ props.link.text }}
-        <Icon name="arrow" class="rotate-45 inline" size="base"/>
-      </NuxtLink> -->
     </div>
   </div>
 </template>

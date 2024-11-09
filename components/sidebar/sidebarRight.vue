@@ -33,7 +33,7 @@
       Table of Contents
       <Icon :class="['lg:hidden transition-transform', isOpen ? 'rotate-[270deg]' : 'rotate-180']" name="chevron" />
     </button>
-    <div v-show="isOpen" class="mt-2 lg:!block text-sm">
+    <div v-show="isOpen" class="mt-4 md:mt-2 lg:!block text-sm">
       <ul class="space-y-1 text-nav-node">
         <li v-for="(link, index) in props.tocLinks" :key="index">
           <NuxtLink @click="setActive(link.id)" :to="`#${link.id}`"

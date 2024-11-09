@@ -7,22 +7,24 @@
     --background: #fff;
     --muted: #F1F5F9;
     --contrast: theme('colors.gray.200');
-    --dimmed: theme('colors.slate.700')
+    --dimmed: theme('colors.slate.700');
+    --text: #000;
   }
    
   .dark {
     --background: #020817;
     --muted: #101929;
     --contrast: theme('colors.gray.700');
-    --dimmed: theme('colors.slate.300')
+    --dimmed: theme('colors.slate.300');
+     --text: #fff;
   }
 
   html {
     scroll-behavior: smooth;
+    background-color: var(--background);
   }
   
   body {
-    background-color: var(--background);
     font-weight: 500;
   }
 
@@ -167,7 +169,7 @@
           width: 0.35rem;
           height: 0.35rem;
           border-radius: 100%;
-          background-color: white;
+          background-color: var(--text);
       }
     }
 
@@ -230,7 +232,7 @@
     }
 
     img {
-      @apply pb-8 md:pb-12;
+      @apply pb-0 md:pb-4;
     }
   }
 }

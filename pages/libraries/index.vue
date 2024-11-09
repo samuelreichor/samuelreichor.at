@@ -43,7 +43,7 @@
       <div>
         <Headline text=" Welcome to the Library Hub!" target="Library" size="h1" />
 
-        <p class="mt-8 max-w-[750px]">
+        <p class="mt-6 md:mt-8 max-w-[750px]">
           Here, you'll discover a comprehensive overview of all the libraries that I actively maintain and continually
           update.
         </p>

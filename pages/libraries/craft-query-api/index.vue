@@ -60,7 +60,7 @@
           url: 'https://gj.com',
         }" />
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mt-16">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mt-10 md:mt-16">
         <Card v-for="pkg in highlights" :key="pkg.title" :headline="pkg.title" :icon="pkg.icon"
           :description="pkg.description" />
       </div>
