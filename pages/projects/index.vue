@@ -1,5 +1,16 @@
 <script setup lang="ts">
   const { page } = await useCustomNavs('/projects')
+
+  useHead({
+    title: 'Samuel Reichör | Projects',
+    meta: [
+      {
+        name: 'description',
+        content:
+          'Browse a selection of website projects crafted by Samuel Reichör, showcasing expertise in frontend development, seamless user experiences, and modern web design.',
+      },
+    ],
+  })
 </script>
 
 <template>

@@ -1,6 +1,8 @@
 ---
 title: Projects
-description: 'A list of all projects I worked on so far.'
+head.title: 'Samuel Reichör | Projects'
+head.description: 'Browse a selection of website projects crafted by Samuel Reichör, showcasing expertise in frontend development, seamless user experiences, and modern web design.'
+description: 'Browse a selection of website projects I have worked on so far.'
 ---
 
 ## FH OE

@@ -2,6 +2,17 @@
   const classes = {
     label: 'bg-muted transition-color py-0.5 px-2 rounded-md hover:text- inline-flex gap-2 items-center translate-y-0.5 mr-1 mt-1'
   }
+
+  useHead({
+    title: 'Samuel Reichör | Frontend Developer',
+    meta: [
+      {
+        name: 'description',
+        content:
+          'Samuel Reichör, frontend developer in Linz, specializing in Craft CMS, Nuxt, and modern web tools. Passionate about clean, efficient code and seamless user experiences. Connect with me for collaborations or insights on web development trends.',
+      },
+    ],
+  })
 </script>
 
 <template>
@@ -9,7 +20,7 @@
     <div class="mt-4 mb-8 md:my-16 max-w-[750px]">
       <Headline text="Samuel Reichör" size="h1" />
       <div class="text-nav-node">
-        <p class="mt-">
+        <p class="mt-8">
           Hey, I am Samuel Reichör, a fanatical frontend developer. <br>
           You can just call me Sam if that funny letter with
           the dots throws you off!
@@ -51,9 +62,9 @@
           <NuxtLink href="https://gsap.com" target="_blank" :class="[classes.label]">
             <Icon name="gsap" size="sm" class="text-[#0ae448]" /> Gsap
           </NuxtLink>
-          <a :class="[classes.label]">
+          <span :class="[classes.label]">
             <span class="h-4 w-0"></span>Many more..
-          </a>
+          </span>
         </p>
 
         <p class="mt-6">

@@ -69,6 +69,7 @@
     </div>
     <div class="absolute right-0 bottom-0 top-0 z-20 flex gap-4 items-center">
       <NuxtLink href="https://github.com/samuelreichor" :external="true" target="_blank">
+        <span class="sr-only">Click to open github profile</span>
         <Icon name="github" size="xl" />
       </NuxtLink>
       <ClientOnly>
@@ -79,6 +80,7 @@
         </template>
       </ClientOnly>
       <button @click="toggleNav()" class="md:hidden">
+        <span class="sr-only">Click to toggle navigation</span>
         <Icon name="hamburger" size="lg" />
       </button>
     </div>

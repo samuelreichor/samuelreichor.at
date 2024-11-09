@@ -21,6 +21,17 @@
       showChilds: false,
     },
   ]
+
+  useHead({
+    title: 'Samuel Reichör | Libraries',
+    meta: [
+      {
+        name: 'description',
+        content:
+          'Explore a complete list of libraries actively maintained and regularly updated by Samuel Reichör, covering the latest in frontend development tools and best practices.',
+      },
+    ],
+  })
 </script>
 
 <template>
