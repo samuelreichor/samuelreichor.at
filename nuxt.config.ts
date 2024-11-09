@@ -5,6 +5,14 @@ export default defineNuxtConfig({
   devtools: { enabled: false },
   modules: ['@nuxt/ui', '@nuxt/content', '@nuxtjs/seo'],
 
+  nitro: {
+    prerender: {
+      crawlLinks: true,
+      routes: ["/sitemap.xml", "/robots.txt"],
+    },
+  },
+
+
   vite: {
     plugins: [svgLoader()],
   },
