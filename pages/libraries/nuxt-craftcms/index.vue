@@ -10,31 +10,13 @@
     defaultOpen: true,
   }]
 
-  const highlights = [
-    {
-      title: 'Flexible Craft Queries',
-      description: 'Fetch content of your Craft CMS Backend in Nuxt with ease.',
-      icon: 'cloud',
-    },
-    {
-      title: 'Unified Content Access',
-      description: 'Retrieve addresses, assets, entries, and users with one API.',
-      icon: 'book',
-    },
-    {
-      title: 'Auto Prop Injection',
-      description: 'Connect your components easily with the data of Craft CMS',
-      icon: 'recycling',
-    },
-  ];
-
   const tocLinks = page.value?.body?.toc?.links;
 </script>
 
 <template>
   <NuxtLayout name="sidebar">
     <template v-slot:sidebarleft>
-      <SidebarLeft :nodes="nodeProps" />
+      <SidebarLeft :nodes="nodeProps" pre-selected-value="nuxt-craftcms"/>
     </template>
 
     <template v-slot:main>
@@ -53,11 +35,6 @@
             url: '/libraries/nuxt-craftcms/get-started/install',
           }
         ]" />
-
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mt-16">
-        <Card v-for="pkg in highlights" :key="pkg.title" :headline="pkg.title" :icon="pkg.icon"
-          :description="pkg.description" />
-      </div>
 
       <div class="markdown-rte mt-10">
         <ContentDoc />

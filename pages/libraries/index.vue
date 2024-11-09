@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { NavItem } from '@nuxt/content';
+  import type { NavItem } from '@nuxt/content';
 
   const { data: craftPlugins } = await useAsyncData(`craftPlugins`, async () => {
     return queryContent('libraries').only(['badge', '_path', 'title', 'icon', 'description']).where({ type: 'craft' }).find()
@@ -17,7 +17,7 @@ import type { NavItem } from '@nuxt/content';
     },
     {
       navNodes: craftPlugins.value as NavItem[],
-      label: 'Craft Cms Plugins',
+      label: 'Craft CMS Plugins',
       showChilds: false,
     }
   ]
@@ -26,7 +26,7 @@ import type { NavItem } from '@nuxt/content';
 <template>
   <NuxtLayout name="sidebar">
     <template v-slot:sidebarleft>
-      <SidebarLeft :nodes="nodes" />
+      <SidebarLeft :nodes="nodes" :show-select="false" />
     </template>
     <template v-slot:main>
       <div>

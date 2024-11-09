@@ -18,7 +18,7 @@
 <template>
   <NuxtLayout name="sidebar">
     <template v-slot:sidebarleft>
-      <SidebarLeft :nodes="nodeProps" />
+      <SidebarLeft :nodes="nodeProps" pre-selected-value="js-craftcms-api"/>
     </template>
 
     <template v-slot:main>

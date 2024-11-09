@@ -21,6 +21,13 @@ export default defineAppConfig({
       size: {
         sm: 'text-base'
       }
+    },
+    select: {
+      color: {
+        white: {
+          outline: 'bg-white dark:bg-muted text-gray-900 dark:text-white ring-1 ring-inset ring-contrast focus:ring-white',
+        }
+      }
     }
   }
 })

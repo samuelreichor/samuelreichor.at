@@ -18,11 +18,11 @@
 <template>
   <NuxtLayout name="sidebar">
     <template v-slot:sidebarleft>
-      <SidebarLeft :nodes="nodeProps" />
+      <SidebarLeft :nodes="nodeProps" pre-selected-value="vue-craftcms" />
     </template>
 
     <template v-slot:main>
-      <HeroSimple :headline="page?.title ?? 'Not Implemented'" :label="headline" :description="page?.description"/>
+      <HeroSimple :headline="page?.title ?? 'Not Implemented'" :label="headline" :description="page?.description" />
       <div class="markdown-rte">
         <ContentDoc />
       </div>
