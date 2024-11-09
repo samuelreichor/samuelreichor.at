@@ -6,7 +6,19 @@
       return colorMode.value === 'dark'
     },
     set() {
-      colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark'
+      colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark';
+      const themeColorMetaTags = [...document.querySelectorAll("#theme-color-meta")] as HTMLMetaElement[];
+
+      if(colorMode.value === 'dark') {
+        themeColorMetaTags.forEach(metaTag => {
+          metaTag.content = '#fff'
+        });
+        console.log(themeColorMetaTags)
+      } else {
+        themeColorMetaTags.forEach(metaTag => {
+          metaTag.content = '#020817'
+        });
+      }
     }
   })
 

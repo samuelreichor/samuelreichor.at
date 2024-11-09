@@ -73,11 +73,13 @@ export default defineNuxtConfig({
           name: 'theme-color',
           media: '(prefers-color-scheme: dark)',
           content: '#020817',
+          id: 'theme-color-meta'
         },
         {
           name: 'theme-color',
           media: '(prefers-color-scheme: light)',
           content: '#fff',
+          id: 'theme-color-meta'
         },
       ],
 
