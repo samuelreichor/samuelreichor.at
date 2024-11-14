@@ -90,5 +90,9 @@ export default defineNuxtConfig({
     strictNuxtContentPaths: true
   },
 
+  site: {
+    trailingSlash: false,
+  },
+
   compatibilityDate: '2024-11-01',
 })
