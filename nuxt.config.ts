@@ -92,6 +92,7 @@ export default defineNuxtConfig({
 
   site: {
     trailingSlash: false,
+    name: 'samuelreichor',
   },
 
   compatibilityDate: '2024-11-01',

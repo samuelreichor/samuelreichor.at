@@ -34,19 +34,19 @@
 <template>
   <NuxtLayout name="sidebar">
     <template v-slot:sidebarleft>
-      <SidebarLeft :nodes="nodeProps" pre-selected-value="craft-query-api"/>
+      <SidebarLeft :nodes="nodeProps" pre-selected-value="craft-query-api" />
     </template>
 
     <template v-slot:main>
       <MainHero :headline="{
-          text: 'The Query API for Craft CMS',
+          text: 'Craft Query API for Craft CMS',
           target: 'Query API',
-        }" 
-        description="Craft Query API makes Craft's query builder accessible across any frontend, 
-          allowing you to dynamically build queries via URL parameters for flexible, real-time data 
-          access in headless or traditional setups." 
-        image="craft-query-api"
-        :cta="[
+        }"
+        description="The Craft Query API is a Craft CMS API Plugin that makes Craft's 
+        query builder accessible across any frontend. It allows you to dynamically 
+        build Craft CMS dynamic queries via URL parameters, enabling flexible, data access in 
+        your headless Craft CMS setup"
+        image="craft-query-api" :cta="[
           {
             text: 'Introduction',
             url: '/libraries/craft-query-api/get-started/introduction',
