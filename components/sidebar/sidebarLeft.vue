@@ -33,6 +33,11 @@
       value: 'craft-query-api' as const
     },
     {
+      name: 'Craft Loanwords',
+      path: '/libraries/craft-loanwords',
+      value: 'craft-loanwords' as const
+    },
+    {
       name: 'Nuxt Craft CMS',
       path: '/libraries/nuxt-craftcms',
       value: 'nuxt-craftcms' as const
