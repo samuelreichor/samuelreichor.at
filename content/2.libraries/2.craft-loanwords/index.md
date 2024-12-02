@@ -15,6 +15,10 @@ badge: true
 - Customize default language tags and CSS classes for consistent styling.
 - Provides case-sensitive and case-insensitive options for flexible loanword matching.
 
+## What are loanwords?
+
+[Loanwords](https://en.wikipedia.org/wiki/Loanword) are words borrowed from one language and incorporated into another, often retaining their original spelling and pronunciation. In German, common loanwords are Anglicisms like "Bachelor", "Job" or "FAQ" borrowed from English.
+
 
 ## Why it matters?
 
