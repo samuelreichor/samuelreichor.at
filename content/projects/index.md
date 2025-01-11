@@ -3,6 +3,11 @@ title: Projects
 head.title: 'Samuel Reichör | Projects'
 head.description: 'Browse a selection of website projects crafted by Samuel Reichör, showcasing expertise in frontend development, seamless user experiences, and modern web design.'
 description: 'Browse a selection of website projects I have worked on so far.'
+navigation: false
+head:
+  meta:
+    - name: 'robots'
+      content: 'noindex, nofollow'
 ---
 
 ## Jobrad Sustainability
