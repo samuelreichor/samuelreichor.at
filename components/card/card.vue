@@ -19,8 +19,27 @@ const props = defineProps({
   link: {
     type: String,
     default: '',
-  }
+  },
+  readingTime: {
+    type: String,
+    default: '',
+  },
+  datePublished: {
+    type: String,
+    default: '',
+  },
 })
+
+function formatDate(date: string) {
+  const dateObj = new Date(date);
+
+  return new Intl.DateTimeFormat('en-US', {
+    year: 'numeric',
+    month: 'short',
+    day: '2-digit',
+  }).format(dateObj);
+
+}
 </script>
 
 <template>
@@ -31,9 +50,12 @@ const props = defineProps({
     <div v-if="props.icon" class="w-10 h-10 rounded-md bg-contrast flex items-center justify-center mb-6">
       <Icon :name="props.icon" size="lg" />
     </div>
-    <h2 class="text-lg !font-medium leading-tight" v-if="props.headline">{{ props.headline }}</h2>
+    <h3 class="text-lg !font-medium leading-tight inline" v-if="props.headline">{{ props.headline }}</h3>
     <p class="mt-3 text-slate-700 dark:text-slate-300 font-normal">
       {{ props.description }}
     </p>
+    <div v-if="props.readingTime && props.datePublished" class="mt-6 text-sm text-slate-700 dark:text-slate-300">
+      <span>{{ formatDate(props.datePublished) }} - {{ props.readingTime }}</span>
+    </div>
   </component>
 </template>
