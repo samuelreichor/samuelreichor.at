@@ -1,8 +1,6 @@
 ---
-head.title: Craft Query API the Query Builder for JS Frameworks
-head.description: Use the Craft Query API to get the Craft CMS query builder in your favorite Javascript Framework. An alternative to graphql.
-title: Loanwords
-description: 'Enhance Screen Reader Experience with Loanwords'
+title: Craft Loanwords 
+description: 'A plugin to enhance screen reader experience with Loanwords.'
 type: 'craft'
 icon: 'craft-loanwords'
 badge: true

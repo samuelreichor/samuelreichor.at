@@ -38,6 +38,11 @@
       value: 'craft-loanwords' as const
     },
     {
+      name: 'Craft Quick Edit',
+      path: '/libraries/craft-quick-edit',
+      value: 'craft-quick-edit' as const
+    },
+    {
       name: 'Nuxt Craft CMS',
       path: '/libraries/nuxt-craftcms',
       value: 'nuxt-craftcms' as const

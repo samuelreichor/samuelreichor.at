@@ -28,11 +28,11 @@
         image="craft-loanwords" :cta="[
           {
             text: 'Install',
-            url: '/libraries/craft-loanwords/install',
+            url: '/libraries/craft-loanwords/get-started/installation',
           },
           {
             text: 'Usage',
-            url: '/libraries/craft-loanwords/usage',
+            url: '/libraries/craft-loanwords/get-started/usage',
           }
         ]" />
 
