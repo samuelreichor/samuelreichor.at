@@ -12,6 +12,7 @@ badge: true
 - Works perfectly with pages cached by Blitz.
 - Completely customizable by css.
 - Only visible if the logged-in user has permission to edit the entry.
+- Support for the Standalone Preview Mode added in Craft 5.6.0.
 - No configuration required.
 
 ## Enable your Authors a better Experience
