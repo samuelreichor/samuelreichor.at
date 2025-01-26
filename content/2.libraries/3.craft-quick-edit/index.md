@@ -9,10 +9,12 @@ badge: true
 ## Features
 
 - Automatically adds an edit page link to your frontend.
+- Only visible if the logged-in user has permission to save the entry.
+- Support for the Standalone Preview Mode added in Craft 5.6.0.
+- Full Support for Multisites.
+- Support for Craft Commerce Product Pages.
 - Works perfectly with pages cached by Blitz.
 - Completely customizable by css.
-- Only visible if the logged-in user has permission to edit the entry.
-- Support for the Standalone Preview Mode added in Craft 5.6.0.
 - No configuration required.
 
 ## Enable your Authors a better Experience
