@@ -54,6 +54,18 @@
       }
     })
   }
+
+  function getCurrentGhUrl(){
+    const path = useRoute().path;
+    const match = path.match(/\/libraries\/([^/]+)/);
+    let baseGhUrl = 'https://github.com/samuelreichor'
+    if (!match) {
+      return baseGhUrl;
+    }
+
+    return baseGhUrl + '/' + match[1];
+  }
+
   onMounted(() => {
     closeOnEsc();
   })
@@ -80,7 +92,7 @@
       </ul>
     </div>
     <div class="absolute right-0 bottom-0 top-0 z-20 flex gap-4 items-center">
-      <NuxtLink href="https://github.com/samuelreichor" :external="true" target="_blank">
+      <NuxtLink :href="getCurrentGhUrl()" :external="true" target="_blank">
         <span class="sr-only">Click to open github profile</span>
         <Icon name="github" size="xl" />
       </NuxtLink>
@@ -106,9 +118,5 @@
 
   :root {
     --nav-height: 72px;
-
-    @screen md {
-      --nav-height: 72px;
-    }
   }
 </style>
