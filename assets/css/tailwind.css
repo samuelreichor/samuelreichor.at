@@ -16,7 +16,7 @@
     --muted: #101929;
     --contrast: theme('colors.gray.700');
     --dimmed: theme('colors.slate.300');
-     --text: #fff;
+    --text: #fff;
   }
 
   html {
@@ -25,7 +25,7 @@
   }
   
   body {
-    font-weight: 500;
+    font-weight: 400;
   }
 
   .outside-container {

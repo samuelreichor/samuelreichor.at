@@ -151,5 +151,3 @@ And for all the TypeScript wizards out there, it's fully type-safe. Pretty cool,
 ## Conclusion
 
 GraphQL has its place in the world, and for larger, complex projects, it can be an excellent choice. But for those of us working on smaller to medium-sized projects, especially with Craft CMS, the [Craft Query API](/libraries/craft-query-api) offers a much simpler and more efficient approach. It's less boilerplate, less headache, and a more enjoyable development experience.
-
-I'd love to hear your thoughts on this! By the way, did you know the like button goes up to 50?
