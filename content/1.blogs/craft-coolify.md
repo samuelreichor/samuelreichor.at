@@ -234,4 +234,3 @@ I'd love to hear your thoughts on this! If you have any questions (or thoughts) 
 **Thanks!**
 
 Huge shoutout to [Mathias Andrasch](https://dev.to/mandrasch) and the awesome people on the[ Discord channel](https://discord.gg/6X8xNJ8n) you helped me a lot! If you're looking for some killer Coolify tutorials (and other cool stuff), definitely check out Mathias' articles!
-```
