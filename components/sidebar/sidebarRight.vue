@@ -12,7 +12,6 @@
   const ids = computed(() =>
     props.tocLinks.flatMap(({ id, children = [] }) => [
       id,
-      ...children.map(({ id }) => id), // Flatten any nested link
     ])
   )
 
