@@ -2,7 +2,7 @@
 title: Deploying a Craft CMS Website with Coolify to a 4€ VPS
 description: 'Learn how to deploy a Craft CMS page to a vps with coolify.'
 datePublished: 2025-03-31
-readingTime: 5min
+readingTime: 7min
 ---
 
 In this tutorial, I'll walk you through how to deploy a Craft CMS website using Coolify, an open-source PaaS, on a Hetzner VPS. We'll go from local development with DDEV all the way to a live production deployment with Docker.
