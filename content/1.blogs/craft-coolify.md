@@ -86,9 +86,12 @@ services:
     depends_on:
       db:
         condition: service_healthy # Ensures the 'web' service starts only after the 'db' service is healthy
+    volumes:
+      - assets_data:/app/web/assets # Maps the 'assets_data' named volume to asset directory
 
 volumes:
   db_data: # Defines the 'db_data' volume for persistent database storage (database is not deleted during deploy)
+  assets_data: # Defines the 'assets_data' volume for persistent asset storage (assets get not deleted during deploy)
 ```
 
 > **Note**: The deployment waits until MySQL is fully ready (not just running) due to the health check. This is necessary for accurate deployment status and will be important when running `project-config/apply`.
