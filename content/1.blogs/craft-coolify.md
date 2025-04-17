@@ -129,7 +129,8 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 # Install system tools like git, unzip, bash, and vim using apk (Alpine Package Keeper).
 # --no-cache avoids caching package lists, reducing image size.
-RUN apk add --no-cache git unzip bash vim
+# mariadb-connector and mysql-client are needed to use mysqldump in the web container.
+RUN apk add --no-cache git unzip bash vim mariadb-connector-c mysql-client
 
 WORKDIR /app
 
