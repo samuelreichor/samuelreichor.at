@@ -27,7 +27,7 @@
 
 <template>
   <div v-if="props.navNodes">
-    <h5 class="text-sm  font-bold">{{ props.label }}</h5>
+    <h5 class="text-sm font-bold">{{ props.label }}</h5>
     <ul class="mt-3 space-y-1 text-sm text-nav-node">
       <li v-for="(node, index) in props.navNodes" :key="index">
         <details v-if="node.children?.length && props.showChilds" class="group" :open="props.defaultOpen">

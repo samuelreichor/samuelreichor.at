@@ -113,5 +113,4 @@
     background-color: white;
     clip-path: polygon(100% 0%, 0 0%, 50% 100%);
   }
-
 </style>
