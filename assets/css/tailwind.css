@@ -235,4 +235,13 @@
       @apply pb-0 md:pb-4;
     }
   }
+  
+  .no-scroll-bar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .no-scroll-bar::-webkit-scrollbar {
+    display: none;
+  }
 }

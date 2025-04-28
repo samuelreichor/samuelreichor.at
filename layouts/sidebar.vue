@@ -19,14 +19,3 @@
     </div>
   </div>
 </template>
-
-<style scoped>
-  .no-scroll-bar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-
-  .no-scroll-bar::-webkit-scrollbar {
-    display: none;
-  }
-</style>

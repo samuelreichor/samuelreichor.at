@@ -18,7 +18,7 @@
         <Icon v-else class="group-hover:text-highlight-500 transition-colors" name="copy-complete" size="sm" />
       </button>
       <pre :class="{
-        'p-4 mt-0 overflow-scroll': true,
+        'p-4 mt-0 overflow-scroll no-scroll-bar': true,
         [$props.class as string]: true,
         'rounded-t-none': $props.filename,
       }"><slot /></pre>
