@@ -96,8 +96,6 @@ Then register this bundle in your module's main class (e.g. in HrPreview.php).
 namespace modules\hrpreview;
 
 use Craft;
-use modules\queryapiextensions\HmrBundle;
-use yii\base\InvalidConfigException;
 use yii\base\Module as BaseModule;
 
 /**
@@ -114,21 +112,12 @@ class HrPreview extends BaseModule
         parent::init();
 
         Craft::$app->onInit(function() {
-            $this->registerAssetBundle();
+            if (Craft::$app->getRequest()->getIsCpRequest()) {
+                Craft::$app->getView()->registerAssetBundle(HrPreviewAsset::class);
+            }
         });
     }
-
-    /**
-     * @throws InvalidConfigException
-     */
-    public function registerAssetBundle(): void
-    {
-        if (Craft::$app->getRequest()->getIsLivePreview()) {
-            Craft::$app->getView()->registerAssetBundle(HmrBundle::class);
-        }
-    }
 }
-
 ```
 
 ### Add the post message event
