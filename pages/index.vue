@@ -36,13 +36,13 @@
             <Icon name="craft-query-api" size="sm" /> Craft Query API
           </NuxtLink>
           <NuxtLink href="/libraries/js-craftcms-api" :class="[classes.label]">
-            <Icon name="ts" size="sm" /> JS SDK
+            <Icon name="ts" size="sm" /> @query-api/js
           </NuxtLink>
           <NuxtLink href="/libraries/vue-craftcms" :class="[classes.label]">
-            <Icon name="vue" size="sm" /> Vue SDK
+            <Icon name="vue" size="sm" /> @query-api/vue
           </NuxtLink>
           <NuxtLink href="/libraries/nuxt-craftcms" :class="[classes.label]">
-            <Icon name="nuxt" size="sm" /> Nuxt SDK
+            <Icon name="nuxt" size="sm" /> @query-api/nuxt
           </NuxtLink>
         </p>
 

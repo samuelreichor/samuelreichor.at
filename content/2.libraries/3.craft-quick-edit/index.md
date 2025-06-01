@@ -3,7 +3,6 @@ title: Craft Quick Edit
 description: 'Automatically adds an edit page link to your frontend. '
 type: 'craft'
 icon: 'craft-quick-edit'
-badge: true
 ---
 
 ## Features

@@ -3,7 +3,6 @@ title: Craft Loanwords
 description: 'A plugin to enhance screen reader experience with Loanwords.'
 type: 'craft'
 icon: 'craft-loanwords'
-badge: true
 ---
 
 ## Features
