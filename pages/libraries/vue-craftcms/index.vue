@@ -42,18 +42,18 @@
         text: 'Use Craft CMS Query Builder in Vue',
         target: 'Vue',
       }"
-        description="With the Vue Craft CMS module, you can easily integrate Craft CMS and leverage the Craft Query Builder in your Vue projects."
+        description="With the Vue SDK, you can easily integrate Craft CMS and leverage the Craft Query Builder in your Vue projects."
         :cta="[
-            {
-              text: 'Introduction',
-              url: '/libraries/vue-craftcms/get-started/introduction',
-            },
-            {
-              text: 'Installation',
-              url: '/libraries/vue-craftcms/get-started/install',
-            }
-          ]" />
-          
+          {
+            text: 'Introduction',
+            url: '/libraries/vue-craftcms/get-started/introduction',
+          },
+          {
+            text: 'Installation',
+            url: '/libraries/vue-craftcms/get-started/install',
+          }
+        ]" />
+
       <div class="markdown-rte mt-10">
         <ContentDoc />
       </div>

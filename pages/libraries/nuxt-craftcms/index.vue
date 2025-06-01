@@ -16,15 +16,15 @@
 <template>
   <NuxtLayout name="sidebar">
     <template v-slot:sidebarleft>
-      <SidebarLeft :nodes="nodeProps" pre-selected-value="nuxt-craftcms"/>
+      <SidebarLeft :nodes="nodeProps" pre-selected-value="nuxt-craftcms" />
     </template>
 
     <template v-slot:main>
       <MainHero :headline="{
-          text: 'Use Craft CMS Query Builder in Nuxt',
-          target: 'Nuxt',
-        }"
-        description="With the Nuxt Craft CMS module, you can easily integrate Craft CMS and leverage the Craft Query Builder in your Nuxt projects."
+        text: 'Use Craft CMS Query Builder in Nuxt',
+        target: 'Nuxt',
+      }"
+        description="With the Nuxt SDK, you can easily integrate Craft CMS and leverage the Craft Query Builder in your Nuxt projects."
         :cta="[
           {
             text: 'Introduction',

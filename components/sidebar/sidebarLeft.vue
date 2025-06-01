@@ -43,17 +43,17 @@
       value: 'craft-quick-edit' as const
     },
     {
-      name: 'Nuxt Craft CMS',
+      name: 'Nuxt SDK',
       path: '/libraries/nuxt-craftcms',
       value: 'nuxt-craftcms' as const
     },
     {
-      name: 'Vue Craft CMS',
+      name: 'Vue SDK',
       path: '/libraries/vue-craftcms',
       value: 'vue-craftcms' as const
     },
     {
-      name: 'Js Craft CMS API',
+      name: 'JS SDK',
       path: '/libraries/js-craftcms-api',
       value: 'js-craftcms-api' as const
     },
