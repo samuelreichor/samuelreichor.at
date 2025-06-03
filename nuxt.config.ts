@@ -3,6 +3,10 @@ import svgLoader from 'vite-svg-loader';
 
 export default defineNuxtConfig({
   devtools: { enabled: false },
+  future: {
+    compatibilityVersion: 4,
+  },
+  
   modules: ['@nuxt/ui', '@nuxt/content', '@nuxtjs/seo'],
 
   nitro: {
