@@ -62,7 +62,7 @@ The only code you really need is a catch-all route in your pages' directory in N
 
 ```vue
 <script setup lang="ts">
-  import { CraftNotImplemented, type Config } from '@query-api/vue';
+  import { CraftNotImplemented, type ContentMapping } from '@query-api/vue';
 
   // sections
   import Home from '~/templates/pages/home.vue';
@@ -72,7 +72,7 @@ The only code you really need is a catch-all route in your pages' directory in N
   import Headline from '~/templates/components/headline.vue';
 
   // define map for auto injecting data
-  const mapping: Config = {
+  const mapping: ContentMapping = {
     pages: {
       'home': Home,
       'news': News,
