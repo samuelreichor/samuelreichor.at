@@ -53,6 +53,11 @@
       value: 'vue-craftcms' as const
     },
     {
+      name: '@query-api/react',
+      path: '/libraries/query-api-react',
+      value: 'query-api-react' as const
+    },
+    {
       name: '@query-api/js',
       path: '/libraries/js-craftcms-api',
       value: 'js-craftcms-api' as const
