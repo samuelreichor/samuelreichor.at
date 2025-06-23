@@ -50,7 +50,7 @@
           },
           {
             text: 'Installation',
-            url: '/libraries/query-api-react/get-started/install',
+            url: '/libraries/query-api-react/get-started/quick-start',
           }
         ]" />
 

@@ -96,6 +96,7 @@ export default defineNuxtConfig({
 
   site: {
     trailingSlash: false,
+    url: 'https://samuelreichor.at',
     name: 'samuelreichor',
   },
 
