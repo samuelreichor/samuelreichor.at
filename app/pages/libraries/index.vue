@@ -1,22 +1,22 @@
 <script setup lang="ts">
-  import type { NavItem } from '@nuxt/content';
+  import type { ContentNavigationItem } from '@nuxt/content';
 
   const { data: craftPlugins } = await useAsyncData(`craftPlugins`, async () => {
-    return queryContent('libraries').only(['badge', '_path', 'title', 'icon', 'description']).where({ type: 'craft' }).find()
+    return queryCollection('docs').select('badge', 'path', 'title', 'icon', 'description').where('type', '=', 'craft').all()
   }, { default: () => [] });
 
   const { data: npmPackages } = await useAsyncData(`npmPackages`, async () => {
-    return queryContent('libraries').only(['badge', '_path', 'title', 'icon', 'description']).where({ type: 'npm' }).find()
+    return queryCollection('docs').select('badge', 'path', 'title', 'icon', 'description').where('type', '=', 'npm').all()
   }, { default: () => [] });
 
   const nodes = [
     {
-      navNodes: craftPlugins.value as NavItem[],
+      navNodes: craftPlugins.value as ContentNavigationItem[],
       label: 'Craft CMS Plugins',
       showChilds: false,
     },
     {
-      navNodes: npmPackages.value as NavItem[],
+      navNodes: npmPackages.value as ContentNavigationItem[],
       label: 'NPM Packages',
       showChilds: false,
     },
@@ -50,12 +50,12 @@
       </div>
       <h2 v-if="craftPlugins.length > 0" class="text-2xl mb-6 mt-10">Craft CMS Plugins</h2>
       <section v-if="craftPlugins.length > 0" id="craft-plugins" class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-        <Card v-for="pkg in craftPlugins" :key="pkg.title" :badge="pkg.badge" :link="pkg._path" :headline="pkg.title"
+        <Card v-for="pkg in craftPlugins" :key="pkg.title" :badge="pkg.badge" :link="pkg.path" :headline="pkg.title"
           :icon="pkg.icon" :description="pkg.description" />
       </section>
       <h2 v-if="npmPackages.length > 0" class="text-2xl mb-6 mt-10 md:mt-16">Npm Packages</h2>
       <section v-if="npmPackages.length > 0" id="npm-packages" class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-        <Card v-for="pkg in npmPackages" :key="pkg.title" :badge="pkg.badge" :link="pkg._path" :headline="pkg.title"
+        <Card v-for="pkg in npmPackages" :key="pkg.title" :badge="pkg.badge" :link="pkg.path" :headline="pkg.title"
           :icon="pkg.icon" :description="pkg.description" />
       </section>
     </template>

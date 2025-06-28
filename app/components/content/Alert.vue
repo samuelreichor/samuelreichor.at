@@ -52,7 +52,7 @@
       </span>
     </div>
     <p class="text-black dark:text-white !mb-0 mt-1">
-      <ContentSlot :use="$slots.default" unwrap="p" />
+      <slot :use="$slots.default" mdc-unwrap="p" />
     </p>
   </div>
 </template>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import type { NavItem } from '@nuxt/content';
+  import type { ContentNavigationItem } from '@nuxt/content';
   const colorMode = useColorMode()
   const isDark = computed({
     get() {
@@ -22,7 +22,7 @@
     }
   })
 
-  const navigation = inject<NavItem[]>('navigationObj');
+  const navigation = inject<ContentNavigationItem[]>('navigationObj');
   const isOpen = ref(false)
 
   function toggleNav() {
@@ -57,13 +57,25 @@
 
   function getCurrentGhUrl(){
     const path = useRoute().path;
+    const ghMap = {
+      'craft-query-api': 'https://github.com/samuelreichor/craft-query-api',
+      'craft-loanwords': 'https://github.com/samuelreichor/craft-loanwords',
+      'craft-quick-edit': 'https://github.com/samuelreichor/craft-quick-edit',
+      'nuxt-craftcms': 'https://github.com/samuelreichor/query-api/tree/main/packages/nuxt',
+      'vue-craftcms': 'https://github.com/samuelreichor/query-api/tree/main/packages/vue',
+      'js-craftcms-api': 'https://github.com/samuelreichor/query-api/tree/main/packages/js',
+      'query-api-react': 'https://github.com/samuelreichor/query-api/tree/main/packages/react',
+    }
     const match = path.match(/\/libraries\/([^/]+)/);
-    let baseGhUrl = 'https://github.com/samuelreichor'
+
     if (!match) {
-      return baseGhUrl;
+      return 'https://github.com/samuelreichor'
     }
 
-    return baseGhUrl + '/' + match[1];
+    if (match[1] && match[1] in ghMap) {
+      const typesMatch = match[1] as keyof typeof ghMap;
+      return ghMap[typesMatch]
+    }
   }
 
   onMounted(() => {
@@ -84,8 +96,13 @@
     </div>
     <div v-else class="mx-auto hidden md:block">
       <ul class="flex gap-6">
+        <li>
+          <NuxtLink href="/blogs">
+            Blog
+          </NuxtLink>
+        </li>
         <li v-for="node in navigation">
-          <NuxtLink :href="node._path">
+          <NuxtLink :href="node.path">
             {{ node.title }}
           </NuxtLink>
         </li>

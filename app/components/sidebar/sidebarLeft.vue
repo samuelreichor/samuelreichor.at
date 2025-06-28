@@ -1,8 +1,8 @@
 <script setup lang="ts">
-  import type { NavItem } from '@nuxt/content';
+  import type { ContentNavigationItem } from '@nuxt/content';
 
   type nodes = {
-    navNodes: NavItem[] | undefined;
+    navNodes: ContentNavigationItem[] | undefined;
     label?: string;
     showParentUrl?: boolean;
     defaultOpen?: boolean;
@@ -24,7 +24,7 @@
     }
   })
 
-  const socialNodes = inject<NavItem[]>('socialMediaObj')
+  const socialNodes = inject<ContentNavigationItem[]>('socialMediaObj')
 
   const packages = [
     {

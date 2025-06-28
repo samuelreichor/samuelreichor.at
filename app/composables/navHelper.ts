@@ -1,34 +1,55 @@
-import type { NavItem, ParsedContent } from '@nuxt/content';
+import { useRoute, useAsyncData, createError } from '#imports'
+import { inject } from 'vue'
+import type { ContentNavigationItem } from '@nuxt/content'
+import { findPageHeadline } from '@nuxt/content/utils'
 
 export const useSurroundHelper = async () => {
-  const route = useRoute();
-  const routePath = route.path;
-  const queryContentFunc = queryContent().where({ _extension: 'md', navigation: { $ne: false } })
-      .only(['title', 'description', '_path'])
-      .findSurround(routePath.endsWith('/') ? routePath.slice(0, -1) : routePath);
+  const route = useRoute()
+  const routePath = route.path.replace(/\/$/, '')
 
-  const { data: surround } = await useAsyncData(`${routePath}-surround`, () => {
-    return queryContentFunc
-  }, { default: () => [] });
+  const { data: surround } = await useAsyncData(
+    `${routePath}-surround`,
+    () =>
+      queryCollectionItemSurroundings('docs', routePath, {
+        fields: ['title', 'description', 'path'],
+      }).then((res) => res || []),
+    { default: () => [] }
+  )
 
-  return { surround };
+  return { surround }
+}
+
+function getCurrentNodeTree(navigation: ContentNavigationItem[], path: string) {
+  for (const node of navigation) {
+    if (node.path === '/libraries') {
+      for (const lib of node.children || []) {
+        if (lib.path === path) {
+          return lib.children
+        }
+      }
+    }
+  }
+  return undefined
 }
 
 export const useCustomNavs = async (path: string) => {
-  const route = useRoute();
-  const { navDirFromPath } = useContentHelpers();
-
-  const navigation = inject<NavItem[]>('navigationObj');
+  const route = useRoute()
+  const navigation = inject<ContentNavigationItem[]>('navigationObj')
   if (!navigation) {
-    throw createError({ statusCode: 500, statusMessage: 'Navigation data not found', fatal: true });
+    throw createError({ statusCode: 500, statusMessage: 'Navigation data not found', fatal: true })
   }
 
-  const navNodes = navDirFromPath(path, navigation);
-
-  const { data: page } = await useAsyncData(route.path, () => queryContent(route.path).findOne());
+  const navNodes =  getCurrentNodeTree(navigation, path)
+  const { data: page } = await useAsyncData(
+    route.path,
+    () =>
+      queryCollection('docs').path(route.path).first().then((res) => res || null)
+  )
   if (!page.value) {
-    throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true });
+    throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
   }
 
-  return { page, navNodes };
+  const headline = findPageHeadline(navigation, route.path)
+
+  return { page, navNodes, headline }
 }

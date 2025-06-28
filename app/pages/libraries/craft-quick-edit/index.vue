@@ -23,12 +23,11 @@
       <MainHero :headline="{
         text: 'Quick Edit for Craft CMS',
         target: 'Quick Edit',
-      }"
-        description="Quick Edit is a Craft CMS plugin that automatically adds an edit page link to the frontend."
+      }" description="Quick Edit is a Craft CMS plugin that automatically adds an edit page link to the frontend."
         image="craft-quick-edit" :cta="[
           {
             text: 'Install',
-    url: '/libraries/craft-quick-edit/get-started/installation',
+            url: '/libraries/craft-quick-edit/get-started/installation',
           },
           {
             text: 'Usage',
@@ -37,12 +36,12 @@
         ]" />
 
       <div class="markdown-rte mt-10">
-        <ContentDoc />
+        <ContentRenderer v-if="page" :value="page" />
       </div>
       <RelatedMd :relations="surround as Relation[]" />
     </template>
 
-    <template v-if="tocLinks?.length" v-slot:sidebarright>
+    <template v-slot:sidebarright>
       <SidebarRight :toc-links="tocLinks" />
     </template>
   </NuxtLayout>

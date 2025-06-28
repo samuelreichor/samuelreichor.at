@@ -1,10 +1,10 @@
 <script setup lang="ts">
-  import type { NavItem } from '@nuxt/content';
+  import type { ContentNavigationItem } from '@nuxt/content';
 
   const props = defineProps({
     navNodes: {
       required: true,
-      type: Array as PropType<NavItem[] | undefined>
+      type: Array as PropType<ContentNavigationItem[] | undefined>
     },
     showParentUrl: {
       type: Boolean,
@@ -42,18 +42,20 @@
     <li v-for="(node, index) in props.navNodes" :key="index">
       <details v-if="node.children?.length" class="group/node">
         <summary class="flex items-center justify-between cursor-pointer">
-          <NuxtLink @click="emitClick()" :href="node._path" v-bind:target="node.target" class="flex gap-2 items-center">
+          <NuxtLink @click="emitClick()" :href="node.path" v-bind:target="node.target" class="flex gap-2 items-center">
             {{ node.title }}
           </NuxtLink>
           <div>
-            <Icon name="chevron" class="rotate-180 transition-transform group-open/node:rotate-[270deg] cursor-pointer" />
+            <Icon name="chevron"
+              class="rotate-180 transition-transform group-open/node:rotate-[270deg] cursor-pointer" />
           </div>
         </summary>
         <ul class="pl-3 border-l-2 border-contrast space-y-1 mt-2 mb-6">
           <li v-for="(child, index) in node.children" :key="index">
             <details v-if="child.children?.length" class="group/child">
               <summary class="flex items-center justify-between cursor-pointer">
-                <NuxtLink @click="emitClick()" :href="child._path" v-bind:target="child.target" class="flex gap-2 items-center">
+                <NuxtLink @click="emitClick()" :href="child.path" v-bind:target="child.target"
+                  class="flex gap-2 items-center">
                   {{ child.title }}
                 </NuxtLink>
                 <div>
@@ -75,28 +77,35 @@
                     </summary>
                     <ul class="pl-3 border-l-2 border-contrast space-y-1 mt-2 mb-6">
                       <li v-for="(childChildChild, index) in childChild.children" :key="index">
-                        <NuxtLink @click="emitClick()" :href="childChildChild._path" v-bind:target="childChildChild.target"
-                          class="flex gap-2 items-center">
+                        <NuxtLink @click="emitClick()" :href="childChildChild.path"
+                          v-bind:target="childChildChild.target" class="flex gap-2 items-center">
                           {{ childChildChild.title }}
                         </NuxtLink>
                       </li>
                     </ul>
                   </details>
-                  <NuxtLink @click="emitClick()" v-else :href="childChild._path" v-bind:target="childChild.target"
+                  <NuxtLink @click="emitClick()" v-else :href="childChild.path" v-bind:target="childChild.target"
                     class="flex gap-2 items-center">
                     {{ childChild.title }}
                   </NuxtLink>
                 </li>
               </ul>
             </details>
-            <NuxtLink @click="emitClick()" v-else :href="child._path" v-bind:target="child.target" class="flex gap-2 items-center">
+            <NuxtLink @click="emitClick()" v-else :href="child.path" v-bind:target="child.target"
+              class="flex gap-2 items-center">
               {{ child.title }}
             </NuxtLink>
           </li>
         </ul>
       </details>
-      <NuxtLink @click="emitClick()" v-else :href="node._path" v-bind:target="node.target" class="flex gap-2 items-center">
+      <NuxtLink @click="emitClick()" v-else :href="node.path" v-bind:target="node.target"
+        class="flex gap-2 items-center">
         {{ node.title }}
+      </NuxtLink>
+    </li>
+    <li>
+      <NuxtLink @click="emitClick()" href="/blogs" class="flex gap-2 items-center">
+        Blog
       </NuxtLink>
     </li>
   </ul>

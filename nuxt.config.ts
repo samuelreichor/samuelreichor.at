@@ -7,7 +7,7 @@ export default defineNuxtConfig({
     compatibilityVersion: 4,
   },
   
-  modules: ['@nuxt/ui', '@nuxt/content', '@nuxtjs/seo'],
+  modules: ['@nuxt/ui', '@nuxt/content', '@nuxtjs/seo', 'nuxt-llms'],
 
   nitro: {
     prerender: {
@@ -22,19 +22,43 @@ export default defineNuxtConfig({
   },
 
   content: {
-    markdown: {
-      anchorLinks: {
-        depth: 2, exclude: [1],
-      }
-    },
-    highlight: {
-      langs: ['js','jsx','json','ts','tsx','vue','css','html','bash','md','mdc','yaml', 'php', 'dockerfile'],
-      theme: {
-        default: 'github-dark',
-        dark: 'github-dark',
-        light: 'github-light',
-      }
+    build: {
+      markdown: {
+        toc: {
+          depth: 2,
+        },
+        highlight: {
+          langs: ['js','jsx','json','ts','tsx','vue','css','html','bash','md','mdc','yaml', 'php', 'dockerfile'],
+          theme: {
+            default: 'github-dark',
+            dark: 'github-dark',
+            light: 'github-light',
+          }
+        }
+      },
     }
+  },
+
+  llms: {
+    domain: 'http://localhost:3000',
+    title: 'Your Site Name',
+    description: 'A brief description of your site',
+    full: {
+      title: 'Full Documentation',
+      description: 'Full documentation of the application',
+    },
+    sections: [
+      {
+        title: 'queryApiJs',
+        description: 'Technical documentation and guides',
+        contentCollection: 'queryApiJs'
+      },
+      {
+        title: 'queryApiVue',
+        description: 'Technical documentation and guides',
+        contentCollection: 'queryApiVue'
+      }
+    ],
   },
 
   app: {

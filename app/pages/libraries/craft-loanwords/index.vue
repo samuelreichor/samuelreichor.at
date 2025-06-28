@@ -21,9 +21,9 @@
 
     <template v-slot:main>
       <MainHero :headline="{
-          text: 'Loanwords for Craft CMS',
-          target: 'Loanwords',
-        }"
+        text: 'Loanwords for Craft CMS',
+        target: 'Loanwords',
+      }"
         description="Loanwords is a Craft CMS plugin that helps manage and highlight loanwords by wrapping them with appropriate language tags, enhancing accessibility and screen reader support."
         image="craft-loanwords" :cta="[
           {
@@ -37,12 +37,12 @@
         ]" />
 
       <div class="markdown-rte mt-10">
-        <ContentDoc />
+        <ContentRenderer v-if="page" :value="page" />
       </div>
       <RelatedMd :relations="surround as Relation[]" />
     </template>
 
-    <template v-if="tocLinks?.length" v-slot:sidebarright>
+    <template v-slot:sidebarright>
       <SidebarRight :toc-links="tocLinks" />
     </template>
   </NuxtLayout>

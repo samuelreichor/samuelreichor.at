@@ -1,5 +1,6 @@
 <script setup lang="ts">
-  import type { Relation } from '~/components/relatedMd/relatedMd.vue';
+  import { ContentRenderer } from '#components';
+import type { Relation } from '~/components/relatedMd/relatedMd.vue';
 
   const { surround } = await useSurroundHelper()
   const { page, navNodes } = await useCustomNavs('/libraries/craft-query-api')
@@ -66,12 +67,12 @@
       </div>
 
       <div class="markdown-rte mt-10">
-        <ContentDoc />
+        <ContentRenderer v-if="page" :value="page"/>
       </div>
       <RelatedMd :relations="surround as Relation[]" />
     </template>
 
-    <template v-if="tocLinks?.length" v-slot:sidebarright>
+    <template v-slot:sidebarright>
       <SidebarRight :toc-links="tocLinks" />
     </template>
   </NuxtLayout>

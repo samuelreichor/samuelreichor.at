@@ -1,17 +1,12 @@
 <script setup lang="ts">
-  import type { NavItem } from '@nuxt/content';
+  import type { ContentNavigationItem } from '@nuxt/content';
 
-  const { data: blogs } = await useAsyncData(`blogs`, async () => {
-    return queryContent('blogs').only(['_path', 'title', 'description', 'datePublished', 'readingTime', 'imgPath']).sort({datePublished: -1}).find()
-  }, { default: () => [] });
-
-  const nodes = [
-    {
-      navNodes: blogs.value as NavItem[],
-      label: 'Latest Articles',
-      showChilds: false,
-    },
-  ]
+  const { data: blogs } = await useAsyncData('blog', async () => {
+    return queryCollection('blog')
+      .select('tags', 'title', 'description', 'datePublished', 'readingTime', 'imgPath', 'path')
+      .order('datePublished', 'DESC')
+      .all()
+  }, { default: () => [] })
 
   useHead({
     title: 'Samuel Reichör | Blog Articles',
@@ -24,7 +19,7 @@
     ],
   })
 
-  const socialNodes = inject<NavItem[]>('socialMediaObj')
+  const socialNodes = inject<ContentNavigationItem[]>('socialMediaObj')
 </script>
 
 <template>
@@ -45,7 +40,7 @@
 
       <Headline text="2025" size="h2" class="mb-6 mt-10" />
       <section v-if="blogs.length > 0" id="npm-packages" class="grid gap-4">
-        <Card v-for="blog in blogs" :key="blog.title" :link="blog._path" :headline="blog.title"
+        <Card v-for="blog in blogs" :key="blog.title" :link="blog.path" :headline="blog.title"
           :description="blog.description" :datePublished="blog.datePublished" :readingTime="blog.readingTime"
           :imgPath="blog.imgPath" />
       </section>

@@ -2,9 +2,7 @@
   import type { Relation } from '~/components/relatedMd/relatedMd.vue';
 
   const { surround } = await useSurroundHelper();
-  const { page, navNodes } = await useCustomNavs('/libraries/craft-quick-edit')
-
-  const headline = computed(() => formatNavDir(page.value?._dir))
+  const { page, navNodes, headline } = await useCustomNavs('/libraries/craft-quick-edit')
 
   const nodeProps = [{
     navNodes,
@@ -18,18 +16,18 @@
 <template>
   <NuxtLayout name="sidebar">
     <template v-slot:sidebarleft>
-      <SidebarLeft :nodes="nodeProps" pre-selected-value="craft-quick-edit"/>
+      <SidebarLeft :nodes="nodeProps" pre-selected-value="craft-quick-edit" />
     </template>
 
     <template v-slot:main>
-      <HeroSimple :headline="page?.title ?? 'Not Implemented'" :label="headline" :description="page?.description"/>
+      <HeroSimple :headline="page?.title ?? 'Not Implemented'" :label="headline" :description="page?.description" />
       <div class="markdown-rte">
-        <ContentDoc />
+        <ContentRenderer v-if="page" :value="page" />
       </div>
       <RelatedMd :relations="surround as Relation[]" />
     </template>
 
-    <template v-if="tocLinks?.length" v-slot:sidebarright>
+    <template v-slot:sidebarright>
       <SidebarRight :toc-links="tocLinks" />
     </template>
   </NuxtLayout>

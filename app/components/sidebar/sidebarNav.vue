@@ -1,10 +1,10 @@
 <script setup lang="ts">
-  import type { NavItem } from '@nuxt/content';
+  import type { ContentNavigationItem } from '@nuxt/content';
 
   const props = defineProps({
     navNodes: {
       required: true,
-      type: Array as PropType<NavItem[] | undefined>
+      type: Array as PropType<ContentNavigationItem[] | undefined>
     },
     label: {
       type: String,
@@ -36,7 +36,7 @@
               <Icon v-if="node.icon" :name="node.icon" size="sm" class="shrink-0" />
               {{ node.title }}
             </div>
-            <NuxtLink v-else :href="node._path" :target="node.target" class="flex gap-2 items-center cursor-pointer">
+            <NuxtLink v-else :href="node.path" :target="node.target" class="flex gap-2 items-center cursor-pointer">
               <Icon v-if="node.icon" :name="node.icon" size="sm" class="shrink-0" />
               {{ node.title }}
             </NuxtLink>
@@ -46,14 +46,14 @@
           </summary>
           <ul class="pl-3 border-l-2 border-contrast space-y-1 mt-2 mb-6">
             <li v-for="(child, index) in node.children" :key="index">
-              <NuxtLink :href="child._path" v-bind:target="child.target" class="flex gap-2 items-center">
+              <NuxtLink :href="child.path" v-bind:target="child.target" class="flex gap-2 items-center">
                 <Icon v-if="child.icon" :name="child.icon" size="sm" class="shrink-0" />
                 {{ child.title }}
               </NuxtLink>
             </li>
           </ul>
         </details>
-        <NuxtLink v-else :href="node._path" v-bind:target="node.target" class="flex gap-2 items-center">
+        <NuxtLink v-else :href="node.path" v-bind:target="node.target" class="flex gap-2 items-center">
           <Icon v-if="node.icon" :name="node.icon" size="sm" class="shrink-0" />
           {{ node.title }}
         </NuxtLink>

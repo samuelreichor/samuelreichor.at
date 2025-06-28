@@ -1,6 +1,6 @@
 <script setup lang="ts">
   export type Relation = {
-    _path: string,
+    path: string,
     title: string,
     description: string,
   }
@@ -15,7 +15,7 @@
   <hr class="border-t-contrast my-default">
   <div v-if="props.relations" class="grid md:grid-cols-2 gap-4 md:gap-8">
     <div v-for="(relation, index) in props.relations" :key="index">
-      <a v-if="relation" :href="relation._path"
+      <a v-if="relation" :href="relation.path"
         :class="['bg-muted rounded-md p-4 md:px-6 md:py-8 group block ml-auto', index === 1 && 'text-right']">
         <div
           class="h-10 w-10 bg-contrast border border-contrast rounded-full inline-flex justify-center items-center transition-colors group-hover:bg-highlight-500/10 group-hover:border-highlight-500">

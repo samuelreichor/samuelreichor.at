@@ -1,10 +1,10 @@
 
-import type { NavItem } from "@nuxt/content";
+import type { ContentNavigationItem } from "@nuxt/content";
 
-export default function removeDuplicateChildren(data: NavItem[]) {
-    function checkDuplicates(parent: NavItem, children: NavItem[]) {
+export default function removeDuplicateChildren(data: ContentNavigationItem[]) {
+    function checkDuplicates(parent: ContentNavigationItem, children: ContentNavigationItem[]) {
       return children.filter(child => {
-        if (child.title === parent.title && child._path === parent._path) {
+        if (child.title === parent.title && child.path === parent.path) {
           return false;
         }
         if (child.children) {
