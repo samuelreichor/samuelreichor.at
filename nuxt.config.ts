@@ -39,13 +39,71 @@ export default defineNuxtConfig({
   },
 
   llms: {
-    domain: 'http://localhost:3000',
-    title: 'Your Site Name',
-    description: 'A brief description of your site',
+    domain: 'https://samuelreichor.at',
+    title: 'Samuel Reichör',
+    description: 'This is a summary of all open source libraries, that I maintain.',
     full: {
       title: 'Full Documentation',
-      description: 'Full documentation of the application',
+      description: 'Full documentation of all libraries',
     },
+    sections: [
+      {
+        title: 'Complete documentation of Query API Craft CMS Plugin',
+        description: 'Query API is a Craft CMS plugin that allows developers to create queries directly from URL parameters, enabling fast and flexible data quering in JS Frameworks.',
+        contentCollection: 'docs',
+        contentFilters: [
+          { field: 'path', operator: 'LIKE', value: '/libraries/craft-query-api%' }
+        ]
+      },
+      {
+        title: 'Complete documentation of Loanwords Craft CMS Plugin',
+        description: 'Loanwords is a Craft CMS plugin that helps manage loanwords by wrapping them with appropriate language tags, enhancing accessibility and screen reader support.',
+        contentCollection: 'docs',
+        contentFilters: [
+          { field: 'path', operator: 'LIKE', value: '/libraries/craft-loanwords%' }
+        ]
+      },
+      {
+        title: 'Complete documentation of Quick Edit Craft CMS Plugin',
+        description: 'Quick Edit is a Craft CMS plugin that automatically adds an edit page button to your frontend.',
+        contentCollection: 'docs',
+        contentFilters: [
+          { field: 'path', operator: 'LIKE', value: '/libraries/craft-quick-edit%' }
+        ]
+      },
+      {
+        title: 'Complete documentation of @query-api/js npm package',
+        description: 'Documentation and usage examples for the JavaScript SDK to integrate with Craft CMS using the Query API.',
+        contentCollection: 'docs',
+        contentFilters: [
+          { field: 'path', operator: 'LIKE', value: '/libraries/js-craftcms-api%' }
+        ]
+      },
+      {
+        title: 'Complete documentation of @query-api/vue npm package',
+        description: 'Documentation and usage examples for the Vue SDK to integrate with Craft CMS using the Query API. It depends on @query-api/js.',
+        contentCollection: 'docs',
+        contentFilters: [
+          { field: 'path', operator: 'LIKE', value: '/libraries/vue-craftcms%' }
+        ]
+      },
+      {
+        title: 'Complete documentation of @query-api/nuxt npm package',
+        description: 'Documentation and usage examples for the Nuxt SDK to integrate with Craft CMS using the Query API. It depends on @query-api/js and @query-api/vue.',
+        contentCollection: 'docs',
+        contentFilters: [
+          { field: 'path', operator: 'LIKE', value: '/libraries/nuxt-craftcms%' }
+        ]
+      },
+      {
+        title: 'Complete documentation of @query-api/react npm package',
+        description: 'Documentation and usage examples for the React SDK to integrate with Craft CMS using the Query API. It depends on @query-api/js.',
+        contentCollection: 'docs',
+        contentFilters: [
+          { field: 'path', operator: 'LIKE', value: '/libraries/query-api-react%' }
+        ]
+      },
+    ],
   },
 
   app: {
