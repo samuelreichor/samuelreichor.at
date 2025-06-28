@@ -104,6 +104,9 @@ export default defineNuxtConfig({
         ]
       },
     ],
+    notes: [
+      'The content is automatically generated from the same source as the official documentation.'
+    ]
   },
 
   app: {
