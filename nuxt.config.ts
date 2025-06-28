@@ -2,7 +2,7 @@
 import svgLoader from 'vite-svg-loader';
 
 export default defineNuxtConfig({
-  devtools: { enabled: false },
+  devtools: { enabled: true },
   future: {
     compatibilityVersion: 4,
   },
@@ -15,7 +15,6 @@ export default defineNuxtConfig({
       routes: ["/sitemap.xml", "/robots.txt"],
     },
   },
-
 
   vite: {
     plugins: [svgLoader()],
@@ -47,18 +46,6 @@ export default defineNuxtConfig({
       title: 'Full Documentation',
       description: 'Full documentation of the application',
     },
-    sections: [
-      {
-        title: 'queryApiJs',
-        description: 'Technical documentation and guides',
-        contentCollection: 'queryApiJs'
-      },
-      {
-        title: 'queryApiVue',
-        description: 'Technical documentation and guides',
-        contentCollection: 'queryApiVue'
-      }
-    ],
   },
 
   app: {
@@ -112,10 +99,6 @@ export default defineNuxtConfig({
       ],
 
     }
-  },
-
-  sitemap: {
-    strictNuxtContentPaths: true
   },
 
   site: {

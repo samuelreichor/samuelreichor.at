@@ -28,6 +28,14 @@ export default defineAppConfig({
           outline: 'bg-white dark:bg-muted text-gray-900 dark:text-white ring-1 ring-inset ring-contrast focus:ring-white',
         }
       }
+    },
+    dropdown: {
+      item: {
+        icon: {
+          inactive: 'text-black dark:text-white',
+          active: 'text-black dark:text-white'
+        }
+      }
     }
   }
 })
