@@ -56,8 +56,8 @@ You can find more information about that command in the [Craft CMS first time se
 ## Dockerizing Craft CMS for Coolify
 To get this thing running on Coolify, we've gotta Dockerize the whole project. Now, I know what you're thinking - 'Can't I just use DDEV?' Nope, sorry, doesn't play nice with Coolify. 😭 Which means, we're diving into some Docker Magic. Don't worry, it's not that bad. Mostly.
 
-### It all starts with docker-compose.yaml ❤️
-Create a `docker-compose.yml` file in the root directory of your project. This file will define the services needed for your Craft CMS application to run: a web server (Nginx with PHP and Node) and a MySQL database.
+### It all starts with docker-compose.yaml
+Create a `docker-compose.yml` file in the root directory of your project. This file will define the services needed for your Craft CMS application to run: a web server (Nginx with PHP and Node ) and a MySQL database.
 
 ```yaml
 services:

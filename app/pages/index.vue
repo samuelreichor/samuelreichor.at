@@ -77,9 +77,6 @@
           I love sharing my insights through
           <NuxtLink href="https://medium.com/@samuelreichor" target="_blank" :class="[classes.label]">blogs </NuxtLink>,
           focusing on the latest trends and best practices in web development.
-          If you're curious about the
-          <NuxtLink href="/projects" :class="[classes.label]">projects</NuxtLink>
-          I've worked on so far, you can find a comprehensive list of them here.
         </p>
 
         <p class="mt-6">

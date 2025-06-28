@@ -54,7 +54,7 @@ if (error.value) {
 }
 ```
 
-All methods that you can use in the query builder are [described here](https://samuelreichor.at/libraries/js-craftcms-api/methods).
+All methods that you can use in the query builder are [described here](h/libraries/js-craftcms-api/methods).
 
 Unlike GraphQL, where prop drilling can quickly spiral out of control, the [Craft Query API](/libraries/craft-query-api) encourages cleaner, more maintainable data flow. You can connect your Nuxt pages and components directly with the entries and get access to it through props.
 
