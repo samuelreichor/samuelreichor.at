@@ -7,7 +7,6 @@ export default eventHandler(async (event) => {
     throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
   }
 
-  const [collection] = String(slug).split('/')
   const path = withLeadingSlash(slug).slice(0, -3)
 
   const page = await queryCollection(event, 'docs')

@@ -1,5 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import svgLoader from 'vite-svg-loader';
+import path from 'path';
+import fs from 'fs';
 
 export default defineNuxtConfig({
   devtools: { enabled: true },
@@ -12,8 +14,47 @@ export default defineNuxtConfig({
   nitro: {
     prerender: {
       crawlLinks: true,
-      routes: ["/sitemap.xml", "/robots.txt"],
+      routes: [],
     },
+  },
+
+  hooks: {
+    async 'nitro:config'(nitroConfig) {
+      if (nitroConfig.dev) return
+
+      const libDir = path.resolve(__dirname, 'content/2.libraries')
+      const mdFiles: string[] = []
+
+      function walk(dir: string) {
+        for (const name of fs.readdirSync(dir)) {
+          const full = path.join(dir, name)
+          const stat = fs.statSync(full)
+          if (stat.isDirectory()) {
+            walk(full)
+          } else if (name.endsWith('.md')) {
+            mdFiles.push(full)
+          }
+        }
+      }
+      walk(libDir)
+
+      function stripNum(s: string) {
+        return s.replace(/^\d+\./, '')
+      }
+
+      const routes = mdFiles.map((fullPath) => {
+        const rel = path.relative(libDir, fullPath).split(path.sep)
+          .map(seg => stripNum(seg))
+          .join('/')
+        if (rel.endsWith('index.md')) {
+          // Replace /index.md with .md (e.g. /foo/index.md -> /foo.md)
+          return `/raw/libraries/${rel.replace(/\/index\.md$/, '.md').replace(/\\/g,'/')}`
+        }
+        return `/raw/libraries/${rel.replace(/\\/g,'/')}`
+      })
+
+      nitroConfig?.prerender?.routes?.push(...routes)
+    }
   },
 
   vite: {
