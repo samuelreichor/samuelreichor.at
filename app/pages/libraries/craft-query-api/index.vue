@@ -1,35 +1,34 @@
 <script setup lang="ts">
-  import { ContentRenderer } from '#components';
 import type { Relation } from '~/components/relatedMd/relatedMd.vue';
+  import { addLinks, libRoute } from './constants';
 
-  const { surround } = await useSurroundHelper()
-  const { page, navNodes } = await useCustomNavs('/libraries/craft-query-api')
-
-  const nodeProps = [{
-    navNodes,
-    showParentUrl: false,
-    defaultOpen: true,
-  }]
-
-  const highlights = [
-    {
-      title: 'Flexible API Queries',
-      description: 'Fetch content via URL parameters for dynamic data retrieval.',
-      icon: 'cloud',
-    },
-    {
-      title: 'Unified Content Access',
-      description: 'Retrieve addresses, assets, entries, and users with one API.',
-      icon: 'book',
-    },
-    {
-      title: 'Image Transforms',
-      description: 'Detects and configures ImagerX transforms for optimized images.',
-      icon: 'image',
-    },
-  ];
-
+  const { page, navNodes } = await useCustomNavs(libRoute)
   const tocLinks = page.value?.body?.toc?.links;
+  const { surround } = await useSurroundHelper()
+
+const nodeProps = [{
+  navNodes,
+  showParentUrl: false,
+  defaultOpen: true,
+}]
+
+const highlights = [
+  {
+    title: 'Flexible API Queries',
+    description: 'Fetch content via URL parameters for dynamic data retrieval.',
+    icon: 'cloud',
+  },
+  {
+    title: 'Unified Content Access',
+    description: 'Retrieve addresses, assets, entries, and users with one API.',
+    icon: 'book',
+  },
+  {
+    title: 'Image Transforms',
+    description: 'Detects and configures ImagerX transforms for optimized images.',
+    icon: 'image',
+  },
+];
 </script>
 
 <template>
@@ -42,12 +41,10 @@ import type { Relation } from '~/components/relatedMd/relatedMd.vue';
       <MainHero :headline="{
           text: 'Craft Query API for Craft CMS',
           target: 'Query API',
-        }"
-        description="The Craft Query API is a Craft CMS API Plugin that makes Craft's 
+        }" description="The Craft Query API is a Craft CMS API Plugin that makes Craft's 
         query builder accessible across any frontend. It allows you to dynamically 
         build Craft CMS dynamic queries via URL parameters, enabling flexible, data access in 
-        your headless Craft CMS setup"
-        image="craft-query-api" :cta="[
+        your headless Craft CMS setup" image="craft-query-api" :cta="[
           {
             text: 'Introduction',
             url: '/libraries/craft-query-api/get-started/introduction',
@@ -67,13 +64,13 @@ import type { Relation } from '~/components/relatedMd/relatedMd.vue';
       </div>
 
       <div class="markdown-rte mt-10">
-        <ContentRenderer v-if="page" :value="page"/>
+        <ContentRenderer v-if="page" :value="page" />
       </div>
       <RelatedMd :relations="surround as Relation[]" />
     </template>
 
     <template v-slot:sidebarright>
-      <SidebarRight :toc-links="tocLinks" />
+      <SidebarRight v-if="tocLinks" :toc-links="tocLinks" :pageTitle="page?.title" :add-links="addLinks"/>
     </template>
   </NuxtLayout>
 </template>

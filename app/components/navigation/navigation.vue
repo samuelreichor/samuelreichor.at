@@ -55,29 +55,6 @@
     })
   }
 
-  function getCurrentGhUrl(){
-    const path = useRoute().path;
-    const ghMap = {
-      'craft-query-api': 'https://github.com/samuelreichor/craft-query-api',
-      'craft-loanwords': 'https://github.com/samuelreichor/craft-loanwords',
-      'craft-quick-edit': 'https://github.com/samuelreichor/craft-quick-edit',
-      'nuxt-craftcms': 'https://github.com/samuelreichor/query-api/tree/main/packages/nuxt',
-      'vue-craftcms': 'https://github.com/samuelreichor/query-api/tree/main/packages/vue',
-      'js-craftcms-api': 'https://github.com/samuelreichor/query-api/tree/main/packages/js',
-      'query-api-react': 'https://github.com/samuelreichor/query-api/tree/main/packages/react',
-    }
-    const match = path.match(/\/libraries\/([^/]+)/);
-
-    if (!match) {
-      return 'https://github.com/samuelreichor'
-    }
-
-    if (match[1] && match[1] in ghMap) {
-      const typesMatch = match[1] as keyof typeof ghMap;
-      return ghMap[typesMatch]
-    }
-  }
-
   onMounted(() => {
     closeOnEsc();
   })

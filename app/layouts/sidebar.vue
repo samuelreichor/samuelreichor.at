@@ -13,7 +13,7 @@
     </div>
     <div v-if="$slots.sidebarright" class="col-span-full max-lg:order-first lg:col-start-9 lg:col-end-11">
       <div
-        class="sticky top-[var(--nav-height)] max-h-[calc(100vh-var(--nav-height))] overflow-y-auto py-2 lg:py-8 no-scroll-bar">
+        class="sticky top-[var(--nav-height)] max-h-[calc(100vh-var(--nav-height))] overflow-y-auto py-2 lg:py-8 no-scroll-bar h-full">
         <slot name="sidebarright" />
       </div>
     </div>

@@ -1,8 +1,9 @@
 <script setup lang="ts">
   import type { Relation } from '~/components/relatedMd/relatedMd.vue';
+  import { addLinks, libRoute} from './constants';
 
   const { surround } = await useSurroundHelper()
-  const { page, navNodes } = await useCustomNavs('/libraries/nuxt-craftcms')
+  const { page, navNodes } = await useCustomNavs(libRoute)
 
   const nodeProps = [{
     navNodes,
@@ -43,7 +44,7 @@
     </template>
 
     <template v-slot:sidebarright>
-      <SidebarRight :toc-links="tocLinks" />
+      <SidebarRight v-if="tocLinks" :toc-links="tocLinks" :page-title="page?.title" :add-links="addLinks"/>
     </template>
   </NuxtLayout>
 </template>
