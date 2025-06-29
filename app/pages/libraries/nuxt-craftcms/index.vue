@@ -1,6 +1,14 @@
 <script setup lang="ts">
   import type { Relation } from '~/components/relatedMd/relatedMd.vue';
-  import { addLinks, libRoute} from './constants';
+  const addLinks = [
+  {
+    text: 'Full Example',
+    url: 'https://github.com/samuelreichor/craft-nuxt-starter',
+    icon: 'showcase',
+    target: '_blank',
+  }
+]
+const libRoute = '/libraries/nuxt-craftcms'
 
   const { surround } = await useSurroundHelper()
   const { page, navNodes } = await useCustomNavs(libRoute)

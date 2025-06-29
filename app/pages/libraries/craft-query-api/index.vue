@@ -1,6 +1,14 @@
 <script setup lang="ts">
 import type { Relation } from '~/components/relatedMd/relatedMd.vue';
-  import { addLinks, libRoute } from './constants';
+  const addLinks = [
+    {
+      text: 'Full Nuxt Example',
+      url: 'https://github.com/samuelreichor/craft-nuxt-starter',
+      icon: 'showcase',
+      target: '_blank',
+    }
+  ]
+  const libRoute = '/libraries/craft-query-api'
 
   const { page, navNodes } = await useCustomNavs(libRoute)
   const tocLinks = page.value?.body?.toc?.links;
