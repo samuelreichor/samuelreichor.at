@@ -11,7 +11,7 @@
     "@nuxt/content": "3.6.3",
     "@nuxt/ui": "^2.18.7",
     "@nuxtjs/seo": "^3.1.0",
-    "better-sqlite3": "^11.10.0",
+    "better-sqlite3": "^12.2.0",
     "nuxi": "^3.25.1",
     "nuxt": "^3.17.5",
     "nuxt-llms": "^0.1.3",
