@@ -17,6 +17,10 @@
     link: {
       type: Object as PropType<Link>,
       default: () => undefined,
+    },
+    showBtns: {
+      type: Boolean,
+      default: () => true,
     }
   });
 
@@ -72,7 +76,7 @@
   <div v-if="props.headline">
     <div class="flex justify-between">
       <span class="text-base text-highlight-500 mb-4 block">{{ props.label }}</span>
-      <UButtonGroup>
+      <UButtonGroup v-if="props.showBtns">
         <UButton :label="`${copyStatus === 'copied' ? 'Copied' : 'Copy Page'}`"
           :icon="`copy${copyStatus === 'copied' ? '-complete' : ''}`" color="white" variant="outline"
           class="text-sm px-3 transition-[filter] hover:brightness-95 dark:hover:brightness-125 bg-white dark:bg-muted text-gray-900 dark:text-white ring-1 ring-inset ring-contrast"

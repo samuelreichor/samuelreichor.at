@@ -24,7 +24,7 @@
     </template>
 
     <template v-slot:main>
-      <HeroSimple :headline="page?.title ?? 'Not Implemented'" :description="page?.description" />
+      <HeroSimple :headline="page?.title ?? 'Not Implemented'" :description="page?.description" :show-btns="false"/>
       <div class="markdown-rte">
         <ContentRenderer v-if="page" :value="page" />
       </div>
