@@ -40,6 +40,7 @@ export function getCurrentGhUrl(){
     'vue-craftcms': 'https://github.com/samuelreichor/query-api/tree/main/packages/vue',
     'js-craftcms-api': 'https://github.com/samuelreichor/query-api/tree/main/packages/js',
     'query-api-react': 'https://github.com/samuelreichor/query-api/tree/main/packages/react',
+    'query-api-next': 'https://github.com/samuelreichor/query-api/tree/main/packages/next',
   }
   const match = path.match(/\/libraries\/([^/]+)/);
 
@@ -63,6 +64,7 @@ export function getCurrentGHBaseUrl(){
     'vue-craftcms': 'https://github.com/samuelreichor/query-api',
     'js-craftcms-api': 'https://github.com/samuelreichor/query-api',
     'query-api-react': 'https://github.com/samuelreichor/query-api',
+    'query-api-next': 'https://github.com/samuelreichor/query-api',
   }
   const match = path.match(/\/libraries\/([^/]+)/);
 

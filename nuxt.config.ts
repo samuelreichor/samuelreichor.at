@@ -144,6 +144,14 @@ export default defineNuxtConfig({
           { field: 'path', operator: 'LIKE', value: '/libraries/query-api-react%' }
         ]
       },
+      {
+        title: 'Complete documentation of @query-api/next npm package',
+        description: 'Documentation and usage examples for the Next.js SDK to integrate with Craft CMS using the Query API. It depends on @query-api/js and @query-api/react.',
+        contentCollection: 'docs',
+        contentFilters: [
+          { field: 'path', operator: 'LIKE', value: '/libraries/query-api-next%' }
+        ]
+      },
     ],
     notes: [
       'The content is automatically generated from the same source as the official documentation.'

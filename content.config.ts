@@ -20,6 +20,10 @@ export default defineContentConfig({
         icon:  z.string(),
         type:  z.string(),
       })
+    }),
+    snippets: defineCollection({
+      source: '_snippets/**',
+      type: 'page',
     })
   }
 })
