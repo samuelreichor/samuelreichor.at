@@ -16,9 +16,9 @@ export default defineContentConfig({
       source: '2.libraries/**',
       type: 'page',
       schema: z.object({
-        badge:  z.string(),
-        icon:  z.string(),
-        type:  z.string(),
+        badge: z.boolean(),
+        icon: z.string(),
+        type: z.string(),
       })
     }),
     snippets: defineCollection({
