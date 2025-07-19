@@ -1,0 +1,5 @@
+- [Vue SDK](/libraries/vue-craftcms): A package to use the query builder in Vue.
+- [Nuxt SDK](/libraries/nuxt-craftcms): A package to use the query builder in Nuxt.
+- [React SDK](/libraries/query-api-react): A package to use the query builder in React.
+- [Next SDK](/libraries/query-api-next): A package to use the query builder in Next.js.
+- [JS SDK](/libraries/js-craftcms-api): Foundation to build a query builder with your preferred JS framework.

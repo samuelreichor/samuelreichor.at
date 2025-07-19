@@ -6,6 +6,12 @@ import type { Relation } from '~/components/relatedMd/relatedMd.vue';
       url: 'https://github.com/samuelreichor/craft-nuxt-starter',
       icon: 'showcase',
       target: '_blank',
+    },
+    {
+      text: 'Other Examples',
+      url: 'https://github.com/samuelreichor/query-api-craft-starter',
+      icon: 'showcase',
+      target: '_blank',
     }
   ]
   const libRoute = '/libraries/craft-query-api'
