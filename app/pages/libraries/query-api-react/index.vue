@@ -3,7 +3,7 @@
   const addLinks = [
   {
     text: 'Full Example',
-    url: 'https://github.com/samuelreichor/query-api-react-demo',
+      url: 'https://github.com/samuelreichor/query-api-craft-starter/tree/examples/react-vite',
     icon: 'showcase',
     target: '_blank',
   }
@@ -18,24 +18,6 @@ const libRoute = '/libraries/query-api-react'
     showParentUrl: false,
     defaultOpen: true,
   }]
-
-  const highlights = [
-    {
-      title: 'Url Builder',
-      description: 'Build your query urls like you would query stuff in Craft CMS',
-      icon: 'cloud',
-    },
-    {
-      title: 'Unified Content Access',
-      description: 'Retrieve addresses, assets, entries, and users with one API.',
-      icon: 'book',
-    },
-    {
-      title: 'Auto Prop Injection',
-      description: 'Connect your components easily with the data of Craft CMS',
-      icon: 'image',
-    },
-  ];
 
   const tocLinks = page.value?.body?.toc?.links;
 </script>

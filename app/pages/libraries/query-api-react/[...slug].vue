@@ -3,7 +3,7 @@
   const addLinks = [
   {
     text: 'Full Example',
-    url: 'https://github.com/samuelreichor/query-api-react-demo',
+    url: 'https://github.com/samuelreichor/query-api-craft-starter/tree/examples/react-vite',
     icon: 'showcase',
     target: '_blank',
   }

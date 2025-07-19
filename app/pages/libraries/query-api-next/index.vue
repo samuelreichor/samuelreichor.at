@@ -19,24 +19,6 @@ const libRoute = '/libraries/query-api-next'
     defaultOpen: true,
   }]
 
-  const highlights = [
-    {
-      title: 'Url Builder',
-      description: 'Build your query urls like you would query stuff in Craft CMS',
-      icon: 'cloud',
-    },
-    {
-      title: 'Unified Content Access',
-      description: 'Retrieve addresses, assets, entries, and users with one API.',
-      icon: 'book',
-    },
-    {
-      title: 'Auto Prop Injection',
-      description: 'Connect your components easily with the data of Craft CMS',
-      icon: 'image',
-    },
-  ];
-
   const tocLinks = page.value?.body?.toc?.links;
 </script>
 
