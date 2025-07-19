@@ -41,7 +41,7 @@ const libRoute = '/libraries/nuxt-craftcms'
           },
           {
             text: 'Installation',
-            url: '/libraries/nuxt-craftcms/get-started/install',
+            url: '/libraries/nuxt-craftcms/get-started/quick-start',
           }
         ]" />
 
