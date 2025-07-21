@@ -51,8 +51,8 @@
         {{ variants[variant].label }}
       </span>
     </div>
-    <p class="text-black dark:text-white !mb-0 mt-1">
-      <slot mdc-unwrap="p" />
-    </p>
+    <div class="text-black dark:text-white [&_*]:!mb-0 mt-1">
+      <slot />
+    </div>
   </div>
 </template>
