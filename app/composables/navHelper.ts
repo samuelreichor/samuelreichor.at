@@ -40,11 +40,14 @@ export const useCustomNavs = async (path: string) => {
   }
 
   const navNodes =  getCurrentNodeTree(navigation, path)
+
+  const uriPath = computed(() => route.path.replace(/\/+$/, '') || '/');
   const { data: page } = await useAsyncData(
-    route.path,
+    uriPath.value,
     () =>
-      queryCollection('docs').path(route.path).first().then((res) => res || null)
+      queryCollection('docs').path(uriPath.value).first().then((res) => res || null)
   )
+
   if (!page.value) {
     throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
   }
