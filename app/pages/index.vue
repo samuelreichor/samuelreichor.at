@@ -38,11 +38,14 @@
           <NuxtLink href="/libraries/js-craftcms-api" :class="[classes.label]">
             <Icon name="ts" size="sm" /> @query-api/js
           </NuxtLink>
-          <NuxtLink href="/libraries/vue-craftcms" :class="[classes.label]">
-            <Icon name="vue" size="sm" /> @query-api/vue
-          </NuxtLink>
           <NuxtLink href="/libraries/nuxt-craftcms" :class="[classes.label]">
             <Icon name="nuxt" size="sm" /> @query-api/nuxt
+          </NuxtLink>
+          <NuxtLink href="/libraries/query-api-next" :class="[classes.label]">
+            <Icon name="next" size="sm" /> @query-api/next
+          </NuxtLink>
+          <NuxtLink href="/libraries/craft-llmify" :class="[classes.label]">
+            <Icon name="craft-llmify" size="sm" /> Craft LLMify
           </NuxtLink>
         </p>
 
