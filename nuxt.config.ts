@@ -113,6 +113,14 @@ export default defineNuxtConfig({
         ]
       },
       {
+        title: 'Complete documentation of LLMify Craft CMS Plugin',
+        description: 'LLMify is a Craft CMS plugin that optimizes your Craft CMS site for Large Language Models (LLMs) by providing structured data.',
+        contentCollection: 'docs',
+        contentFilters: [
+          { field: 'path', operator: 'LIKE', value: '/libraries/craft-llmify%' }
+        ]
+      },
+      {
         title: 'Complete documentation of @query-api/js npm package',
         description: 'Documentation and usage examples for the JavaScript SDK to integrate with Craft CMS using the Query API.',
         contentCollection: 'docs',

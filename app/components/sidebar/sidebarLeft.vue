@@ -43,6 +43,11 @@
       value: 'craft-quick-edit' as const
     },
     {
+      name: 'Craft LLMify',
+      path: '/libraries/craft-llmify',
+      value: 'craft-llmify' as const
+    },
+    {
       name: '@query-api/nuxt',
       path: '/libraries/nuxt-craftcms',
       value: 'nuxt-craftcms' as const
