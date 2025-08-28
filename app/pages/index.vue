@@ -21,7 +21,7 @@
       <Headline text="Samuel Reichör" size="h1" />
       <div class="text-nav-node">
         <p class="mt-8">
-          Hey, I am Samuel Reichör, a fanatical frontend developer. <br>
+          Hey, I am Samuel Reichör, a fanatical full stack developer. <br>
           You can just call me Sam if that funny letter with
           the dots throws you off!
         </p>
@@ -33,7 +33,7 @@
 
         <p>Creator of:
           <NuxtLink href="/libraries/craft-query-api" :class="[classes.label]">
-            <Icon name="craft-query-api" size="sm" /> Craft Query API
+            <Icon name="craft-query-api" size="sm" /> Query API
           </NuxtLink>
           <NuxtLink href="/libraries/js-craftcms-api" :class="[classes.label]">
             <Icon name="ts" size="sm" /> @query-api/js
@@ -45,7 +45,7 @@
             <Icon name="next" size="sm" /> @query-api/next
           </NuxtLink>
           <NuxtLink href="/libraries/craft-llmify" :class="[classes.label]">
-            <Icon name="craft-llmify" size="sm" /> Craft LLMify
+            <Icon name="craft-llmify" size="sm" /> LLMify
           </NuxtLink>
         </p>
 
