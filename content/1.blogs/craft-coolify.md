@@ -21,7 +21,7 @@ curl -fsSL https://cdn.coollabs.io/coolify/install.sh | bash
 
 Once installed, Coolify should be accessible at `https://your-server-ip:8000`, or at a custom domain if you configure one.
 
-> **Quick Heads-Up**: I highly recommend checking out this [YouTube video](https://www.youtube.com/watch?v=taJlPG82Ucw). It'll give you a solid overview of Coolify, and save you a bunch of headaches later.
+> **Quick Heads-Up**: I highly recommend checking out this [YouTube video](https://www.youtube.com/watch?v=taJlPG82Ucw). It'll give you a solid overview of Coolify, and save you a bunch of headaches later. Don't configure Caddy, this does not work as expected.
 
 ---
 
