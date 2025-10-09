@@ -78,7 +78,7 @@
 
         <p class="mt-6">
           I love sharing my insights through
-          <NuxtLink href="https://medium.com/@samuelreichor" target="_blank" :class="[classes.label]">blogs </NuxtLink>,
+          <NuxtLink href="/blogs" target="_blank" :class="[classes.label]">blogs </NuxtLink>,
           focusing on the latest trends and best practices in web development.
         </p>
 
@@ -93,7 +93,7 @@
           <NuxtLink href="https://github.com/samuelreichor" target="_blank" :class="[classes.label]">
             <Icon name="github" size="sm" /> Github
           </NuxtLink>
-          <NuxtLink href="https://medium.com/@samuelreichor" target="_blank" :class="[classes.label]">
+          <NuxtLink href="https://medium.com/@Coderabbit" target="_blank" :class="[classes.label]">
             <Icon name="medium" size="sm" /> Medium
           </NuxtLink>
           <NuxtLink href="https://discordapp.com/users/samuelreichoer" target="_blank" :class="[classes.label]">

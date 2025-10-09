@@ -22,7 +22,7 @@
       icon: 'discord'
     },
     {
-      path: 'https://medium.com/@samuelreichor',
+      path: 'https://medium.com/@Coderabbit',
       title: 'Blog',
       target: '_blank',
       icon: 'medium'
