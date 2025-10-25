@@ -6,7 +6,7 @@ export default defineEventHandler(async (event) => {
     throw createError({ statusCode: 400, statusMessage: 'Missing slug' })
   }
 
-  const body = await readBody<{ reaction: 'thumbsUp' | 'thumbsDown' | 'heart' | 'rocket' }>(event)
+  const body = await readBody<{ reaction: 'thumbsUp' | 'thumbsDown' | 'thinking' | 'rocket' }>(event)
 
   if (!body?.reaction) {
     throw createError({

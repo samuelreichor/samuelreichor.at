@@ -5,14 +5,14 @@ const props = defineProps<{
   slug: string
 }>()
 
-type ReactionKey = 'thumbsUp' | 'thumbsDown' | 'heart' | 'rocket'
+type ReactionKey = 'thumbsUp' | 'thumbsDown' | 'thinking' | 'rocket'
 type ReactionState = Record<ReactionKey, number>
 
 const loading = ref(false)
 const counts = ref({
   reactions: {
     thumbsUp: 0,
-    heart: 0,
+    thinking: 0,
     rocket: 0,
     thumbsDown: 0,
   }
@@ -64,24 +64,8 @@ const classes = {
       <button
         :class="classes.btn"
         :disabled="loading"
-        @click="react('heart')"
-        aria-label="React with Heart"
-      >
-        <span :class="classes.emojiContainer">
-          <span class="block md:scale-150">
-            ❤️
-          </span>
-        </span> 
-        <span class="block">
-          {{ counts?.reactions.heart ?? 0 }}
-        </span>
-      </button>
-  
-      <button
-        :class="classes.btn"
-        :disabled="loading"
         @click="react('rocket')"
-        aria-label="React with Rocket"
+        aria-label="React with rocket"
       >
         <span :class="classes.emojiContainer">
           <span class="block md:scale-150">
@@ -90,6 +74,22 @@ const classes = {
         </span> 
         <span class="block">
           {{ counts?.reactions.rocket ?? 0 }}
+        </span>
+      </button>
+  
+      <button
+        :class="classes.btn"
+        :disabled="loading"
+        @click="react('thinking')"
+        aria-label="React with thinking"
+      >
+        <span :class="classes.emojiContainer">
+          <span class="block md:scale-150">
+            🤔
+          </span>
+        </span> 
+        <span class="block">
+          {{ counts?.reactions.thinking ?? 0 }}
         </span>
       </button>
   
