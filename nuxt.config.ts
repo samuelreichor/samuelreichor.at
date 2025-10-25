@@ -12,6 +12,7 @@ export default defineNuxtConfig({
   modules: ['@nuxt/ui', '@nuxt/content', '@nuxtjs/seo', 'nuxt-llms'],
 
   nitro: {
+    preset: 'netlify',
     prerender: {
       crawlLinks: true,
       routes: [],

@@ -28,6 +28,7 @@
       <div class="markdown-rte">
         <ContentRenderer v-if="page" :value="page" />
       </div>
+      <Reaction :slug="$route.params.slug![0] as string" />
     </template>
 
     <template v-if="tocLinks?.length" v-slot:sidebarright>
