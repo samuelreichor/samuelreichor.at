@@ -9,7 +9,14 @@ type ReactionKey = 'thumbsUp' | 'thumbsDown' | 'heart' | 'rocket'
 type ReactionState = Record<ReactionKey, number>
 
 const loading = ref(false)
-const { data: counts } = useFetch<{ reactions: ReactionState }>(`/reactions/${props.slug}`)
+const counts = ref({
+  reactions: {
+    thumbsUp: 0,
+    heart: 0,
+    rocket: 0,
+    thumbsDown: 0,
+  }
+})
 async function react(which: ReactionKey) {
   if (loading.value) return
   loading.value = true
@@ -22,6 +29,10 @@ async function react(which: ReactionKey) {
     loading.value = false
   }
 }
+
+onMounted(async () => {
+  counts.value = await $fetch<{ reactions: ReactionState }>(`/reactions/${props.slug}`)
+})
 
 const classes = {
   btn: 'grow max-w-[88px] p-2 aspect-square bg-muted rounded-md border border-transparent hover:border-contrast transition-colors disabled:cursor-wait',

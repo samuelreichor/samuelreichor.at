@@ -13,7 +13,6 @@
         themeColorMetaTags.forEach(metaTag => {
           metaTag.content = '#fff'
         });
-        console.log(themeColorMetaTags)
       } else {
         themeColorMetaTags.forEach(metaTag => {
           metaTag.content = '#020817'

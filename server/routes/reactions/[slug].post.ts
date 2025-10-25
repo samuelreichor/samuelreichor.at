@@ -15,7 +15,6 @@ export default defineEventHandler(async (event) => {
     })
   }
 
-  console.log(body.reaction)
   const updated = await addReaction(slug, body.reaction)
   return updated
 })
