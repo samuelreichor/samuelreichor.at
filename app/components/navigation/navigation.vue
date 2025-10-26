@@ -60,12 +60,12 @@
 </script>
 
 <template>
-  <header class="sticky top-0 left-0 right-0 z-[1000] flex justify-between py-6 bg-background">
+  <header class="sticky top-0 left-0 right-0 z-1000 flex justify-between py-6 bg-background">
     <NuxtLink to="/" class="font-bold z-20" @click="closeNavigation()">
       SR
     </NuxtLink>
     <div v-if="isOpen"
-      class="w-full bg-background fixed bottom-0 left-0 right-0 top-[var(--nav-height)] min-h-[calc(100vh-var(--nav-height))] overflow-y-auto overscroll-contain z-10 md:hidden">
+      class="w-full bg-background fixed bottom-0 left-0 right-0 top-(--nav-height) min-h-[calc(100vh-var(--nav-height))] overflow-y-auto overscroll-contain z-10 md:hidden">
       <div class="outside-container">
         <LazyNavigationNodeTree :nav-nodes="navigation" @click-e="closeNavigation()" />
       </div>
@@ -106,7 +106,7 @@
 
 <style>
   .router-link-active {
-    color: theme('colors.highlight.500');
+    color: var(--color-highlight-500);
   } 
 
   :root {

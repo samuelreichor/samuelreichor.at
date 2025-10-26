@@ -1,7 +1,7 @@
 <template>
-  <div class="bg-muted rounded-lg border border-contrast shadow-sm margin-bottom flow-root">
+  <div class="bg-muted rounded-lg border border-contrast shadow-xs margin-bottom flow-root">
     <div v-if="$props.filename"
-      class="font-mono text-sm bg-background py-3 px-4 rounded-t-lg text-black dark:text-white !mb-0 !flex w-full items-center justify-between">
+      class="font-mono text-sm bg-background py-3 px-4 rounded-t-lg text-black dark:text-white mb-0! flex! w-full items-center justify-between">
       <span>
         {{ $props.filename }}
       </span>
@@ -11,7 +11,7 @@
         <Icon v-else class="group-hover:text-highlight-500 transition-colors" name="copy-complete" size="sm" />
       </button>
     </div>
-    <div class="!mb-0 relative">
+    <div class="mb-0! relative">
       <button v-if="!$props.filename" class="group absolute top-4 right-4" @click="copy(code)">
         <span class="sr-only">Copy code to clipboard</span>
         <Icon v-if="!copied" class="group-hover:text-highlight-500 transition-colors" name="copy" size="sm" />

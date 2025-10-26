@@ -28,47 +28,47 @@
 
   const packages = [
     {
-      name: 'Craft Query API',
+      label: 'Craft Query API',
       path: '/libraries/craft-query-api',
       value: 'craft-query-api' as const
     },
     {
-      name: 'Craft Loanwords',
+      label: 'Craft Loanwords',
       path: '/libraries/craft-loanwords',
       value: 'craft-loanwords' as const
     },
     {
-      name: 'Craft Quick Edit',
+      label: 'Craft Quick Edit',
       path: '/libraries/craft-quick-edit',
       value: 'craft-quick-edit' as const
     },
     {
-      name: 'Craft LLMify',
+      label: 'Craft LLMify',
       path: '/libraries/craft-llmify',
       value: 'craft-llmify' as const
     },
     {
-      name: '@query-api/nuxt',
+      label: '@query-api/nuxt',
       path: '/libraries/nuxt-craftcms',
       value: 'nuxt-craftcms' as const
     },
     {
-      name: '@query-api/vue',
+      label: '@query-api/vue',
       path: '/libraries/vue-craftcms',
       value: 'vue-craftcms' as const
     },
     {
-      name: '@query-api/next',
+      label: '@query-api/next',
       path: '/libraries/query-api-next',
       value: 'query-api-next' as const
     },
     {
-      name: '@query-api/react',
+      label: '@query-api/react',
       path: '/libraries/query-api-react',
       value: 'query-api-react' as const
     },
     {
-      name: '@query-api/js',
+      label: '@query-api/js',
       path: '/libraries/js-craftcms-api',
       value: 'js-craftcms-api' as const
     },
@@ -95,7 +95,7 @@
   <aside class="flex flex-col justify-between h-full">
     <nav class="space-y-14">
       <div v-if="props.showSelect" class="mx-0.5">
-        <USelect v-model="selectedPackage" :options="packages" option-attribute="name" size="lg" />
+        <USelect v-model="selectedPackage" :items="packages" option-attribute="label" size="lg" />
       </div>
       <SidebarNav v-for="nodeObj in props.nodes" :label="nodeObj.label" :nav-nodes="nodeObj.navNodes"
         :default-open="nodeObj.defaultOpen" :show-parent-url="nodeObj.showParentUrl"

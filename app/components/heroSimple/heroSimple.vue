@@ -30,7 +30,7 @@
     [{
       label: 'Copy Markdown Link',
       icon: 'link',
-      click() {
+      onSelect() {
         navigator.clipboard.writeText(`${window.location.origin}/raw${route.path}.md`)
       },
     }],
@@ -38,7 +38,7 @@
       label: 'View as Markdown',
       icon: 'markdown',
       target: '_blank',
-      click() {
+      onSelect() {
         window.open(`${window.location.origin}/raw${route.path}.md`, '_blank')
       },
     }],
@@ -46,7 +46,7 @@
       label: 'Open in ChatGPT',
       icon: 'chat-gpt',
       target: '_blank',
-      click() {
+      onSelect() {
         window.open(`https://chatgpt.com/?hints=search&q=${encodeURIComponent(`Read ${window.location.origin}/raw${route.path}.md so I can ask questions about it.`)}`, '_blank')
       },
     }],
@@ -54,7 +54,7 @@
       label: 'Open in Claude',
       icon: 'claude',
       target: '_blank',
-      click() {
+      onSelect() {
         window.open(`https://claude.ai/new?q=${encodeURIComponent(`Read ${window.location.origin}/raw${route.path}.md so I can ask questions about it.`)}`, '_blank')
       },
     }],
@@ -76,12 +76,12 @@
   <div v-if="props.headline">
     <div class="flex justify-between">
       <span class="text-base text-highlight-500 mb-4 block">{{ props.label }}</span>
-      <UButtonGroup v-if="props.showBtns">
+      <UFieldGroup v-if="props.showBtns">
         <UButton :label="`${copyStatus === 'copied' ? 'Copied' : 'Copy Page'}`"
           :icon="`copy${copyStatus === 'copied' ? '-complete' : ''}`" color="white" variant="outline"
           class="text-sm px-3 transition-[filter] hover:brightness-95 dark:hover:brightness-125 bg-white dark:bg-muted text-gray-900 dark:text-white ring-1 ring-inset ring-contrast"
           :loading="copyStatus === 'copying'" @click="copyPage" />
-        <UDropdown :items="items" :content="{
+        <UDropdownMenu :items="items" :content="{
               align: 'end',
               side: 'bottom',
               sideOffset: 8,
@@ -91,8 +91,8 @@
             }">
           <UButton icon="chevron-down" color="white" variant="outline"
             class="bg-white transition-[filter] hover:brightness-95 dark:hover:brightness-125 dark:bg-muted text-gray-900 dark:text-white ring-1 ring-inset ring-contrast" />
-        </UDropdown>
-      </UButtonGroup>
+        </UDropdownMenu>
+      </UFieldGroup>
     </div>
     <Headline tag="h1" size="h1Small" :text="props.headline" />
     <p class="mt-6 text-lg text-dimmed">{{ props.description }}</p>

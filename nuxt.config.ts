@@ -5,15 +5,14 @@ import fs from 'fs';
 
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  future: {
-    compatibilityVersion: 4,
-  },
   
   modules: ['@nuxt/ui', '@nuxt/content', '@nuxtjs/seo', 'nuxt-llms'],
 
   routeRules: {
     '/': { prerender: true },
   },
+
+  css: ['~/assets/css/tailwind.css'],
 
   nitro: {
     preset: 'netlify',

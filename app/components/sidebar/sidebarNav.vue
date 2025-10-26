@@ -41,7 +41,7 @@
               {{ node.title }}
             </NuxtLink>
             <div>
-              <Icon name="chevron" class="rotate-180 transition-transform group-open:rotate-[270deg] cursor-pointer" />
+              <Icon name="chevron" class="rotate-180 transition-transform group-open:rotate-270 cursor-pointer" />
             </div>
           </summary>
           <ul class="pl-3 border-l-2 border-contrast space-y-1 mt-2 mb-6">
@@ -64,6 +64,9 @@
 
 <style scoped>
   .router-link-active {
-    @apply !text-highlight-500 hover:!text-highlight-500;
+    color: var(--color-highlight-500);
+  }
+  .router-link-active:hover {
+    color: var(--color-highlight-500) !important
   }
 </style>

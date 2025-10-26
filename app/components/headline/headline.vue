@@ -27,7 +27,7 @@
     });
 
     const sizes = {
-        h1: 'text-4xl md:text-5xl !leading-tight font-semibold',
+        h1: 'text-4xl md:text-5xl leading-tight! font-semibold',
         h1Small: 'text-4xl font-semibold',
         h2: 'text-2xl font-semibold',
     } as const;

@@ -1,22 +1,78 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+@import "@nuxt/ui";
 
+@theme static {
+  --font-base: 'ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;';
+  --breakpoint-*: initial;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+
+  --aspect-auto: auto;
+  --aspect-square: 1 / 1;
+  --aspect-video: 16 / 9;
+
+  --color-highlight-50: #eff6ff;
+  --color-highlight-100: #dbeafe;
+  --color-highlight-200: #bfdbfe;
+  --color-highlight-300: #93c5fd;
+  --color-highlight-400: #3178c6;
+  --color-highlight-500: #3c83f6;
+  --color-highlight-600: #2563eb;
+  --color-highlight-700: #1d4ed8;
+  --color-highlight-800: #1e40af;
+  --color-highlight-900: #1e3a8a;
+  --color-highlight-950: #172554;
+
+  --color-background: var(--background);
+  --color-muted: var(--muted);
+  --color-contrast: var(--contrast);
+  --color-dimmed: var(--dimmed);
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
 @layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
   :root {
     --background: #fff;
     --muted: #F1F5F9;
-    --contrast: theme('colors.gray.200');
-    --dimmed: theme('colors.slate.700');
+    --contrast: var(--color-gray-200);
+    --dimmed: var(--color-slate-700);
     --text: #000;
+
+    --ui-bg: var(--background);
+    --ui-text: var(--text);
+    --ui-bg-muted: var(--muted);
+    --ui-border: var(--contrast);
+    --ui-text-dimmed: var(--text);
+    --ui-text-muted: var(--text);
+    --ui-text-toned: var(--text);
   }
    
   .dark {
     --background: #020817;
     --muted: #101929;
-    --contrast: theme('colors.gray.700');
-    --dimmed: theme('colors.slate.300');
+    --contrast: var(--color-gray-700);
+    --dimmed: var(--color-slate-300);
     --text: #fff;
+
   }
 
   html {
@@ -25,11 +81,11 @@
   }
   
   body {
-    font-weight: 400;
+    font-weight: 500 !important;
   }
 
   .outside-container {
-    @apply px-5 lg:px-8 xl:px-10 2xl:px-14 w-full mx-auto max-w-screen-2xl;
+    @apply px-5 lg:px-8 xl:px-10 2xl:px-14 w-full mx-auto max-w-(--breakpoint-2xl);
   }
 
   .outside-container-outbreak {
@@ -64,7 +120,7 @@
   }
 
   hr {
-    border-color: theme('colors.contrast.DEFAULT');
+    border-color: var(--color-contrast);
     border-top-width: 1px;
   }
 
@@ -108,7 +164,7 @@
     }
 
     h2:first-child {
-      @apply !pt-0;
+      @apply pt-0!;
     }
 
     h3 {
@@ -136,7 +192,7 @@
     }
 
     blockquote {
-      border-inline-start-color: theme('colors.contrast.DEFAULT');
+      border-inline-start-color: var(--color-contrast);
       border-inline-start-width: .25rem;
       font-style: italic;
       font-weight: 400;
@@ -146,8 +202,8 @@
     }
 
     code.single-code {
-      background-color: theme('colors.muted.DEFAULT');
-      border: 1px solid theme('colors.contrast.DEFAULT');
+      background-color: var(--color-muted);
+      border: 1px solid var(--color-contrast);
       border-radius: .375rem;
       display: inline-block;
       font-size: .875em;
@@ -203,12 +259,12 @@
       min-width: 400px;
       border-spacing: 0;
       border-collapse: separate;
-      border: 1px solid theme('colors.contrast.DEFAULT');
+      border: 1px solid var(--color-contrast);
 
       thead {
-        background-color: theme('colors.muted.DEFAULT');
+        background-color: var(--color-muted);
         text-align: left;
-        box-shadow: 0 1px 0 0 theme('colors.contrast.DEFAULT');
+        box-shadow: 0 1px 0 0 var(--color-contrast);
       }
       
       thead th:first-child {
@@ -226,7 +282,7 @@
 
       tbody {
         tr:nth-child(even) {
-          background-color: theme('colors.muted.DEFAULT');
+          background-color: var(--color-muted);
         }
       } 
     }
@@ -244,4 +300,3 @@
   .no-scroll-bar::-webkit-scrollbar {
     display: none;
   }
-}

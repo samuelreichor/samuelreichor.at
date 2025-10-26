@@ -33,11 +33,13 @@
 </script>
 
 <template>
-  <NuxtLayout>
-    <Navigation />
-    <div id="main" class="min-h-[calc(100vh-var(--nav-height))]">
-      <NuxtPage />
-    </div>
-    <Footer />
-  </NuxtLayout>
+  <UApp>
+    <NuxtLayout>
+      <Navigation />
+      <div id="main" class="min-h-[calc(100vh-var(--nav-height))]">
+        <NuxtPage />
+      </div>
+      <Footer />
+    </NuxtLayout>
+  </UApp>
 </template>

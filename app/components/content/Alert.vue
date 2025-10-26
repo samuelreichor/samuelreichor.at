@@ -45,13 +45,13 @@
 
 <template>
   <div :class="[variants[variant].class, 'border-l-[3px] pl-4 py-1.5 border-l-current margin-bottom']">
-    <div class="!mb-0 flex gap-3 items-center">
+    <div class="mb-0! flex gap-3 items-center">
       <Icon :name="variants[variant].icon" size="base" />
       <span class="font-medium">
         {{ variants[variant].label }}
       </span>
     </div>
-    <div class="text-black dark:text-white [&_*]:!mb-0 mt-1">
+    <div class="text-black dark:text-white **:mb-0! mt-1">
       <slot />
     </div>
   </div>
