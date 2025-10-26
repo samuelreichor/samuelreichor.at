@@ -72,7 +72,7 @@ export default defineNuxtConfig({
           depth: 2,
         },
         highlight: {
-          langs: ['js','jsx','json','ts','tsx','vue','css','html','bash','md','mdc','yaml', 'php', 'dockerfile'],
+          langs: ['js','jsx','json','ts','tsx','vue','css','html','bash','md','mdc','yaml', 'php', 'dockerfile', 'nginx'],
           theme: {
             default: 'github-dark',
             dark: 'github-dark',
