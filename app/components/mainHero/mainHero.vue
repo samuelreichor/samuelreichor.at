@@ -35,6 +35,8 @@
           :key="index"
           :color="index % 2 ? 'gray' : 'primary'" 
           :to="link.url"
+          class="rounded-full! px-6 py-2.5"
+          size="xl"
         >
         {{ link.text }}
       </UButton>

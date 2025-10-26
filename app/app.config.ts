@@ -6,7 +6,7 @@ export default defineAppConfig({
     strategy: 'override',
     button: {
       slots: {
-        base: 'text-base rounded-full focus-visible:ring-offset-background focus-visible:ring-offset-2 focus-visible:ring-2 focus-visible:ring-highlight-500 focus:outline-hidden focus-visible:outline-0 disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:cursor-not-allowed aria-disabled:opacity-75 shrink-0',
+        base: 'text-base focus-visible:ring-offset-background focus-visible:ring-offset-2 focus-visible:ring-2 focus-visible:ring-highlight-500 focus:outline-hidden focus-visible:outline-0 disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:cursor-not-allowed aria-disabled:opacity-75 shrink-0',
       },
       variants: {
         color: {
@@ -14,7 +14,7 @@ export default defineAppConfig({
           gray: 'bg-muted brightness-95 hover:brightness-90 dark:brightness-125 dark:hover:brightness-150 text-black! dark:text-white! transition-[filter]',
         },
         size: {
-          md: {
+          sm: {
             base: 'px-6 py-2.5 text-base',
           }
         },

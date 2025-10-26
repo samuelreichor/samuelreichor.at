@@ -6,7 +6,7 @@
     },
     size: {
       type: String as PropType<SizeVariants>,
-      default: () => 'base'
+      default: () => 'sm'
     }
   });
 

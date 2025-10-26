@@ -155,38 +155,6 @@
     }
 
   .markdown-rte {
-    h1 {
-      @apply mb-6 md:mb-8 text-4xl;
-    }
-
-    h2 {
-      @apply mb-5 pt-8 text-3xl font-medium;
-    }
-
-    h2:first-child {
-      @apply pt-0!;
-    }
-
-    h3 {
-      @apply mb-4 pt-6 text-2xl;
-    }
-
-    h4 {
-      @apply mb-2 pt-4 text-xl;
-    }
-
-    h5 {
-      @apply mb-2 md:mb-4 text-lg;
-    }
-
-    .margin-bottom,
-    ul,
-    ol,
-    p {
-      line-height: 1.75;
-      @apply block mb-5;
-    }
-
     .max-w-text p:not(:has(img)) {
       @apply max-w-[750px];
     }
@@ -209,48 +177,6 @@
       font-size: .875em;
       padding: 0 .5rem;
       word-break: break-all;
-    }
-
-
-    ul li {
-      position: relative;
-      list-style-type: none;
-      padding-left: 1.75rem;
-
-      &:before {
-          position: absolute;
-          content: '';
-          top: 0.8rem;
-          left: 0.625rem;
-          width: 0.35rem;
-          height: 0.35rem;
-          border-radius: 100%;
-          background-color: var(--text);
-      }
-    }
-
-    ol {
-      position: relative;
-      list-style: none;
-      counter-reset: ol-counter;
-      padding-left: 1.5rem;
-
-      li {
-        counter-increment: ol-counter;
-
-        &::before {
-          content: counter(ol-counter) ". ";
-          position: absolute;
-          left: 0;
-        }
-      }
-    }
-
-    ul,
-    ol {
-      li:not(:last-child) {
-          margin-bottom: 0.1rem;
-      }
     }
 
     table {
@@ -287,9 +213,6 @@
       } 
     }
 
-    img {
-      @apply pb-0 md:pb-4;
-    }
   }
   
   .no-scroll-bar {
