@@ -155,6 +155,11 @@
     }
 
   .markdown-rte {
+    iframe {
+      aspect-ratio: 16 / 9;
+      width: 100%;
+    }
+
     .max-w-text p:not(:has(img)) {
       @apply max-w-[750px];
     }
