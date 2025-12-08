@@ -32,7 +32,7 @@
       <MainHero :headline="{
         text: 'Bulk Import Element Types with Genesis',
         target: 'Genesis',
-      }" description="Genesis helps you set up your Craft CMS site structure quickly using CSV files. You can define everything in a spreadsheet and import it all at once."
+      }" description="Genesis helps you to set up your Craft CMS site structure quickly using CSV files. You can define everything in a spreadsheet and import it all at once."
         image="craft-genesis" :cta="[
           {
             text: 'Install',
