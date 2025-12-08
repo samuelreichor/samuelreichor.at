@@ -125,6 +125,14 @@ export default defineNuxtConfig({
         ]
       },
       {
+        title: 'Complete documentation of Genesis Craft CMS Plugin',
+        description: 'Genesis is a Craft CMS plugin that adds a bulk import utility to import all kinds of element types with csv files.',
+        contentCollection: 'docs',
+        contentFilters: [
+          { field: 'path', operator: 'LIKE', value: '/libraries/craft-genesis%' }
+        ]
+      },
+      {
         title: 'Complete documentation of @query-api/js npm package',
         description: 'Documentation and usage examples for the JavaScript SDK to integrate with Craft CMS using the Query API.',
         contentCollection: 'docs',

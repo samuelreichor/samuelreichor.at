@@ -48,6 +48,11 @@
       value: 'craft-llmify' as const
     },
     {
+      label: 'Craft Genesis',
+      path: '/libraries/craft-genesis',
+      value: 'craft-genesis' as const
+    },
+    {
       label: '@query-api/nuxt',
       path: '/libraries/nuxt-craftcms',
       value: 'nuxt-craftcms' as const
