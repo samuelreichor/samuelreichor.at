@@ -14,6 +14,8 @@ badge: true
 - **Filesystems** - Local storage paths for assets
 - **Asset Volumes** - Configure where your assets live
 
+![Genesis utility](/images/bitmap/genesis-utility.png)
+
 ## How It Works
 
 1. **Download a CSV template** for the element type you want to create
@@ -29,6 +31,8 @@ Genesis validates your CSV before importing:
 - Validates column names against allowed fields
 - Verifies data types (booleans, language codes, etc.)
 - Ensures referenced elements exist (sites, entry types, filesystems)
+
+![Validtion errors after uploading invalid csv file](/images/bitmap/genesis-validation.png)
 
 This catches mistakes early so you don't end up with partial imports.
 
