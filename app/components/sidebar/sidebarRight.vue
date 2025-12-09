@@ -66,7 +66,7 @@
   </div>
   <div v-if="(props.addLinks && props.addLinks.length > 0) || props.pageTitle" class="max-md:hidden">
     <hr class="border-t-contrast mt-6 mb-6">
-    <p class="font-bold text-sm">Useful Links</p>
+    <p class="font-bold text-sm">Useful links</p>
     <ul class="flex flex-col gap-1 text-sm mt-2">
       <li v-for="(node, index) in props.addLinks" :key="index">
         <NuxtLink :href="node.url" v-bind:target="node.target" class="flex gap-2 items-center">
