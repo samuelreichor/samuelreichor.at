@@ -35,4 +35,9 @@ After installation, navigate to **Utilities > Genesis Import** in your control p
 
 ## Example Config File
 
-To get started quickly, use this [example config file](/other-files/example-craft-config.xlsx){target="_blank" download="/other-files/example-craft-config.xlsx"} and get begin to configure it.
+To get started quickly, use this [example config file](/other-files/example-craft-config.xlsx){target="_blank" download="/other-files/example-craft-config.xlsx"} and get begin to configure it. 
+
+
+::alert{variant="note"}
+You can use Title Case or camelCase for the column header.
+::
