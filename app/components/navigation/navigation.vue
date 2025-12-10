@@ -145,6 +145,6 @@
   } 
 
   :root {
-    --nav-height: 72px;
+    --nav-height: 80px;
   }
 </style>

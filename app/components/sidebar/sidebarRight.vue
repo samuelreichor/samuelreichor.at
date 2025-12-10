@@ -49,7 +49,7 @@
     <button @click="toggleNav()"
       class="font-bold max-lg:flex max-lg:justify-between max-lg:w-full max-lg:bg-muted max-lg:p-3 max-lg:rounded-md lg:text-sm">
       On this page
-      <Icon :class="['lg:hidden transition-transform', isOpen ? 'rotate-270' : 'rotate-180']" name="chevron" />
+      <Icon :class="['lg:hidden transition-transform my-auto', isOpen ? 'rotate-270' : 'rotate-180']" name="chevron" />
     </button>
     <div v-show="isOpen" class="mt-4 md:mt-2 lg:block! text-sm">
       <ul class="space-y-1 text-nav-node">
@@ -61,7 +61,7 @@
         </li>
       </ul>
 
-      <hr class="border-t-contrast mb-0 md:mt-6 lg:hidden">
+      <hr class="border-t-contrast mb-0! md:mt-6! lg:hidden">
     </div>
   </div>
   <div v-if="(props.addLinks && props.addLinks.length > 0) || props.pageTitle" class="max-lg:hidden">

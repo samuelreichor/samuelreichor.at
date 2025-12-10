@@ -98,9 +98,9 @@
 
 <template>
   <aside class="flex flex-col justify-between h-full">
-    <nav class="space-y-6">
+    <nav class="space-y-8">
       <div v-if="props.showSelect" class="mx-0.5">
-        <USelect v-model="selectedPackage" :items="packages" option-attribute="label" size="lg" />
+        <USelect v-model="selectedPackage" :items="packages" option-attribute="label" size="lg" class="w-full" />
       </div>
       <SidebarNav v-for="nodeObj in props.nodes" :label="nodeObj.label" :nav-nodes="nodeObj.navNodes"
         :default-open="nodeObj.defaultOpen" :show-parent-url="nodeObj.showParentUrl"
