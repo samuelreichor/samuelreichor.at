@@ -102,3 +102,29 @@ export function getCurrentPluginStoreLink(){
     return ghMap[typesMatch]
   }
 }
+
+export function getCurrentLibrary(){
+  const path = useRoute().path;
+  const libMap = {
+    'craft-query-api': '',
+    'craft-loanwords': 'https://github.com/samuelreichor/craft-loanwords',
+    'craft-quick-edit': 'https://github.com/samuelreichor/craft-quick-edit',
+    'craft-llmify': 'https://github.com/samuelreichor/craft-llmify',
+    'craft-genesis': 'https://github.com/samuelreichor/craft-genesis',
+    'nuxt-craftcms': 'https://github.com/samuelreichor/query-api',
+    'vue-craftcms': 'https://github.com/samuelreichor/query-api',
+    'js-craftcms-api': 'https://github.com/samuelreichor/query-api',
+    'query-api-react': 'https://github.com/samuelreichor/query-api',
+    'query-api-next': 'https://github.com/samuelreichor/query-api',
+  }
+  const match = path.match(/\/libraries\/([^/]+)/);
+
+  if (!match) {
+    return 'https://github.com/samuelreichor'
+  }
+
+  if (match[1] && match[1] in libMap) {
+    const typesMatch = match[1] as keyof typeof libMap;
+    return libMap[typesMatch]
+  }
+}

@@ -21,6 +21,23 @@
     }
   })
 
+  const { data: files } = await useAsyncData('search', () => queryCollectionSearchSections('docs'))
+  const searchTerm = ref('')
+  const route = useRoute()
+
+  const isLibraryRoute = computed(() => route.path.startsWith('/libraries/'))
+
+  // Filter files basierend auf aktueller Library
+  const filteredFiles = computed(() => {
+    if (!files.value) return []
+
+    const libraryMatch = route.path.match(/^\/libraries\/([^\/]+)/)
+    if (!libraryMatch) return files.value
+
+    const currentLibrary = libraryMatch[1]
+    return files.value.filter(file => file.id?.startsWith(`/libraries/${currentLibrary}`))
+  })
+
   const navigation = inject<ContentNavigationItem[]>('navigationObj');
   const isOpen = ref(false)
 
@@ -60,10 +77,27 @@
 </script>
 
 <template>
-  <header class="sticky top-0 left-0 right-0 z-1000 flex justify-between py-6 bg-background">
-    <NuxtLink to="/" class="font-bold z-20" @click="closeNavigation()">
-      SR
-    </NuxtLink>
+  <header class="sticky top-0 left-0 right-0 z-1000 flex items-center justify-between py-6 bg-background">
+    <div class="flex items-center gap-6 md:gap-8">
+      <NuxtLink to="/" class="font-bold z-20" @click="closeNavigation()">
+        SR
+      </NuxtLink>
+      <template v-if="isLibraryRoute">
+        <UContentSearchButton
+          :collapsed="false"
+          class="w-40"
+        />
+        <ClientOnly>
+          <UContentSearch
+            v-model:search-term="searchTerm"
+            :files="filteredFiles"
+            :navigation="navigation"
+            :color-mode="false"
+            :fuse="{ resultLimit: 42 }"
+          />
+        </ClientOnly>
+      </template>
+    </div>
     <div v-if="isOpen"
       class="w-full bg-background fixed bottom-0 left-0 right-0 top-(--nav-height) min-h-[calc(100vh-var(--nav-height))] overflow-y-auto overscroll-contain z-10 md:hidden">
       <div class="outside-container">
@@ -84,8 +118,8 @@
         </li>
       </ul>
     </div>
-    <div class="absolute right-0 bottom-0 top-0 z-20 flex gap-4 items-center">
-      <CraftBtn v-if="getCurrentPluginStoreLink()" :link="getCurrentPluginStoreLink() ?? ''"/>
+    <div class="z-20 flex gap-4 items-center">
+      <CraftBtn class="max-md:hidden" v-if="getCurrentPluginStoreLink()" :link="getCurrentPluginStoreLink() ?? ''"/>
       <NuxtLink :href="getCurrentGhUrl()" :external="true" target="_blank">
         <span class="sr-only">Click to open github profile</span>
         <Icon name="github" size="xl" />

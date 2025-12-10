@@ -96,6 +96,6 @@
     </div>
     <Headline tag="h1" size="h1Small" :text="props.headline" />
     <p class="mt-6 text-lg text-dimmed">{{ props.description }}</p>
-    <hr class="mt-8 mb-6 md:my-10">
+    <hr class="my-6! md:my-10!">
   </div>
 </template>

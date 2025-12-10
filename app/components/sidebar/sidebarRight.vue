@@ -64,8 +64,8 @@
       <hr class="border-t-contrast mb-0 md:mt-6 lg:hidden">
     </div>
   </div>
-  <div v-if="(props.addLinks && props.addLinks.length > 0) || props.pageTitle" class="max-md:hidden">
-    <hr class="border-t-contrast mt-6 mb-6">
+  <div v-if="(props.addLinks && props.addLinks.length > 0) || props.pageTitle" class="max-lg:hidden">
+    <hr class="border-t-contrast mt-6! mb-6!">
     <p class="font-bold text-sm">Useful links</p>
     <ul class="flex flex-col gap-1 text-sm mt-2">
       <li v-for="(node, index) in props.addLinks" :key="index">

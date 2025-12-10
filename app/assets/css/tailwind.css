@@ -29,7 +29,6 @@
   --color-background: var(--background);
   --color-muted: var(--muted);
   --color-contrast: var(--contrast);
-  --color-dimmed: var(--dimmed);
 }
 
 /*
@@ -61,7 +60,6 @@
     --ui-text: var(--text);
     --ui-bg-muted: var(--muted);
     --ui-border: var(--contrast);
-    --ui-text-dimmed: var(--text);
     --ui-text-muted: var(--text);
     --ui-text-toned: var(--text);
   }
@@ -92,13 +90,14 @@
     @apply -mx-5 lg:-mx-8 px-5 lg:px-8 xl:px-0 xl:mx-0;
   }
 
-  .container,
   .container-gaps {
     @apply gap-x-4 md:gap-x-8 xl:gap-x-10;
   }
 
-  .container {
-    @apply grid grid-cols-10;
+  @utility container {
+    max-width: unset;
+    width: unset;
+    @apply grid grid-cols-10 gap-x-4 md:gap-x-8 xl:gap-x-10;
   }
 
   a:hover {
