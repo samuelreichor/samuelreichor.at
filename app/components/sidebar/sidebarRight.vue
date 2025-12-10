@@ -80,6 +80,12 @@
           Provide Feedback to this Page
         </NuxtLink>
       </li>
+      <li v-if="getCurrentGHBaseUrl() !== 'https://github.com/samuelreichor'">
+        <NuxtLink :href="getCurrentGHBaseUrl()" target="_blank" class="flex gap-2 items-center group">
+          <Icon name="star" size="sm" class="shrink-0 [&_path]:fill-transparent transition-colors [&_path]:transition-colors group-hover:text-[#FFFF00] [&_path]:group-hover:fill-[#FFFF00]" />
+          Star on GitHub
+        </NuxtLink>
+      </li>
     </ul>
   </div>
 </template>

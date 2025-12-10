@@ -41,7 +41,7 @@
     </template>
 
     <template v-slot:sidebarright>
-      <SidebarRight v-if="tocLinks" :toc-links="tocLinks" />
+      <SidebarRight v-if="tocLinks" :page-title="page?.title" :toc-links="tocLinks" />
     </template>
   </NuxtLayout>
 </template>
