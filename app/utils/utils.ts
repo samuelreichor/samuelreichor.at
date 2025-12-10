@@ -81,3 +81,24 @@ export function getCurrentGHBaseUrl(){
     return ghMap[typesMatch]
   }
 }
+
+export function getCurrentPluginStoreLink(){
+  const path = useRoute().path;
+  const ghMap = {
+    'craft-query-api': 'https://plugins.craftcms.com/query-api',
+    'craft-loanwords': 'https://plugins.craftcms.com/loanwords',
+    'craft-quick-edit': 'https://plugins.craftcms.com/quick-edit',
+    'craft-llmify': 'https://plugins.craftcms.com/llmify',
+    'craft-genesis': 'https://plugins.craftcms.com/genesis',
+  }
+  const match = path.match(/\/libraries\/([^/]+)/);
+
+  if (!match) {
+    return ''
+  }
+
+  if (match[1] && match[1] in ghMap) {
+    const typesMatch = match[1] as keyof typeof ghMap;
+    return ghMap[typesMatch]
+  }
+}

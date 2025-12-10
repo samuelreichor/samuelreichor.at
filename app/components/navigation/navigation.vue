@@ -85,6 +85,7 @@
       </ul>
     </div>
     <div class="absolute right-0 bottom-0 top-0 z-20 flex gap-4 items-center">
+      <CraftBtn v-if="getCurrentPluginStoreLink()" :link="getCurrentPluginStoreLink() ?? ''"/>
       <NuxtLink :href="getCurrentGhUrl()" :external="true" target="_blank">
         <span class="sr-only">Click to open github profile</span>
         <Icon name="github" size="xl" />
