@@ -18,10 +18,10 @@ badge: true
 
 ## How It Works
 
-1. **Download a CSV template** for the element type you want to create
-2. **Fill in your data** using any spreadsheet application
+1. **Download the CSV template** or create a google / excel sheet.
+2. **Fill in your data**
 3. **Upload and validate** to catch errors before importing
-4. **Import** - Genesis handles the rest via queue jobs
+4. **Import**, Genesis handles the rest via queue jobs
 
 ## Validation
 
