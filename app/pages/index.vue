@@ -102,7 +102,7 @@
         </p>
 
         <p class="mt-1">
-          Or write an email <NuxtLink href="mailto:samuelreichor@gmail.at" :class="[classes.label]">
+          Or write an email <NuxtLink href="mailto:samuelreichor@gmail.com" :class="[classes.label]">
             <Icon name="email" size="sm" /> samuelreichoer@gmail.com
           </NuxtLink>
         </p>
