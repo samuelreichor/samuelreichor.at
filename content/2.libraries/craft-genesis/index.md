@@ -1,5 +1,5 @@
 ---
-title: Craft Genesis
+title: Genesis
 description: 'Bulk import Craft elemnts by csv files.'
 type: 'craft'
 icon: 'craft-genesis'

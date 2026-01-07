@@ -1,5 +1,5 @@
 ---
-title: Craft Loanwords 
+title: Loanwords 
 description: 'A plugin to enhance screen reader experience with Loanwords.'
 type: 'craft'
 icon: 'craft-loanwords'

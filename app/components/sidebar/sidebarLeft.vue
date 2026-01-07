@@ -28,27 +28,27 @@
 
   const packages = [
     {
-      label: 'Craft Query API',
+      label: 'Query API',
       path: '/libraries/craft-query-api',
       value: 'craft-query-api' as const
     },
     {
-      label: 'Craft Loanwords',
+      label: 'Loanwords',
       path: '/libraries/craft-loanwords',
       value: 'craft-loanwords' as const
     },
     {
-      label: 'Craft Quick Edit',
+      label: 'Quick Edit',
       path: '/libraries/craft-quick-edit',
       value: 'craft-quick-edit' as const
     },
     {
-      label: 'Craft LLMify',
+      label: 'LLMify',
       path: '/libraries/craft-llmify',
       value: 'craft-llmify' as const
     },
     {
-      label: 'Craft Genesis',
+      label: 'Genesis',
       path: '/libraries/craft-genesis',
       value: 'craft-genesis' as const
     },
