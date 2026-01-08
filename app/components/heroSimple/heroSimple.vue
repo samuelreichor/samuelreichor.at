@@ -14,6 +14,10 @@
       type: String,
       default: () => '',
     },
+    badge: {
+      type: String,
+      default: () => '',
+    },
     link: {
       type: Object as PropType<Link>,
       default: () => undefined,
@@ -89,12 +93,15 @@
             }" :ui="{
               content: 'w-48',
             }">
-          <UButton icon="chevron-down" color="white" variant="outline"
+          <UButton icon="chevron-down" variant="outline"
             class="bg-white transition-[filter] hover:brightness-95 dark:hover:brightness-125 dark:bg-muted text-gray-900 dark:text-white ring-1 ring-inset ring-contrast" />
         </UDropdownMenu>
       </UFieldGroup>
     </div>
-    <Headline tag="h1" size="h1Small" :text="props.headline" />
+    <div class="flex items-center gap-3">
+      <Headline tag="h1" size="h1Small" :text="props.headline" />
+      <UBadge v-if="props.badge" :label="props.badge" color="primary" class="text-white" variant="solid" />
+    </div>
     <p class="mt-6 text-lg text-dimmed">{{ props.description }}</p>
     <hr class="my-6! md:my-10!">
   </div>

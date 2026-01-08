@@ -3,7 +3,6 @@ title: LLMify
 description: 'LLMify makes your Craft CMS content instantly AI-ready.'
 type: 'craft'
 icon: 'craft-llmify'
-badge: true
 ---
 
 AI models like ChatGPT struggle to read websites built for people. They see a wall of code, menus, ads, and sidebars. This "noise" makes it hard for them to find the real story—your valuable content.

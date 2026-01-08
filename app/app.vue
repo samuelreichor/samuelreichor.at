@@ -2,7 +2,7 @@
   import type { ContentNavigationItem } from '@nuxt/content';
   import removeDuplicateChildren from './utils/utils';
   
-  const { data: nav } = await useAsyncData('navigation', () => queryCollectionNavigation('docs'))
+  const { data: nav } = await useAsyncData('navigation', () => queryCollectionNavigation('docs', ['badge']))
 
   if (nav.value) {
     provide('navigationObj', removeDuplicateChildren(nav.value))

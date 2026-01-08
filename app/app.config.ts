@@ -38,6 +38,11 @@ export default defineAppConfig({
           active: 'text-black dark:text-white'
         }
       }
+    },
+    prose: {
+      badge: {
+        base: 'bg-primary text-white'
+      }
     }
   }
 })

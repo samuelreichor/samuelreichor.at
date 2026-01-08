@@ -16,7 +16,7 @@ export default defineContentConfig({
       source: '2.libraries/**',
       type: 'page',
       schema: z.object({
-        badge: z.boolean(),
+        badge: z.string().optional(),
         icon: z.string(),
         type: z.string(),
       })

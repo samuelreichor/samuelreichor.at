@@ -53,6 +53,11 @@
       value: 'craft-genesis' as const
     },
     {
+      label: 'Insights',
+      path: '/libraries/craft-insights',
+      value: 'craft-insights' as const
+    },
+    {
       label: '@query-api/nuxt',
       path: '/libraries/nuxt-craftcms',
       value: 'nuxt-craftcms' as const
