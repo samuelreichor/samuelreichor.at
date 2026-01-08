@@ -38,6 +38,7 @@ export function getCurrentGhUrl(){
     'craft-quick-edit': 'https://github.com/samuelreichor/craft-quick-edit',
     'craft-llmify': 'https://github.com/samuelreichor/craft-llmify',
     'craft-genesis': 'https://github.com/samuelreichor/craft-genesis',
+    'craft-insights': 'https://github.com/samuelreichor/craft-insights',
     'nuxt-craftcms': 'https://github.com/samuelreichor/query-api/tree/main/packages/nuxt',
     'vue-craftcms': 'https://github.com/samuelreichor/query-api/tree/main/packages/vue',
     'js-craftcms-api': 'https://github.com/samuelreichor/query-api/tree/main/packages/js',
@@ -64,6 +65,7 @@ export function getCurrentGHBaseUrl(){
     'craft-quick-edit': 'https://github.com/samuelreichor/craft-quick-edit',
     'craft-llmify': 'https://github.com/samuelreichor/craft-llmify',
     'craft-genesis': 'https://github.com/samuelreichor/craft-genesis',
+    'craft-insights': 'https://github.com/samuelreichor/craft-insights',
     'nuxt-craftcms': 'https://github.com/samuelreichor/query-api',
     'vue-craftcms': 'https://github.com/samuelreichor/query-api',
     'js-craftcms-api': 'https://github.com/samuelreichor/query-api',
@@ -90,6 +92,7 @@ export function getCurrentPluginStoreLink(){
     'craft-quick-edit': 'https://plugins.craftcms.com/quick-edit',
     'craft-llmify': 'https://plugins.craftcms.com/llmify',
     'craft-genesis': 'https://plugins.craftcms.com/genesis',
+    'craft-insights': 'https://plugins.craftcms.com/insights',
   }
   const match = path.match(/\/libraries\/([^/]+)/);
 
@@ -111,6 +114,7 @@ export function getCurrentLibrary(){
     'craft-quick-edit': 'https://github.com/samuelreichor/craft-quick-edit',
     'craft-llmify': 'https://github.com/samuelreichor/craft-llmify',
     'craft-genesis': 'https://github.com/samuelreichor/craft-genesis',
+    'craft-insights': 'https://github.com/samuelreichor/craft-insights',
     'nuxt-craftcms': 'https://github.com/samuelreichor/query-api',
     'vue-craftcms': 'https://github.com/samuelreichor/query-api',
     'js-craftcms-api': 'https://github.com/samuelreichor/query-api',

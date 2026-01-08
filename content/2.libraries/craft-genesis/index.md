@@ -3,7 +3,7 @@ title: Genesis
 description: 'Bulk import Craft elemnts by csv files.'
 type: 'craft'
 icon: 'craft-genesis'
-badge: true
+badge: 'New'
 ---
 
 ## What Can You Import?

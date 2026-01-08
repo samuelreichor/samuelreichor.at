@@ -49,6 +49,7 @@
               <NuxtLink :href="child.path" v-bind:target="child.target" class="flex gap-2 items-center">
                 <Icon v-if="child.icon" :name="child.icon" size="sm" class="shrink-0" />
                 {{ child.title }}
+                <UBadge v-if="child.badge" :label="child.badge" color="primary" variant="soft" size="sm"  />
               </NuxtLink>
             </li>
           </ul>
@@ -56,6 +57,7 @@
         <NuxtLink v-else :href="node.path" v-bind:target="node.target" class="flex gap-2 items-center">
           <Icon v-if="node.icon" :name="node.icon" size="sm" class="shrink-0" />
           {{ node.title }}
+          <UBadge v-if="node.badge" :label="node.badge" color="primary" variant="subtle" />
         </NuxtLink>
       </li>
     </ul>
