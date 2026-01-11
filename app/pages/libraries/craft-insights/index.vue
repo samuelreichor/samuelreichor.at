@@ -31,7 +31,7 @@
           },
           {
             text: 'Feature Tour',
-            url: '/libraries/craft-insights/introduction/feature-tour',
+            url: '/libraries/craft-insights/knowledge/feature-tour',
           },
         ]" />
 

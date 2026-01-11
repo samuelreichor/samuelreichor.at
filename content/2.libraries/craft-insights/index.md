@@ -47,21 +47,24 @@ This means no consent banners, no privacy policy updates, and no GDPR headaches.
 
 **Lite** covers the essentials-pageviews, referrers, devices, and real-time visitors. Perfect for blogs and smaller sites.
 
-**Pro** adds marketing features: campaign tracking (UTM), country stats, user events, outbound links, and site search analytics. Built for teams that need deeper insights.
+**Pro** adds marketing features: campaign tracking (UTM), country stats, user events, scroll depth, session insights, and more. Built for teams that need deeper insights.
 
 | Feature | Lite | Pro |
 |---------|:----:|:---:|
-| Pageview Tracking | ✅ | ✅ |
-| Referrer Analysis | ✅ | ✅ |
-| Device Breakdown | ✅ | ✅ |
-| Real-time Visitors | ✅ | ✅ |
+| [Pageview Tracking](/libraries/craft-insights/knowledge/how-tracking-works#pageviews) | ✅ | ✅ |
+| [Referrer Analysis](/libraries/craft-insights/knowledge/how-tracking-works#referrers) | ✅ | ✅ |
+| [Device Breakdown](/libraries/craft-insights/knowledge/how-tracking-works#devices) | ✅ | ✅ |
+| [Real-time Visitors](/libraries/craft-insights/knowledge/how-tracking-works#real-time-visitors) | ✅ | ✅ |
 | Entry Sidebar | ✅ | ✅ |
-| Data Export (CSV, JSON) | ✅ | ✅ |
-| Campaign Tracking (UTM) | ❌ | ✅ |
-| Country Tracking | ❌ | ✅ |
-| User Events | ❌ | ✅ |
-| Outbound Link Tracking | ❌ | ✅ |
-| Site Search Analytics | ❌ | ✅ |
+| Data Export (CSV) | ✅ | ✅ |
+| [Campaign Tracking (UTM)](/libraries/craft-insights/knowledge/how-tracking-works#campaign-tracking) | ❌ | ✅ |
+| [Country Tracking](/libraries/craft-insights/knowledge/how-tracking-works#countries) | ❌ | ✅ |
+| [User Events](/libraries/craft-insights/knowledge/how-tracking-works#user-events) | ❌ | ✅ |
+| [Outbound Link Tracking](/libraries/craft-insights/knowledge/how-tracking-works#outbound-links) | ❌ | ✅ |
+| [Site Search Analytics](/libraries/craft-insights/knowledge/how-tracking-works#site-searches) | ❌ | ✅ |
+| [Scroll Depth Tracking](/libraries/craft-insights/knowledge/how-tracking-works#scroll-depth) | ❌ | ✅ |
+| [Session Insights](/libraries/craft-insights/knowledge/how-tracking-works#session-insights) | ❌ | ✅ |
+| [Entry & Exit Pages](/libraries/craft-insights/knowledge/how-tracking-works#entry-pages) | ❌ | ✅ |
 
 ## Getting Started
 
