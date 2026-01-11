@@ -133,6 +133,14 @@ export default defineNuxtConfig({
         ]
       },
       {
+        title: 'Complete documentation of Insights Craft CMS Plugin',
+        description: 'Insights is a GDPR-compliant, privacy-first analytics plugin for Craft CMS. All data stays on your server with no cookies, no fingerprinting, and no third-party services.',
+        contentCollection: 'docs',
+        contentFilters: [
+          { field: 'path', operator: 'LIKE', value: '/libraries/craft-insights%' }
+        ]
+      },
+      {
         title: 'Complete documentation of @query-api/js npm package',
         description: 'Documentation and usage examples for the JavaScript SDK to integrate with Craft CMS using the Query API.',
         contentCollection: 'docs',
