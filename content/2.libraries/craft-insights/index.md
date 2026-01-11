@@ -51,20 +51,21 @@ This means no consent banners, no privacy policy updates, and no GDPR headaches.
 
 | Feature | Lite | Pro |
 |---------|:----:|:---:|
-| [Pageview Tracking](/libraries/craft-insights/knowledge/how-tracking-works#pageviews) | ✅ | ✅ |
+| [Key Metrics](/libraries/craft-insights/knowledge/how-tracking-works#key-metrics) | ✅ | ✅ |
 | [Referrer Analysis](/libraries/craft-insights/knowledge/how-tracking-works#referrers) | ✅ | ✅ |
-| [Device Breakdown](/libraries/craft-insights/knowledge/how-tracking-works#devices) | ✅ | ✅ |
 | [Real-time Visitors](/libraries/craft-insights/knowledge/how-tracking-works#real-time-visitors) | ✅ | ✅ |
+| [Device Breakdown](/libraries/craft-insights/knowledge/how-tracking-works#devices) | ✅ | ✅ |
 | Entry Sidebar | ✅ | ✅ |
 | Data Export (CSV) | ✅ | ✅ |
-| [Campaign Tracking (UTM)](/libraries/craft-insights/knowledge/how-tracking-works#campaign-tracking) | ❌ | ✅ |
+| Widgets | ✅ | ✅ |
 | [Country Tracking](/libraries/craft-insights/knowledge/how-tracking-works#countries) | ❌ | ✅ |
 | [User Events](/libraries/craft-insights/knowledge/how-tracking-works#user-events) | ❌ | ✅ |
-| [Outbound Link Tracking](/libraries/craft-insights/knowledge/how-tracking-works#outbound-links) | ❌ | ✅ |
-| [Site Search Analytics](/libraries/craft-insights/knowledge/how-tracking-works#site-searches) | ❌ | ✅ |
 | [Scroll Depth Tracking](/libraries/craft-insights/knowledge/how-tracking-works#scroll-depth) | ❌ | ✅ |
 | [Session Insights](/libraries/craft-insights/knowledge/how-tracking-works#session-insights) | ❌ | ✅ |
 | [Entry & Exit Pages](/libraries/craft-insights/knowledge/how-tracking-works#entry-pages) | ❌ | ✅ |
+| [Outbound Link Tracking](/libraries/craft-insights/knowledge/how-tracking-works#outbound-links) | ❌ | ✅ |
+| [Campaign Tracking (UTM)](/libraries/craft-insights/knowledge/how-tracking-works#campaign-tracking) | ❌ | ✅ |
+| [Site Search Analytics](/libraries/craft-insights/knowledge/how-tracking-works#site-searches) | ❌ | ✅ |
 
 ## Getting Started
 
