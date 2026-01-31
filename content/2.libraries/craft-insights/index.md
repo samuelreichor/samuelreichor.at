@@ -58,6 +58,7 @@ This means no consent banners, no privacy policy updates, and no GDPR headaches.
 | Entry Sidebar | ✅ | ✅ |
 | Data Export (CSV) | ✅ | ✅ |
 | Widgets | ✅ | ✅ |
+| [Custom Queue](/libraries/craft-insights/get-started/configuration#custom-queue) | ✅ | ✅ |
 | [Country Tracking](/libraries/craft-insights/knowledge/how-tracking-works#countries) | ❌ | ✅ |
 | [User Events](/libraries/craft-insights/knowledge/how-tracking-works#user-events) | ❌ | ✅ |
 | [Scroll Depth Tracking](/libraries/craft-insights/knowledge/how-tracking-works#scroll-depth) | ❌ | ✅ |
@@ -66,6 +67,7 @@ This means no consent banners, no privacy policy updates, and no GDPR headaches.
 | [Outbound Link Tracking](/libraries/craft-insights/knowledge/how-tracking-works#outbound-links) | ❌ | ✅ |
 | [Campaign Tracking (UTM)](/libraries/craft-insights/knowledge/how-tracking-works#campaign-tracking) | ❌ | ✅ |
 | [Site Search Analytics](/libraries/craft-insights/knowledge/how-tracking-works#site-searches) | ❌ | ✅ |
+| [Custom Database](/libraries/craft-insights/get-started/configuration#external-database) | ❌ | ✅ |
 
 ## Getting Started
 
