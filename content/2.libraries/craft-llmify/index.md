@@ -19,6 +19,7 @@ This creates a perfect, distraction-free version of your content, served in AI-r
 - **Exclude Tags with Classes**: Define classes that should be excluded from the HTML output.
 - **Flexible Configuration**: Site-wide, section, and entry-level settings.
 - **Easy Refresh Options**: Automatic background jobs, manual updates in the CP, or console commands for deployments.
+- **Frontmatter Metadata**: Add configurable metadata to your Markdown.
 
 ## Why it Matters
 
