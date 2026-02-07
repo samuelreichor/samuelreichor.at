@@ -58,6 +58,11 @@
       value: 'craft-insights' as const
     },
     {
+      label: 'Custom Queue Manager',
+      path: '/libraries/craft-custom-queue-manager',
+      value: 'craft-custom-queue-manager' as const
+    },
+    {
       label: '@query-api/nuxt',
       path: '/libraries/nuxt-craftcms',
       value: 'nuxt-craftcms' as const

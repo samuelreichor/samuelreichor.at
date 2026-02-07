@@ -141,6 +141,14 @@ export default defineNuxtConfig({
         ]
       },
       {
+        title: 'Complete documentation of Custom Queue Manager Craft CMS Plugin',
+        description: 'Custom Queue Manager is a Craft CMS plugin that adds a control panel utility for monitoring and managing custom queue jobs with real-time dashboard, bulk actions, and email notifications.',
+        contentCollection: 'docs',
+        contentFilters: [
+          { field: 'path', operator: 'LIKE', value: '/libraries/craft-custom-queue-manager%' }
+        ]
+      },
+      {
         title: 'Complete documentation of @query-api/js npm package',
         description: 'Documentation and usage examples for the JavaScript SDK to integrate with Craft CMS using the Query API.',
         contentCollection: 'docs',
