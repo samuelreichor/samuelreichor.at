@@ -17,6 +17,7 @@ This creates a perfect, distraction-free version of your content, served in AI-r
 - **LLM-Ready Text Files**: Generates `llms.txt` (summary) and `llms-full.txt` (full content).
 - **Twig Tags for Control**: Use `{% llmify %}` to include or `{% excludellmify %}` to exclude HTML from the output.
 - **Exclude Tags with Classes**: Define classes that should be excluded from the HTML output.
+- **Auto-Serve Markdown**: Serve markdown instead of HTML based on the `Accept: text/markdown` header.
 - **Flexible Configuration**: Site-wide, section, and entry-level settings.
 - **Easy Refresh Options**: Automatic background jobs, manual updates in the CP, or console commands for deployments.
 - **Frontmatter Metadata**: Add configurable metadata to your Markdown.
