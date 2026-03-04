@@ -44,7 +44,7 @@
           </NuxtLink>
         </p>
 
-        <p>In love with:
+        <p>Obsessed with:
           <NuxtLink href="https://nuxt.com/" target="_blank" :class="[classes.label]">
             <Icon name="nuxt" size="sm" /> Nuxt
           </NuxtLink>
@@ -56,6 +56,9 @@
           </NuxtLink>
           <NuxtLink href="https://gsap.com" target="_blank" :class="[classes.label]">
             <Icon name="gsap" size="sm" class="text-[#0ae448]" /> Gsap
+          </NuxtLink>
+          <NuxtLink href="https://coolify.io" target="_blank" :class="[classes.label]">
+            <Icon name="coolify" size="sm" /> Coolify
           </NuxtLink>
           <span :class="[classes.label]">
             <span class="h-4 w-0"></span>Many more..
