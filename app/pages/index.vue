@@ -36,10 +36,10 @@
           <NuxtLink href="/libraries/craft-insights" :class="[classes.label]">
             <Icon name="craft-insights" size="sm" /> Insights
           </NuxtLink>
-          <NuxtLink href="/libraries/genesis" :class="[classes.label]">
+          <NuxtLink href="/libraries/craft-genesis" :class="[classes.label]">
             <Icon name="craft-genesis" size="sm" /> Genesis
           </NuxtLink>
-          <NuxtLink href="/libraries/custom-queue-manager" :class="[classes.label]">
+          <NuxtLink href="/libraries/craft-custom-queue-manager" :class="[classes.label]">
             <Icon name="craft-custom-queue-manager" size="sm" /> Custom Queue Manager
           </NuxtLink>
         </p>
