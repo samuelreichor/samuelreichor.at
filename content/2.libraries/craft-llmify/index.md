@@ -11,6 +11,9 @@ Craft LLMify solves this by converting your Twig templates into clean, structure
 
 This creates a perfect, distraction-free version of your content, served in AI-ready files like `llms.txt` and `llms-full.txt`, ensuring your message is understood with perfect accuracy.
 
+::alert
+  If you want to learn more about the broader landscape of Generative Engine Optimization, check out my blog post: [Current State of GEO](/blogs/current-geo-state).
+::
 ## Features
 
 - **Automatic Markdown Output**: Creates clean Markdown versions of your Twig templates.
@@ -47,5 +50,3 @@ It acts as a **curated guide or a map** for models like ChatGPT, giving them a s
 
 The **`llms-full.txt`** file is its essential companion. It contains the **complete, clean Markdown content** from all the pages listed in the `llms.txt` file. 
 By stripping away all the visual noise—like ads, menus, and banners—it provides the AI with perfect source material, dramatically improving the accuracy of its answers and summaries about your site.
-
-
