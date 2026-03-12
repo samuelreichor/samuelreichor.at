@@ -12,6 +12,7 @@ export default defineContentConfig({
           imgPath: z.string(),
           datePublished: z.date(),
           readingTime: z.string(),
+          badge: z.string().optional(),
         })
       })
     ),

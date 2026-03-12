@@ -8,6 +8,9 @@
       .all()
   }, { default: () => [] })
 
+  const blogs2026 = computed(() => blogs.value.filter(b => new Date(b.datePublished).getFullYear() === 2026))
+  const blogs2025 = computed(() => blogs.value.filter(b => new Date(b.datePublished).getFullYear() === 2025))
+
   useHead({
     title: 'Samuel Reichör | Blog Articles',
     meta: [
@@ -38,9 +41,16 @@
         </p>
       </div>
 
-      <Headline text="2025" size="h2" class="mb-6 mt-10" />
-      <section v-if="blogs.length > 0" id="npm-packages" class="grid gap-4">
-        <Card v-for="blog in blogs" :key="blog.title" :link="blog.path" :headline="blog.title"
+      <Headline v-if="blogs2026.length > 0" text="2026" size="h2" class="mb-6 mt-10" />
+      <section v-if="blogs2026.length > 0" class="grid gap-4">
+        <Card v-for="blog in blogs2026" :key="blog.title" :link="blog.path" :headline="blog.title"
+          :description="blog.description" :datePublished="blog.datePublished" :readingTime="blog.readingTime"
+          :imgPath="blog.imgPath" />
+      </section>
+
+      <Headline v-if="blogs2025.length > 0" text="2025" size="h2" class="mb-6 mt-10" />
+      <section v-if="blogs2025.length > 0" class="grid gap-4">
+        <Card v-for="blog in blogs2025" :key="blog.title" :link="blog.path" :headline="blog.title"
           :description="blog.description" :datePublished="blog.datePublished" :readingTime="blog.readingTime"
           :imgPath="blog.imgPath" />
       </section>
