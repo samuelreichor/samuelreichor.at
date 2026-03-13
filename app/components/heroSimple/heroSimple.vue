@@ -98,7 +98,7 @@
         </UDropdownMenu>
       </UFieldGroup>
     </div>
-    <div class="flex items-center gap-3">
+    <div class="flex items-center max-md:flex-col-reverse max-md:items-start gap-3">
       <Headline tag="h1" size="h1Small" :text="props.headline" />
       <UBadge v-if="props.badge" :label="props.badge" color="primary" class="text-white" variant="solid" />
     </div>
