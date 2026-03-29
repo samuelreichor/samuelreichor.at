@@ -40,6 +40,7 @@ export function getCurrentGhUrl(){
     'craft-genesis': 'https://github.com/samuelreichor/craft-genesis',
     'craft-insights': 'https://github.com/samuelreichor/craft-insights',
     'craft-custom-queue-manager': 'https://github.com/samuelreichor/craft-custom-queue-manager',
+    'craft-co-pilot': 'https://github.com/samuelreichor/craft-coPilot',
     'nuxt-craftcms': 'https://github.com/samuelreichor/query-api/tree/main/packages/nuxt',
     'vue-craftcms': 'https://github.com/samuelreichor/query-api/tree/main/packages/vue',
     'js-craftcms-api': 'https://github.com/samuelreichor/query-api/tree/main/packages/js',
@@ -68,6 +69,7 @@ export function getCurrentGHBaseUrl(){
     'craft-genesis': 'https://github.com/samuelreichor/craft-genesis',
     'craft-insights': 'https://github.com/samuelreichor/craft-insights',
     'craft-custom-queue-manager': 'https://github.com/samuelreichor/craft-custom-queue-manager',
+    'craft-co-pilot': 'https://github.com/samuelreichor/craft-coPilot',
     'nuxt-craftcms': 'https://github.com/samuelreichor/query-api',
     'vue-craftcms': 'https://github.com/samuelreichor/query-api',
     'js-craftcms-api': 'https://github.com/samuelreichor/query-api',
@@ -96,6 +98,7 @@ export function getCurrentPluginStoreLink(){
     'craft-genesis': 'https://plugins.craftcms.com/genesis',
     'craft-insights': 'https://plugins.craftcms.com/insights',
     'craft-custom-queue-manager': 'https://plugins.craftcms.com/custom-queue-manager',
+    'craft-co-pilot': 'https://plugins.craftcms.com/co-pilot',
   }
   const match = path.match(/\/libraries\/([^/]+)/);
 
@@ -119,6 +122,7 @@ export function getCurrentLibrary(){
     'craft-genesis': 'https://github.com/samuelreichor/craft-genesis',
     'craft-insights': 'https://github.com/samuelreichor/craft-insights',
     'craft-custom-queue-manager': 'https://github.com/samuelreichor/craft-custom-queue-manager',
+    'craft-co-pilot': 'https://github.com/samuelreichor/craft-coPilot',
     'nuxt-craftcms': 'https://github.com/samuelreichor/query-api',
     'vue-craftcms': 'https://github.com/samuelreichor/query-api',
     'js-craftcms-api': 'https://github.com/samuelreichor/query-api',

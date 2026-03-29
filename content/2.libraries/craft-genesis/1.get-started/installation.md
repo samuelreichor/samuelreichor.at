@@ -12,7 +12,7 @@ description: 'Learn how to install the Genesis Craft CMS plugin.'
 
 To install Genesis, go to the Plugin Store in your Craft control panel, search for "Genesis," and click the Install button.
 
-## Installation
+## Composer
 
 ::code-group
 

@@ -149,6 +149,14 @@ export default defineNuxtConfig({
         ]
       },
       {
+        title: 'Complete documentation of CoPilot Craft CMS Plugin',
+        description: 'AI Agent plugin for Craft CMS that can understand and edit your content.',
+        contentCollection: 'docs',
+        contentFilters: [
+          { field: 'path', operator: 'LIKE', value: '/libraries/craft-co-pilot%' }
+        ]
+      },
+      {
         title: 'Complete documentation of @query-api/js npm package',
         description: 'Documentation and usage examples for the JavaScript SDK to integrate with Craft CMS using the Query API.',
         contentCollection: 'docs',

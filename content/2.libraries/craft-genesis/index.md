@@ -1,9 +1,8 @@
 ---
 title: Genesis
-description: 'Bulk import Craft elemnts by csv files.'
+description: 'Bulk import Craft elements by csv files.'
 type: 'craft'
 icon: 'craft-genesis'
-badge: 'New'
 ---
 
 ## What Can You Import?

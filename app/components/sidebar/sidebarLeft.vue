@@ -63,6 +63,11 @@
       value: 'craft-custom-queue-manager' as const
     },
     {
+      label: 'CoPilot',
+      path: '/libraries/craft-co-pilot',
+      value: 'craft-co-pilot' as const
+    },
+    {
       label: '@query-api/nuxt',
       path: '/libraries/nuxt-craftcms',
       value: 'nuxt-craftcms' as const
