@@ -31,7 +31,7 @@ We've been building and maintaining large Craft sites for years, and this has al
 
 CoPilot started as an experiment: what if an AI agent actually understood Craft's content model? Not a generic chatbot bolted onto the CP, but an agent that knows your sections, reads your field layouts, respects your permissions, and writes content the way your brand voice demands.
 
-After months of real-world testing with complex multi-site setups, we're confident it delivers on that promise. But we'll let you be the judge and we are looking forward for Feedback!
+After weeks of real-world testing with complex multi-site setups, we're confident it delivers on that promise. But we'll let you be the judge and we are looking forward for Feedback!
 
 ## Getting Started
 
