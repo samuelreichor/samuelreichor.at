@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+	<style>
+		@keyframes spin { to { transform: rotate(360deg); } }
+		.spinner { animation: spin 1s linear infinite; transform-origin: center; }
+	</style>
+	<circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2" opacity="0.3" />
+	<path class="spinner" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M12 3c4.97 0 9 4.03 9 9" />
+</svg>
