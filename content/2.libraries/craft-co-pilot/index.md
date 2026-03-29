@@ -13,12 +13,15 @@ An AI agent that lives in your Craft CMS control panel. It reads your content st
 
 ## Features
 
-- Multi-provider support: Anthropic, OpenAI, or Google Gemini
-- Create, edit, translate, and publish entries through chat
-- Granular permissions per section, volume, and category group
-- Brand voice, glossary, and forbidden words
-- Audit log with field-level diffs
-- Extensible with custom commands, tools, and field transformers
+- **AI Chat in the Control Panel**: A full chat interface and an entry slideout
+- **Read, Write & Publish**: Create entries, fill fields, update content, and publish it directly
+- **Multi-Site Translation**: Translate entries across sites and languages with automatic propagation handling
+- **Multi-Provider Support**: Use Anthropic, OpenAI, or Google Gemini
+- **Granular Permissions**: Control read, write, or block access per section, volume, and category group
+- **Brand Voice & Glossary**: Define tone, terminology, and forbidden words to keep content on brand
+- **Custom Commands & Tools**: Register your own slash commands and tools via events to extend the agent with project-specific capabilities
+- **Audit Log**: Full traceability of every read, create, and update the agent performs (with field-level diffs)
+- **Web Search**: Let the agent browse the web to research and enrich your content
 
 ## Why CoPilot?
 
