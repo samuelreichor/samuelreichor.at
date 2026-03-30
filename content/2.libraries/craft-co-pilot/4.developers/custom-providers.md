@@ -29,6 +29,6 @@ Your provider must implement `samuelreichor\coPilot\providers\ProviderInterface`
 
 Use one of the built-in providers as a reference implementation:
 
-- [`OpenAIProvider`](https://github.com/samuelreichor/craft-coPilot/blob/main/src/providers/OpenAIProvider.php)
-- [`AnthropicProvider`](https://github.com/samuelreichor/craft-coPilot/blob/main/src/providers/AnthropicProvider.php)
-- [`GeminiProvider`](https://github.com/samuelreichor/craft-coPilot/blob/main/src/providers/GeminiProvider.php)
+- [`OpenAIProvider`](https://github.com/samuelreichor/craft-co-pilot/blob/main/src/providers/OpenAIProvider.php)
+- [`AnthropicProvider`](https://github.com/samuelreichor/craft-co-pilot/blob/main/src/providers/AnthropicProvider.php)
+- [`GeminiProvider`](https://github.com/samuelreichor/craft-co-pilot/blob/main/src/providers/GeminiProvider.php)
