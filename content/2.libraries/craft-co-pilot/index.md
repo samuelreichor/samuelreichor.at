@@ -16,7 +16,7 @@ An AI agent that lives in your Craft CMS control panel. It reads your content st
 - **AI Chat in the Control Panel**: A full chat interface and an entry slideout
 - **Read, Write & Publish**: Create entries, fill fields, update content, and publish it directly
 - **Multi-Site Translation**: Translate entries across sites and languages with automatic propagation handling
-- **Multi-Provider Support**: Use Anthropic, OpenAI, or Google Gemini
+- **Multi-Provider Support**: Use [Langdock](https://langdock.com), Anthropic, OpenAI, or Google Gemini
 - **Granular Permissions**: Control read, write, or block access per section, volume, and category group
 - **Brand Voice & Glossary**: Define tone, terminology, and forbidden words to keep content on brand
 - **Custom Commands & Tools**: Register your own slash commands and tools via events to extend the agent with project-specific capabilities
