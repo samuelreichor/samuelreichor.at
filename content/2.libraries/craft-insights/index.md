@@ -56,7 +56,8 @@ This means no consent banners, no privacy policy updates, and no GDPR headaches.
 | [Real-time Visitors](/libraries/craft-insights/knowledge/how-tracking-works#real-time-visitors) | ✅ | ✅ |
 | [Device Breakdown](/libraries/craft-insights/knowledge/how-tracking-works#devices) | ✅ | ✅ |
 | Entry Sidebar | ✅ | ✅ |
-| Data Export (CSV) | ✅ | ✅ |
+| Data Export (CSV & PDF) | ✅ | ✅ |
+| [Scheduled Email Reports](/libraries/craft-insights/usage/email-reports) | ✅ | ✅ |
 | Widgets | ✅ | ✅ |
 | [Custom Queue](/libraries/craft-insights/get-started/configuration#custom-queue) | ✅ | ✅ |
 | [Country Tracking](/libraries/craft-insights/knowledge/how-tracking-works#countries) | ❌ | ✅ |
