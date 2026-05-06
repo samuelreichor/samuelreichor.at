@@ -24,7 +24,7 @@
     twitterDescription: description,
   })
 
-  defineOgImageComponent('Default', { title, description })
+  defineOgImage('Default', { title, description })
 
   const socialNodes = inject<ContentNavigationItem[]>('socialMediaObj')
 </script>

@@ -35,7 +35,7 @@
     twitterDescription: description,
   })
 
-  defineOgImageComponent('Default', { title, description })
+  defineOgImage('Default', { title, description })
 </script>
 
 <template>
