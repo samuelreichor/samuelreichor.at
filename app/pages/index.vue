@@ -22,7 +22,7 @@
 <template>
   <NuxtLayout name="full">
     <div class="mt-4 mb-8 md:my-16 max-w-[750px]">
-      <Headline text="Samuel Reichör" size="h1" />
+      <Headline tag="h1" text="Samuel Reichör" size="h1" />
       <div class="text-nav-node">
         <p class="mt-8 mb-6">
           Hey, I am Samuel Reichör, a fanatical full stack freelance developer. <br>

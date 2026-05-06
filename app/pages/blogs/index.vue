@@ -38,7 +38,7 @@
     </template>
     <template v-slot:main>
       <div>
-        <Headline text="Welcome to the Blog Hub!" target="Blog" size="h1" />
+        <Headline tag="h1" text="Welcome to the Blog Hub!" target="Blog" size="h1" />
         <p class="mt-6 md:mt-8 max-w-[750px]">
           Here you can find blogs featuring opinions on tech topics, tutorials, and latest news about the fast moving
           tech space.
