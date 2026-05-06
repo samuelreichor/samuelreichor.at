@@ -12,6 +12,7 @@ const libRoute = '/libraries/nuxt-craftcms'
 
   const { surround } = await useSurroundHelper()
   const { page, navNodes } = await useCustomNavs(libRoute)
+  useContentSeo(page)
 
   const nodeProps = [{
     navNodes,

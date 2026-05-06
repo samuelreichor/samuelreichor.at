@@ -3,6 +3,7 @@
 
   const { surround } = await useSurroundHelper();
   const { page, navNodes, headline } = await useCustomNavs('/libraries/craft-custom-queue-manager')
+  useContentSeo(page)
 
   const nodeProps = [{
     navNodes,

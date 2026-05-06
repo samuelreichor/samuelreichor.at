@@ -3,6 +3,7 @@
 
   const { surround } = await useSurroundHelper();
   const { page, navNodes, headline } = await useCustomNavs('/libraries/craft-co-pilot')
+  useContentSeo(page)
 
   const nodeProps = [{
     navNodes,

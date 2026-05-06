@@ -3,6 +3,7 @@
 
   const { surround } = await useSurroundHelper()
   const { page, navNodes } = await useCustomNavs('/libraries/craft-llmify')
+  useContentSeo(page)
 
   const nodeProps = [{
     navNodes,

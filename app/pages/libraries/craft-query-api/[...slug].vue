@@ -17,6 +17,7 @@
   const libRoute = '/libraries/craft-query-api'
 
   const { page, navNodes, headline } = await useCustomNavs(libRoute)
+  useContentSeo(page)
   const tocLinks = page.value?.body?.toc?.links;
   const { surround } = await useSurroundHelper()
 
