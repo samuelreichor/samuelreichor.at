@@ -11,15 +11,17 @@
   const blogs2026 = computed(() => blogs.value.filter(b => new Date(b.datePublished).getFullYear() === 2026))
   const blogs2025 = computed(() => blogs.value.filter(b => new Date(b.datePublished).getFullYear() === 2025))
 
-  useHead({
-    title: 'Samuel Reichör | Blog Articles',
-    meta: [
-      {
-        name: 'description',
-        content:
-          'Samuel Reichör`s writing hub featuring opinions on tech topics, tutorials, and latest news about the fast moving tech space.',
-      },
-    ],
+  const title = 'Blog Articles'
+  const description = 'Samuel Reichör`s writing hub featuring opinions on tech topics, tutorials, and latest news about the fast moving tech space.'
+
+  useSeoMeta({
+    title,
+    description,
+    ogTitle: title,
+    ogDescription: description,
+    twitterCard: 'summary_large_image',
+    twitterTitle: title,
+    twitterDescription: description,
   })
 
   const socialNodes = inject<ContentNavigationItem[]>('socialMediaObj')
