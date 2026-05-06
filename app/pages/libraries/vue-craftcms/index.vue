@@ -3,6 +3,7 @@
 
   const { surround } = await useSurroundHelper()
   const { page, navNodes } = await useCustomNavs('/libraries/vue-craftcms')
+  useContentSeo(page)
 
   const nodeProps = [{
     navNodes,

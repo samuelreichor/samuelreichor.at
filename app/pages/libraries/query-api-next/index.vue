@@ -12,6 +12,7 @@ const libRoute = '/libraries/query-api-next'
 
   const { surround } = await useSurroundHelper();
   const { page, navNodes, headline } = await useCustomNavs(libRoute)
+  useContentSeo(page)
 
   const nodeProps = [{
     navNodes,

@@ -3,6 +3,7 @@
 
   const { surround } = await useSurroundHelper();
   const { page, navNodes, headline } = await useCustomNavs('/libraries/js-craftcms-api')
+  useContentSeo(page)
 
   const nodeProps = [{
     navNodes,
