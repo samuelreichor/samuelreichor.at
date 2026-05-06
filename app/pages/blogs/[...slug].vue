@@ -7,6 +7,8 @@
     return queryCollection('blog').path(route.path).first()
   })
 
+  useContentSeo(page)
+
   const tocLinks = page.value?.body?.toc?.links;
 
   const socialNodes = inject<ContentNavigationItem[]>('socialMediaObj')
