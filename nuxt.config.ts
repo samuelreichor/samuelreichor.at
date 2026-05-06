@@ -12,6 +12,12 @@ export default defineNuxtConfig({
     '/': { prerender: true },
   },
 
+  seo: {
+    setupNuxtConfigAppHeadWithMoreDefaults: false,
+    // 'low' alias = 200; numeric since this version's types still expect number
+    tagPriority: 200,
+  },
+
   css: ['~/assets/css/tailwind.css'],
 
   nitro: {
@@ -270,7 +276,7 @@ export default defineNuxtConfig({
       name: 'Samuel Reichör',
       alternateName: 'Sam',
       url: 'https://samuelreichor.at',
-      description: 'Fullstack developer from Linz, Austria. Author of open source Craft CMS plugins and JavaScript SDKs.',
+      description: 'Fullstack Craft CMS developer from Linz, Austria. Author of open source Craft CMS plugins and JavaScript SDKs.',
       jobTitle: 'Fullstack Developer',
       worksFor: { '@type': 'Person', name: 'Samuel Reichör' },
       sameAs: [
