@@ -15,6 +15,10 @@ export default defineContentConfig({
         datePublished: z.date(),
         readingTime: z.string(),
         badge: z.string().optional(),
+        seo: z.object({
+          title: z.string().optional(),
+          description: z.string().optional(),
+        }).optional(),
         robots: defineRobotsSchema(),
         sitemap: defineSitemapSchema(),
         ogImage: defineOgImageSchema(),
@@ -28,6 +32,10 @@ export default defineContentConfig({
         badge: z.string().optional(),
         icon: z.string(),
         type: z.string(),
+        seo: z.object({
+          title: z.string().optional(),
+          description: z.string().optional(),
+        }).optional(),
         robots: defineRobotsSchema(),
         sitemap: defineSitemapSchema(),
         ogImage: defineOgImageSchema(),
