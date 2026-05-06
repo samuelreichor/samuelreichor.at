@@ -14,8 +14,6 @@ export default defineNuxtConfig({
 
   seo: {
     setupNuxtConfigAppHeadWithMoreDefaults: false,
-    // 'low' alias = 200; numeric since this version's types still expect number
-    tagPriority: 200,
   },
 
   css: ['~/assets/css/tailwind.css'],
