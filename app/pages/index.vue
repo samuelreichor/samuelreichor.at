@@ -3,15 +3,17 @@
     label: 'bg-muted transition-color py-0.5 px-2 rounded-md hover:text- inline-flex gap-2 items-center translate-y-0.5 mr-1 mt-1'
   }
 
-  useHead({
-    title: 'Samuel Reichör | Fullstack Developer',
-    meta: [
-      {
-        name: 'description',
-        content:
-          'Samuel Reichör, fullstack developer in Linz, specializing in Craft CMS, Nuxt, and modern web tools. Passionate about clean, efficient code and seamless user experiences. Connect with me for collaborations or insights on web development trends.',
-      },
-    ],
+  const title = 'Fullstack Developer'
+  const description = 'Samuel Reichör, fullstack developer in Linz, specializing in Craft CMS, Nuxt, and modern web tools. Passionate about clean, efficient code and seamless user experiences. Connect with me for collaborations or insights on web development trends.'
+
+  useSeoMeta({
+    title,
+    description,
+    ogTitle: title,
+    ogDescription: description,
+    twitterCard: 'summary_large_image',
+    twitterTitle: title,
+    twitterDescription: description,
   })
 </script>
 
