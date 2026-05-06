@@ -204,9 +204,6 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      htmlAttrs: {
-        lang: 'en',
-      },
       link: [
         {
           rel: 'icon',
@@ -258,7 +255,9 @@ export default defineNuxtConfig({
   site: {
     trailingSlash: false,
     url: 'https://samuelreichor.at',
-    name: 'samuelreichor',
+    name: 'Samuel Reichör',
+    description: 'Samuel Reichör — fullstack developer in Linz, building open source Craft CMS plugins and JavaScript SDKs around Nuxt and modern web tools.',
+    defaultLocale: 'en-US',
   },
 
   ogImage: {
