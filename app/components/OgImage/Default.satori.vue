@@ -15,13 +15,7 @@ withDefaults(defineProps<{
     class="w-full h-full flex flex-col"
     style="background: #020817; color: white; padding: 72px; font-family: Inter, sans-serif;"
   >
-    <div class="flex items-center" style="margin-bottom: 32px;">
-      <div class="flex" style="font-size: 28px; color: #94a3b8; font-weight: 500;">
-        samuelreichor.at
-      </div>
-    </div>
-
-    <div class="flex flex-col" style="flex: 1; justify-content: center;">
+    <div class="flex flex-col" style="flex: 1;">
       <div class="flex items-center" style="margin-bottom: 28px;">
         <div
           class="flex"
@@ -46,10 +40,10 @@ withDefaults(defineProps<{
       </div>
     </div>
 
-    <div class="flex items-center" style="margin-top: 32px;">
-      <div class="flex" style="font-size: 24px; color: #94a3b8; font-weight: 500;">
-        Samuel Reichör · Fullstack Developer
-      </div>
+    <div class="flex items-center" style="font-size: 24px; color: #94a3b8; font-weight: 500;">
+      <div class="flex">Samuel Reichör · Fullstack Developer</div>
+      <div class="flex" style="margin-left: 16px; color: #475569;">·</div>
+      <div class="flex" style="margin-left: 16px;">samuelreichor.at</div>
     </div>
   </div>
 </template>
