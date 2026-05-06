@@ -264,5 +264,21 @@ export default defineNuxtConfig({
     zeroRuntime: true,
   },
 
+  schemaOrg: {
+    identity: {
+      type: 'Person',
+      name: 'Samuel Reichör',
+      alternateName: 'Sam',
+      url: 'https://samuelreichor.at',
+      description: 'Fullstack developer from Linz, Austria. Author of open source Craft CMS plugins and JavaScript SDKs.',
+      jobTitle: 'Fullstack Developer',
+      worksFor: { '@type': 'Person', name: 'Samuel Reichör' },
+      sameAs: [
+        'https://github.com/samuelreichor',
+        'https://medium.com/@Coderabbit',
+      ],
+    },
+  },
+
   compatibilityDate: '2024-11-01',
 })
