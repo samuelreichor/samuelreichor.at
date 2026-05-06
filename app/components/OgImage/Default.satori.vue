@@ -18,7 +18,7 @@ withDefaults(defineProps<{
     <div class="flex" style="margin-bottom: 40px;">
       <div
         class="flex items-center justify-center"
-        style="width: 88px; height: 88px; background: #3c83f6; border-radius: 22px; font-size: 42px; font-weight: 700; color: white; letter-spacing: -0.02em;"
+        style="width: 64px; height: 64px; background: #3c83f6; border-radius: 16px; font-size: 30px; font-weight: 700; color: white; letter-spacing: -0.02em;"
       >
         SR
       </div>
