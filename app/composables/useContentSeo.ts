@@ -24,7 +24,7 @@ export function useContentSeo(page: Ref<ContentSeoPage>) {
     twitterDescription: description,
   })
 
-  defineOgImageComponent('Default', {
+  defineOgImage('Default', {
     title: title.value,
     description: description.value,
     badge: page.value?.badge,
