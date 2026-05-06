@@ -95,3 +95,8 @@ The Nuxt UI theme is customized in `app/app.config.ts`:
 - Primary color: `highlight` (custom color)
 - Button variants: `primary` (highlight-500) and `gray` (muted with brightness)
 - Focus styles use highlight-500 with ring offset
+
+<!-- skilld -->
+Before modifying code, evaluate each installed skill against the current task.
+For each skill, determine YES/NO relevance and invoke all YES skills before proceeding.
+<!-- /skilld -->
