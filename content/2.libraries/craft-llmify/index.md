@@ -45,6 +45,7 @@ Combined with Craft Commerce compatibility, granular control over your Markdowns
 ### Integrations
 - **SEOmatic Integration**: Automatically populate front matter from SEOmatic fields.
 - **Craft Commerce Support**: Full support for Commerce Products alongside Entries.
+- **[AI Bot Analytics](/libraries/craft-llmify/usage/ai-bot-analytics)**: Install [Craft Insights](/libraries/craft-insights) to get a dedicated dashboard for AI bot traffic, crawler breakdowns, top visited Markdowns, and delivery splits across every Markdown response your site serves.
 
 ## Why it Matters
 

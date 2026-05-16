@@ -60,6 +60,7 @@ This means no consent banners, no privacy policy updates, and no GDPR headaches.
 | [Scheduled Email Reports](/libraries/craft-insights/usage/email-reports) | ✅ | ✅ |
 | Widgets | ✅ | ✅ |
 | [Custom Queue](/libraries/craft-insights/get-started/configuration#custom-queue) | ✅ | ✅ |
+| [AI Bot Analytics](/libraries/craft-insights/knowledge/how-tracking-works#ai-bot-analytics) (requires [LLMify](/libraries/craft-llmify)) | ✅ | ✅ |
 | [Country Tracking](/libraries/craft-insights/knowledge/how-tracking-works#countries) | ❌ | ✅ |
 | [User Events](/libraries/craft-insights/knowledge/how-tracking-works#user-events) | ❌ | ✅ |
 | [Scroll Depth Tracking](/libraries/craft-insights/knowledge/how-tracking-works#scroll-depth) | ❌ | ✅ |
