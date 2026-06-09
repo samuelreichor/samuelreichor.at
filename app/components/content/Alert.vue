@@ -7,7 +7,7 @@
     class: string
   }
 
-  defineProps({
+  const props = defineProps({
     variant: {
       type: String as PropType<VariantKey>,
       default: () => 'note',
@@ -41,14 +41,16 @@
       class: 'text-red-500',
     },
   };
+
+  const current = computed<Variant>(() => variants[props.variant] ?? variants.note);
 </script>
 
 <template>
-  <div :class="[variants[variant].class, 'border-l-[3px] pl-4 py-1.5 border-l-current margin-bottom']">
+  <div :class="[current.class, 'border-l-[3px] pl-4 py-1.5 border-l-current margin-bottom']">
     <div class="mb-0! flex gap-3 items-center">
-      <Icon :name="variants[variant].icon" size="base" />
+      <Icon :name="current.icon" size="base" />
       <span class="font-medium">
-        {{ variants[variant].label }}
+        {{ current.label }}
       </span>
     </div>
     <div class="text-black dark:text-white **:mb-0! mt-1">
