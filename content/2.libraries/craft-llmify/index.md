@@ -35,6 +35,9 @@ Combined with Craft Commerce compatibility, granular control over your Markdowns
 - **Discovery Tag**: Injects `<link rel="alternate" type="text/markdown">` into your HTML head.
 - **Industry Standard Response Headers**: Sets `Vary: Accept`, `X-Robots-Tag: noindex, nofollow`, and `Link: rel="canonical"` on all Markdown responses.
 
+### Headless
+- **[Headless Support](/libraries/craft-llmify/usage/headless)**: Running a separate front end (Nuxt, Next, Astro, …)? LLMify generates Markdown by fetching your front-end URLs and exposes API endpoints to serve `llms.txt`, `llms-full.txt`, and individual `.md` pages from your own domain.
+
 ### Content Management
 - **Hierarchical Settings**: Site-wide, section, and entry-level configuration with inheritance.
 - **Per-Entry Control**: Include or exclude individual entries via the LLMify Settings Field.
