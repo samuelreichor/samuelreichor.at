@@ -23,7 +23,7 @@ Combined with Craft Commerce compatibility, granular control over your Markdowns
 ### Content Generation
 - **Pre-Generated Markdown**: Async batch processing stores Markdown in a dedicated database table for instant delivery at any scale.
 - **On-Demand Fallback**: Automatically generates Markdown on first request if not yet pre-generated.
-- **Template-Level Control**: Use `{% llmify %}` and `{% excludellmify %}` Twig tags for precise control over what content is included.
+- **Template-Level Control**: Use `{% llmify %}` and `{% excludeLlmify %}` Twig tags for precise control over what content is included.
 - **CSS Class Exclusion**: Define classes to exclude entire sections from the HTML-to-Markdown conversion.
 - **YAML Front Matter**: Configurable metadata with hierarchical inheritance (Site > Section > Entry).
 - **Console Commands**: `llmify/markdown/generate` and `llmify/markdown/clear` for CI/CD and deployment workflows.
@@ -33,6 +33,8 @@ Combined with Craft Commerce compatibility, granular control over your Markdowns
 - **AI Crawler Detection**: Automatically serve Markdown to known AI bots (GPTBot, ClaudeBot, ChatGPT-User, and more).
 - **LLM-Ready Text Files**: Generates `llms.txt`, `llms-full.txt`, and `/.well-known/llms.txt`.
 - **Discovery Tag**: Injects `<link rel="alternate" type="text/markdown">` into your HTML head.
+- **[WebMCP Tools](/libraries/craft-llmify/usage/webmcp)**: Opt-in support for the experimental WebMCP standard, giving in-browser AI agents (e.g. Gemini in Chrome) read-only search, page, and navigation tools over your enabled content.
+- **[Twig Functions](/libraries/craft-llmify/usage/twig-functions)**: `mdUrl()`, `chatGptUrl()`, and `claudeUrl()` for "View as Markdown" links and buttons that open the current page in ChatGPT or Claude.
 - **Industry Standard Response Headers**: Sets `Vary: Accept`, `X-Robots-Tag: noindex, nofollow`, and `Link: rel="canonical"` on all Markdown responses.
 
 ### Headless
