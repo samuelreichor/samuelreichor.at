@@ -3,7 +3,6 @@ title: 'CoPilot'
 description: 'AI agent plugin for Craft CMS that creates, edits, translates, and publishes content through natural language.'
 type: 'craft'
 icon: 'craft-co-pilot'
-badge: 'New'
 ---
 
 ::video-player{src="/videos/craft-co-pilot-chat-demo.mp4" alt="CoPilot demo"}

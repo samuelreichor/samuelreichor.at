@@ -31,6 +31,9 @@
         </p>
 
         <p>Creator of:
+          <NuxtLink href="https://knecht.works" :class="[classes.label]">
+            <Icon name="knecht-works" size="sm" /> Knecht Works
+          </NuxtLink>
           <NuxtLink href="/libraries/craft-query-api" :class="[classes.label]">
             <Icon name="craft-query-api" size="sm" /> Query API
           </NuxtLink>

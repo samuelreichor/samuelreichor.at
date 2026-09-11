@@ -3,7 +3,6 @@ title: Custom Queue Manager
 description: 'Manage custom queues in the Craft CMS control panel.'
 type: 'craft'
 icon: 'craft-custom-queue-manager'
-badge: 'New'
 ---
 
 Custom Queue Manager adds a utility to the Craft CMS control panel for monitoring and managing custom queue jobs. It auto-discovers all custom queues registered in your app config and provides a real-time dashboard with job management capabilities.

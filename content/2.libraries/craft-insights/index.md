@@ -3,7 +3,6 @@ title: Insights
 description: 'GDPR-compliant, privacy-first analytics for Craft CMS.'
 type: 'craft'
 icon: 'craft-insights'
-badge: 'New'
 ---
 
 ![Insights Dashboard Overview](/images/bitmap/craft-insights-dashboard.png)
