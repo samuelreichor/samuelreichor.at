@@ -32,10 +32,10 @@ Combined with Craft Commerce compatibility, granular control over your Markdowns
 - **Auto-Serve Markdown**: Content negotiation via `Accept: text/markdown` header.
 - **AI Crawler Detection**: Automatically serve Markdown to known AI bots (GPTBot, ClaudeBot, ChatGPT-User, and more).
 - **LLM-Ready Text Files**: Generates `llms.txt`, `llms-full.txt`, and `/.well-known/llms.txt`.
-- **Discovery Tag**: Injects `<link rel="alternate" type="text/markdown">` into your HTML head.
+- **Discovery Tag**: Injects `<link rel="alternate" type="text/markdown">` and `<link rel="describedby" href="/llms.txt">` into your HTML head, as recommended by the [llms.txt spec](https://llmstxt.org/).
 - **[WebMCP Tools](/libraries/craft-llmify/usage/webmcp)**: Opt-in support for the experimental WebMCP standard, giving in-browser AI agents (e.g. Gemini in Chrome) read-only search, page, and navigation tools over your enabled content.
 - **[Twig Functions](/libraries/craft-llmify/usage/twig-functions)**: `mdUrl()`, `chatGptUrl()`, and `claudeUrl()` for "View as Markdown" links and buttons that open the current page in ChatGPT or Claude.
-- **Industry Standard Response Headers**: Sets `Vary: Accept`, `X-Robots-Tag: noindex, nofollow`, and `Link: rel="canonical"` on all Markdown responses.
+- **Industry Standard Response Headers**: Sets `Vary: Accept`, `X-Robots-Tag: noindex, nofollow`, and a `Link` header with `rel="describedby"` (pointing to `llms.txt`) on all Markdown responses, plus `rel="canonical"` on `.md` URLs.
 
 ### Headless
 - **[Headless Support](/libraries/craft-llmify/usage/headless)**: Running a separate front end (Nuxt, Next, Astro, …)? LLMify generates Markdown by fetching your front-end URLs and exposes API endpoints to serve `llms.txt`, `llms-full.txt`, and individual `.md` pages from your own domain.
