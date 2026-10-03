@@ -15,41 +15,47 @@ LLMify solves this by converting your Twig templates into clean, structured Mark
 ## Why LLMify?
 
 LLMify is built for production-scale AI content delivery.
-Instead of converting HTML to Markdown on every request, LLMify does the work upfront. Your Markdown is stored and ready before any bot shows up.
+It renders the Markdown of a page from your own templates on the first request and keeps it in Craft's data cache. The cache uses Craft's element cache tags, so a page's Markdown is invalidated as soon as the page or anything it shows changes.
+
 Combined with Craft Commerce compatibility, granular control over your Markdowns and user permissions, LLMify gives you everything you need to make your entire site AI-ready.
 
 ## Features
 
-### Content Generation
-- **Pre-Generated Markdown**: Async batch processing stores Markdown in a dedicated database table for instant delivery at any scale.
-- **On-Demand Fallback**: Automatically generates Markdown on first request if not yet pre-generated.
+### Content
 - **Template-Level Control**: Use `{% llmify %}` and `{% excludeLlmify %}` Twig tags for precise control over what content is included.
 - **CSS Class Exclusion**: Define classes to exclude entire sections from the HTML-to-Markdown conversion.
 - **YAML Front Matter**: Configurable metadata with hierarchical inheritance (Site > Section > Entry).
-- **Console Commands**: `llmify/markdown/generate` and `llmify/markdown/clear` for CI/CD and deployment workflows.
+
+### Caching
+- **Rendered on Demand**: Markdown is rendered on the first request of a page and cached. There is no queue to run and no database table to keep in sync.
+- **Always Up to Date**: Element cache tags invalidate a page's Markdown when the page, a related entry, an asset or a global set it shows changes, no matter where it is saved from.
+- **Cache Warming**: `llmify/markdown/generate` or the LLMify utility cache every page that is not cached yet, e.g. after a deployment.
+- **Clear Caches**: Clear the Markdown from the LLMify utility, from Utilities > Clear Caches or with `php craft clear-caches/llmify`.
+- **Failure Reports**: Pages whose Markdown could not be rendered are listed on the dashboard, and the element sidebar shows the reason.
 
 ### AI Content Delivery
 - **Auto-Serve Markdown**: Content negotiation via `Accept: text/markdown` header.
 - **AI Crawler Detection**: Automatically serve Markdown to known AI bots (GPTBot, ClaudeBot, ChatGPT-User, and more).
-- **LLM-Ready Text Files**: Generates `llms.txt`, `llms-full.txt`, and `/.well-known/llms.txt`.
+- **LLM-Ready Text Files**: Generates `llms.txt` and `/.well-known/llms.txt`.
 - **Discovery Tag**: Injects `<link rel="alternate" type="text/markdown">` and `<link rel="describedby" href="/llms.txt">` into your HTML head, as recommended by the [llms.txt spec](https://llmstxt.org/).
 - **[WebMCP Tools](/libraries/craft-llmify/usage/webmcp)**: Opt-in support for the experimental WebMCP standard, giving in-browser AI agents (e.g. Gemini in Chrome) read-only search, page, and navigation tools over your enabled content.
 - **[Twig Functions](/libraries/craft-llmify/usage/twig-functions)**: `mdUrl()`, `chatGptUrl()`, and `claudeUrl()` for "View as Markdown" links and buttons that open the current page in ChatGPT or Claude.
 - **Industry Standard Response Headers**: Sets `Vary: Accept`, `X-Robots-Tag: noindex, nofollow`, and a `Link` header with `rel="describedby"` (pointing to `llms.txt`) on all Markdown responses, plus `rel="canonical"` on `.md` URLs.
 
 ### Headless
-- **[Headless Support](/libraries/craft-llmify/usage/headless)**: Running a separate front end (Nuxt, Next, Astro, …)? LLMify generates Markdown by fetching your front-end URLs and exposes API endpoints to serve `llms.txt`, `llms-full.txt`, and individual `.md` pages from your own domain.
+- **[Headless Support](/libraries/craft-llmify/usage/headless)**: Running a separate front end (Nuxt, Next, Astro, ...)? LLMify fetches your front-end URLs, converts and caches the result, and exposes API endpoints to serve `llms.txt` and individual `.md` pages from your own domain.
 
 ### Content Management
 - **Hierarchical Settings**: Site-wide, section, and entry-level configuration with inheritance.
 - **Per-Entry Control**: Include or exclude individual entries via the LLMify Settings Field.
-- **Permission System**: Granular user permissions for dashboard, content settings, site settings, generate, and clear actions.
+- **Permission System**: Granular user permissions for dashboard, content settings, site settings, warming and clearing the cache.
 - **Preview Targets**: Preview Markdown output directly from the entry editor.
-- **Dashboard**: Site setup scores and section-level content statistics at a glance.
+- **Dashboard**: Site setup score, cache status, failed pages and section-level content statistics at a glance.
 
 ### Integrations
 - **SEOmatic Integration**: Automatically populate front matter from SEOmatic fields.
 - **Craft Commerce Support**: Full support for Commerce Products alongside Entries.
+- **[Blitz](/libraries/craft-llmify/usage/auto-serve#blitz-integration)**: Markdown requests bypass the Blitz cache.
 - **[AI Bot Analytics](/libraries/craft-llmify/usage/ai-bot-analytics)**: Install [Craft Insights](/libraries/craft-insights) to get a dedicated dashboard for AI bot traffic, crawler breakdowns, top visited Markdowns, and delivery splits across every Markdown response your site serves.
 
 ## Why it Matters
