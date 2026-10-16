@@ -64,8 +64,11 @@ export async function addReaction(slug: string, reaction: ReactionKey) {
     RETURNING thumbs_up, thumbs_down, thinking, rocket
   `
 
-    const rows = await sql(updateQuery, [slug])
+  const rows = await sql.query(updateQuery, [slug])
   const updated = rows[0]
+  if (!updated) {
+    throw createError({ statusCode: 500, statusMessage: 'Reaction update failed' })
+  }
 
   return {
     slug,
