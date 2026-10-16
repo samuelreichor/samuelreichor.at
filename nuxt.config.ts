@@ -14,6 +14,9 @@ export default defineNuxtConfig({
 
   seo: {
     setupNuxtConfigAppHeadWithMoreDefaults: false,
+    // The prerender HTML minifier also rewrites the Shiki <style> that ContentRenderer
+    // renders into the page body, which causes a hydration mismatch on blog posts.
+    minify: { build: false },
   },
 
   css: ['~/assets/css/tailwind.css'],
