@@ -7,6 +7,10 @@ readingTime: 15min
 
 This week I got a very interesting job at [Fredmansky](https://fredmansky.at): optimizing their largest site. It's the website of the [Diocese of Passau](https://www.bistum-passau.de), the Catholic diocese in Bavaria, with all of its parishes, churches, church services and events: a Craft CMS project with 127 [sites](https://craftcms.com/docs/5.x/system/sites.html), a 51 GB database and over 48k frontend pages.
 
+::alert{variant="warning"}
+Craft 5 has a [soft limit of 100 sites](https://craftcms.com/knowledge-base/how-much-content-can-a-craft-site-have#mind-your-site-count) per installation, and Pixel & Tonic recommends not getting anywhere close to it. With 127 sites, this project is well beyond it.
+::
+
 It grew over the years to an unmanageable size, and the frontend performance was only okay-ish thanks to [Blitz](https://putyourlightson.com/plugins/blitz) static caching. And Blitz only covers the main site, so the other 126 sites rendered every single request from scratch. In the control panel, every save took ages and the control panel search wasn't usable anymore.
 
 ## The Plan
@@ -101,7 +105,9 @@ So is switching to MySQL worth it? For the frontend: no, the difference is small
 
 Just excluding the church services overview with query strings would have been too much. Some of these URLs are worth caching, like the church services of a single church, which are linked from every church page. So I turned it around: **exclude every URL with a query string, except the ones I explicitly allow.**
 
-Blitz has no setting for this, but excluded patterns are matched against the URI including the query string. So the allowlist lives inside the exclude pattern as a [negative lookahead](https://www.regular-expressions.info/lookaround.html):
+Blitz does have [included/excluded query string parameters](https://putyourlightson.com/plugins/blitz#included-excluded-query-string-parameters), but they don't decide *whether* a page gets cached. They only control which parameters are kept in the cached URL, and all others are disregarded. If I only included `church`, `?startDate=…&church=12` would be cached as `?church=12`, and visitors would get a page that doesn't match their date filter.
+
+Excluded URI patterns, on the other hand, are matched against the URI including the query string. So the allowlist lives inside the exclude pattern as a [negative lookahead](https://www.regular-expressions.info/lookaround.html):
 
 ```php
 'uriPattern' => '^(?!(shop\?|gottesdienste\?(church|pa)=\d+$|aktuelles-termine/termine\?category=\d+$))[^?]*\?',
