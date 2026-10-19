@@ -164,6 +164,14 @@ export default defineNuxtConfig({
         ]
       },
       {
+        title: 'Complete documentation of Better Cache Craft CMS Plugin',
+        description: 'Easy scalable static caching for Craft CMS.',
+        contentCollection: 'docs',
+        contentFilters: [
+          { field: 'path', operator: 'LIKE', value: '/libraries/craft-better-cache%' }
+        ]
+      },
+      {
         title: 'Complete documentation of @query-api/js npm package',
         description: 'Documentation and usage examples for the JavaScript SDK to integrate with Craft CMS using the Query API.',
         contentCollection: 'docs',

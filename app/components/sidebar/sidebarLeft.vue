@@ -68,6 +68,11 @@
       value: 'craft-co-pilot' as const
     },
     {
+      label: 'Better Cache',
+      path: '/libraries/craft-better-cache',
+      value: 'craft-better-cache' as const
+    },
+    {
       label: '@query-api/nuxt',
       path: '/libraries/nuxt-craftcms',
       value: 'nuxt-craftcms' as const
