@@ -283,6 +283,7 @@ export default defineNuxtConfig({
       sameAs: [
         'https://github.com/samuelreichor',
         'https://medium.com/@Coderabbit',
+        'https://dev-null.sh/@samuelreichor',
       ],
     },
   },

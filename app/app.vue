@@ -27,6 +27,12 @@
       target: '_blank',
       icon: 'medium'
     },
+    {
+      path: 'https://dev-null.sh/@samuelreichor',
+      title: 'Dev Null',
+      target: '_blank',
+      icon: 'dev-null'
+    },
   ]
 
   provide('socialMediaObj', socialMediaObj)

@@ -102,6 +102,9 @@
           <NuxtLink href="https://discordapp.com/users/samuelreichoer" target="_blank" :class="[classes.label]">
             <Icon name="discord" size="sm" /> Discord
           </NuxtLink>
+          <NuxtLink href="https://dev-null.sh/@samuelreichor" target="_blank" :class="[classes.label]">
+            <Icon name="dev-null" size="sm" /> Dev Null
+          </NuxtLink>
         </p>
         <p class="mt-1">
           Or write an email <NuxtLink href="mailto:samuelreichor@gmail.com" :class="[classes.label]">
