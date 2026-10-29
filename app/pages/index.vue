@@ -103,7 +103,7 @@
             <Icon name="discord" size="sm" /> Discord
           </NuxtLink>
           <NuxtLink href="https://dev-null.sh/@samuelreichor" target="_blank" :class="[classes.label]">
-            <Icon name="dev-null" size="sm" /> Dev Null
+            <Icon name="dev-null" size="sm" /> /dev/null
           </NuxtLink>
         </p>
         <p class="mt-1">

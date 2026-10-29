@@ -29,7 +29,7 @@
     },
     {
       path: 'https://dev-null.sh/@samuelreichor',
-      title: 'Dev Null',
+      title: '/dev/null',
       target: '_blank',
       icon: 'dev-null'
     },
